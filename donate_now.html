@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Donate Now - Geeta Ambulance Services</title>
+    <meta name="description" content="Support Jan Akanksha Foundation by making a donation through UPI or bank transfer." />
+    <meta name="keywords" content="donate, charity, Jan Akanksha Foundation, ambulance services, support" />
+    <meta name="author" content="Geeta Ambulance Services" />
+    <meta name="robots" content="index, follow" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+      *{
+        font-family:cambria;
+      }
+      
+      /* Top Header Styles */
+      .top-header {
+        background-color: #176bb1;
+        color: white;
+        padding: 8px 0;
+      }
+      
+      .top-header a {
+        color: white;
+        transition: all 0.3s ease;
+      }
+      
+      .top-header a:hover {
+        color: #fa0102;
+      }
+      
+      /* Main Header Styles */
+      .main-header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      /* Sticky header styles */
+      .header-wrapper {
+        position: relative;
+      }
+      
+      .sticky-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+      }
+      
+      .sticky-nav.visible {
+        transform: translateY(0);
+      }
+      
+      /* Add padding to body to prevent content jump */
+      body.sticky-header-active {
+        padding-top: 120px; /* Adjusted to match combined header height */
+      }
+      
+      /* Dropdown styles */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: #176bb1;
+        color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        min-width: 150px;
+        z-index: 100;
+      }
+      
+      .dropdown-menu a {
+        display: block;
+        padding: 8px 16px;
+      }
+      
+      .dropdown-menu a:hover {
+        background-color: #fa0102;
+      }
+      
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+      
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          position: static;
+          box-shadow: none;
+        }
+      }
+      
+      /* Logo styles */
+      .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0; /* Added padding above and below logo */
+      }
+      
+      .logo-img {
+        max-height: 100px;
+        width: auto;
+        object-fit: contain;
+        transition: all 0.3s ease;
+      }
+      
+      .logo-img:hover {
+        transform: scale(1.05);
+      }
+      
+      /* Sticky header logo adjustments */
+      .sticky-nav .logo-img {
+        max-height: 60px;
+      }
+      
+      /* Added padding for sticky header logo container */
+      .sticky-nav .logo-container {
+        padding: 10px 0; /* Reduced padding for sticky header */
+      }
+      
+      /* Navigation link styles */
+      .nav-link {
+        position: relative;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 50%;
+        background-color: #fa0102;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      
+      /* Feedback button styles */
+      .feedback-btn {
+        background-color: #fa0102;
+        color: white;
+        border-radius: 50px;
+        padding: 8px 16px;
+        font-weight: bold;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+      
+      .feedback-btn:hover {
+        background-color: #176bb1;
+        transform: scale(1.05);
+      }
+      
+      /* Menu icon styles */
+      .menu-icon {
+        margin-right: 6px;
+        color: #176bb1;
+      }
+      
+      .nav-link:hover .menu-icon {
+        color: #fa0102;
+      }
+      
+      /* Donate page specific styles */
+      .donate-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      
+      .donate-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      
+      .donate-header h1 {
+        font-size: 2.5rem;
+        color: #176bb1;
+        margin-bottom: 10px;
+      }
+      
+      .donate-header p {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .donate-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+      
+      .donate-card {
+        flex: 1;
+        min-width: 300px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 30px;
+        transition: transform 0.3s ease;
+      }
+      
+      .donate-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .donate-card h2 {
+        color: #176bb1;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+      
+      .qr-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .qr-code {
+        width: 200px;
+        height: 200px;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      
+      .qr-code img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      
+      .account-details {
+        margin-top: 20px;
+      }
+      
+      .account-details p {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      
+      .account-details strong {
+        color: #176bb1;
+      }
+      
+      .donor-form {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 30px;
+      }
+      
+      .donor-form h2 {
+        color: #176bb1;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+      }
+      
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+      
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      
+      .submit-btn {
+        background-color: #fa0102;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        width: 100%;
+        font-size: 1.1rem;
+        transition: background-color 0.3s;
+      }
+      
+      .submit-btn:hover {
+        background-color: #176bb1;
+      }
+      
+      .thank-you-message {
+        display: none;
+        background-color: #d4edda;
+        color: #155724;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      
+      .foundation-info {
+        background-color: #f8f9fa;
+        border-left: 4px solid #176bb1;
+        padding: 15px;
+        margin-bottom: 30px;
+        border-radius: 0 5px 5px 0;
+      }
+      
+      .foundation-info h3 {
+        color: #176bb1;
+        margin-bottom: 10px;
+      }
+      
+      @media (max-width: 768px) {
+        .donate-content {
+          flex-direction: column;
+        }
+        
+        .donate-header h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      }
+
+      // Improved dropdown toggle function
+      function toggleDropdown(event, menuId) {
+        event.preventDefault();
+        const menu = document.getElementById(menuId);
+        menu.classList.toggle('hidden');
+        
+        // Close other dropdowns when opening a new one
+        if (!menu.classList.contains('hidden')) {
+          document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+            if (otherMenu.id !== menuId && !otherMenu.classList.contains('hidden')) {
+              otherMenu.classList.add('hidden');
+            }
+          });
+        }
+      }
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!event.target.matches('.dropdown-toggle')) {
+          document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            if (!menu.classList.contains('hidden')) {
+              menu.classList.add('hidden');
+            }
+          });
+        }
+      });
+      
+      // Sticky header functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('.main-header');
+        const stickyNav = document.createElement('div');
+        stickyNav.className = 'sticky-nav';
+        stickyNav.innerHTML = header.innerHTML;
+        document.querySelector('.header-wrapper').appendChild(stickyNav);
+        
+        // Clone mobile menu functionality for sticky header
+        const stickyMobileMenu = stickyNav.querySelector('#mobile-menu');
+        if (stickyMobileMenu) {
+          stickyNav.querySelector('.md\\:hidden button').onclick = function() {
+            stickyMobileMenu.classList.toggle('hidden');
+          };
+        }
+        
+        // Update dropdown toggle functions for sticky header
+        stickyNav.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+          const menuId = toggle.getAttribute('data-menu');
+          toggle.onclick = function(e) {
+            e.preventDefault();
+            const menu = document.getElementById(menuId);
+            menu.classList.toggle('hidden');
+          };
+        });
+        
+        window.addEventListener('scroll', function() {
+          const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+          const stickyHeader = document.querySelector('.sticky-nav');
+          
+          if (scrollPosition > 100) {
+            stickyHeader.classList.add('visible');
+            document.body.classList.add('sticky-header-active');
+          } else {
+            stickyHeader.classList.remove('visible');
+            document.body.classList.remove('sticky-header-active');
+          }
+        });
+        
+        // Handle donor form submission
+        const donorForm = document.getElementById('donorForm');
+        const thankYouMessage = document.querySelector('.thank-you-message');
+        
+        donorForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // In a real implementation, you would send this data to a server
+          // For now, we'll just show a thank you message
+          thankYouMessage.style.display = 'block';
+          donorForm.reset();
+          
+          // Hide the thank you message after 5 seconds
+          setTimeout(() => {
+            thankYouMessage.style.display = 'none';
+          }, 5000);
+        });
+      });
+    </script>
+  </head>
+  <body class="font-sans bg-gray-100">
+
+    <!-- Header Section -->
+    <div class="header-wrapper">
+      <!-- Top Header -->
+      <div class="top-header">
+        <div class="max-w-screen-xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center space-x-4 mb-2 md:mb-0">
+            <a href="tel:+919234241407" class="flex items-center">
+              <i class="fas fa-phone-alt mr-2"></i>
+              <span>+91 92964 16490</span>
+            </a>
+            <a href="mailto:info@geetaambulance.com" class="flex items-center">
+              <i class="fas fa-envelope mr-2"></i>
+              <span>info@geetaambulance.com</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <li>
+              <a href="./donate.html" class="feedback-btn">
+               <i class="fas fa-donate mr-2"></i>
+               Donate-Now
+              </a>
+            </li>
+            <a href="https://www.facebook.com/geetaambulance" target="_blank" class="hover:text-[#fa0102]">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/geetaambulance" target="_blank" class="hover:text-[#fa0102]">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/geetaambulance" target="_blank" class="hover:text-[#fa0102]">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/geetaambulance" target="_blank" class="hover:text-[#fa0102]">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <nav class="main-header text-black text-[14px] px-4 z-50">
+        <div class="max-w-screen-xl mx-auto py-4 flex items-center justify-between h-[90px]">
+          <div class="logo-container">
+            <a href="./index.html" class="flex items-center">
+              <img
+                src="./image/logo/logo.png"
+                alt="Geeta Ambulance Logo"
+                class="logo-img"
+              />
+            </a>
+          </div>
+          <div class="md:hidden">
+            <button onclick="toggleMenu()" class="focus:outline-none">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex space-x-6 items-center" style="font-size:16px;font-weight:600">
+            <li><a href="./index.html" class="nav-link"><i class="fas fa-home menu-icon"></i>Home</a></li>
+            <li class="dropdown relative">
+              <a href="#" class="nav-link inline-block flex items-center dropdown-toggle" data-menu="aboutMenu" onclick="toggleDropdown(event, 'aboutMenu')">
+                <i class="fas fa-info-circle menu-icon"></i>About Us
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </a>
+              <ul id="aboutMenu" class="dropdown-menu hidden">
+                <li><a href="./about.html" class="hover:bg-[orange]"><i class="fas fa-building mr-2"></i>About</a></li>
+                <li><a href="./director-disk.html" class="hover:bg-[orange]"><i class="fas fa-user-tie mr-2"></i>Director Desk</a></li>
+                <li><a href="./mission-vision.html" class="hover:bg-[orange]"><i class="fas fa-bullseye mr-2"></i>Mission</a></li>
+              </ul>
+            </li>
+            <li><a href="./service.html" class="nav-link"><i class="fas fa-concierge-bell menu-icon"></i>Service</a></li>
+            <li><a href="./our-product.html" class="nav-link"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
+            <li><a href="./gallery.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Gallery</a></li>
+            <li><a href="./career.html" class="nav-link"><i class="fas fa-briefcase menu-icon"></i>Career</a></li>
+            <li><a href="./contect.html" class="nav-link"><i class="fas fa-envelope menu-icon"></i>Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden py-4 bg-white">
+          <ul class="flex flex-col space-y-2 px-4" style="font-size:20px;font-weight:700">
+            <li><a href="./index.html" class="hover:underline block py-2"><i class="fas fa-home mr-2"></i>Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="hover:underline inline-block flex items-center dropdown-toggle" data-menu="mobileAboutMenu" onclick="toggleDropdown(event, 'mobileAboutMenu')">
+                <i class="fas fa-info-circle mr-2"></i>About Us
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </a>
+              <ul id="mobileAboutMenu" class="dropdown-menu hidden bg-blue-600">
+                <li><a href="./about.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-building mr-2"></i>About</a></li>
+                <li><a href="./director-disk.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-user-tie mr-2"></i>Director Desk</a></li>
+                <li><a href="./mission-vision.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-bullseye mr-2"></i>Mission</a></li>
+              </ul>
+            </li>
+             <li><a href="./service.html" class="hover:underline block py-2"><i class="fas fa-concierge-bell mr-2"></i>Service</a></li>
+            <li><a href="./gallery.html" class="hover:underline block py-2"><i class="fas fa-images mr-2"></i>Gallery</a></li>
+           <li><a href="./our-product.html" class="hover:underline block py-2"><i class="fas fa-project-diagram mr-2"></i>Project</a></li>
+            <li><a href="./career.html" class="hover:underline block py-2"><i class="fas fa-briefcase mr-2"></i>Career</a></li>
+            <li><a href="./contect.html" class="hover:underline block py-2"><i class="fas fa-envelope mr-2"></i>Contact Us</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Donate Now Content -->
+    <div class="donate-container">
+      <div class="donate-header">
+        <h1>Support Jan Akanksha Foundation</h1>
+        <p>Your generous donation helps us provide critical ambulance services to those in need. Every contribution makes a difference in saving lives.</p>
+      </div>
+
+      <div class="foundation-info">
+        <h3>About Jan Akanksha Foundation</h3>
+        <p>Jan Akanksha Foundation is a non-profit organization dedicated to providing emergency medical services and ambulance support to communities in need. Our mission is to ensure that no one is denied access to timely medical care due to financial constraints.</p>
+      </div>
+
+      <div class="donate-content">
+        <div class="donate-card">
+          <h2><i class="fas fa-qrcode mr-2"></i>UPI Payment</h2>
+          <div class="qr-container">
+            <div class="qr-code">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=janakanksha@ybl&pn=Jan%20Akanksha%20Foundation&am=&cu=INR" alt="UPI QR Code">
+            </div>
+            <p>Scan the QR code above to donate via UPI</p>
+            <p><strong>UPI ID:</strong> janakanksha@ybl</p>
+          </div>
+        </div>
+
+        <div class="donate-card">
+          <h2><i class="fas fa-university mr-2"></i>Bank Transfer</h2>
+          <div class="account-details">
+            <p><strong>Account Name:</strong> Jan Akanksha Foundation</p>
+            <p><strong>Account Number:</strong> 502000123456</p>
+            <p><strong>Bank Name:</strong> State Bank of India</p>
+            <p><strong>Branch:</strong> Connaught Place, New Delhi</p>
+            <p><strong>IFSC Code:</strong> SBIN0001234</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="donor-form">
+        <h2><i class="fas fa-hand-holding-heart mr-2"></i>Donor Information</h2>
+        <form id="donorForm">
+          <div class="form-group">
+            <label for="donorName">Full Name *</label>
+            <input type="text" id="donorName" name="donorName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="donorEmail">Email Address *</label>
+            <input type="email" id="donorEmail" name="donorEmail" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="donorPhone">Phone Number *</label>
+            <input type="tel" id="donorPhone" name="donorPhone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="donationAmount">Donation Amount (₹) *</label>
+            <select id="donationAmount" name="donationAmount" required>
+              <option value="">Select Amount</option>
+              <option value="500">₹ 500</option>
+              <option value="1000">₹ 1,000</option>
+              <option value="2500">₹ 2,500</option>
+              <option value="5000">₹ 5,000</option>
+              <option value="10000">₹ 10,000</option>
+              <option value="other">Other Amount</option>
+            </select>
+          </div>
+          
+          <div class="form-group" id="customAmountGroup" style="display: none;">
+            <label for="customAmount">Custom Amount (₹)</label>
+            <input type="number" id="customAmount" name="customAmount" min="1">
+          </div>
+          
+          <div class="form-group">
+            <label for="donationType">Donation Type</label>
+            <select id="donationType" name="donationType">
+              <option value="general">General Donation</option>
+              <option value="ambulance">Ambulance Services</option>
+              <option value="medical">Medical Equipment</option>
+              <option value="education">Health Education</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="donorMessage">Message (Optional)</label>
+            <textarea id="donorMessage" name="donorMessage" placeholder="Any special instructions or messages..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>
+              <input type="checkbox" name="anonymous" id="anonymous">
+              Donate anonymously
+            </label>
+          </div>
+          
+          <button type="submit" class="submit-btn">Submit Donation Details</button>
+          
+          <div class="thank-you-message">
+            <i class="fas fa-check-circle mr-2"></i>Thank you for your generosity! We've received your donation details.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    <script>
+      // Show/hide custom amount field based on selection
+      document.addEventListener('DOMContentLoaded', function() {
+        const donationAmount = document.getElementById('donationAmount');
+        const customAmountGroup = document.getElementById('customAmountGroup');
+        
+        donationAmount.addEventListener('change', function() {
+          if (this.value === 'other') {
+            customAmountGroup.style.display = 'block';
+            document.getElementById('customAmount').setAttribute('required', 'required');
+          } else {
+            customAmountGroup.style.display = 'none';
+            document.getElementById('customAmount').removeAttribute('required');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

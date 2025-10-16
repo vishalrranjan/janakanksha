@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | JAN AKANKSHA FOUNDATION</title>
+  <meta name="description" content="Explore our gallery showcasing community development initiatives, education programs, health camps, and sustainable development projects by JAN AKANKSHA FOUNDATION." />
+  <meta name="keywords" content="JAN AKANKSHA FOUNDATION gallery, community development, education programs, health camps, sustainable development, NGO activities" />
+  <meta name="author" content="JAN AKANKSHA FOUNDATION" />
+  <meta name="robots" content="index, follow" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fredoka+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    
+    /* Header Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+    *{
+      font-family:cambria;
+    }
+    
+    /* Top Header Styles */
+    .top-header {
+      background: linear-gradient(135deg, #88b852 45%, #1b3860 30%);
+      color: white;
+      padding: 8px 0;
+    }
+    
+    .top-header a {
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .top-header a:hover {
+      color: #e9a86b;
+    }
+    
+    /* Main Header Styles */
+    .main-header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    /* Sticky header styles */
+    .header-wrapper {
+      position: relative;
+    }
+    
+    .sticky-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .sticky-nav.visible {
+      transform: translateY(0);
+    }
+    
+    /* Add padding to body to prevent content jump */
+    body.sticky-header-active {
+      padding-top: 120px; /* Adjusted to match combined header height */
+    }
+    
+    /* Dropdown styles */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: #1b3860;
+      color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      min-width: 150px;
+      z-index: 100;
+    }
+    
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 16px;
+    }
+    
+    .dropdown-menu a:hover {
+      background-color: #e9a86b;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+    }
+    
+    /* Logo styles */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 0; /* Added padding above and below logo */
+    }
+    
+    .logo-img {
+      max-height: 100px;
+      width: auto;
+      object-fit: contain;
+      transition: all 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Sticky header logo adjustments */
+    .sticky-nav .logo-img {
+      max-height: 60px;
+    }
+    
+    /* Added padding for sticky header logo container */
+    .sticky-nav .logo-container {
+      padding: 10px 0; /* Reduced padding for sticky header */
+    }
+    
+    /* Navigation link styles */
+    .nav-link {
+      position: relative;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #e9a86b;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Feedback button styles */
+    .feedback-btn {
+      background-color: #e9a86b;
+      color: white;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-weight: bold;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+    
+    .feedback-btn:hover {
+      background-color: #1b3860;
+      transform: scale(1.05);
+    }
+    
+    /* Feedback modal styles */
+    .feedback-modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      animation: fadeIn 0.3s;
+    }
+    
+    .feedback-modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: slideIn 0.4s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .feedback-modal-header {
+      background-color: #e9a86b;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 12px 12px 0 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .feedback-close {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .feedback-close:hover {
+      opacity: 0.7;
+    }
+    
+    .feedback-body {
+      padding: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .submit-btn {
+      background-color: #e9a86b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+      background-color: #1b3860;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    /* Search bar styles */
+    .search-container {
+      position: relative;
+    }
+    
+    .search-input {
+      padding: 8px 35px 8px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      width: 200px;
+      transition: all 0.3s ease;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: #1b3860;
+      width: 250px;
+    }
+    
+    .search-btn {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #1b3860;
+      cursor: pointer;
+    }
+    
+    /* Menu icon styles */
+    .menu-icon {
+      margin-right: 6px;
+      color: #1b3860;
+    }
+    
+    .nav-link:hover .menu-icon {
+      color: #e9a86b;
+    }
+
+    /* Footer Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .footer-link {
+      transition: all 0.3s ease;
+    }
+    .footer-link:hover {
+      transform: translateX(5px);
+      color: #1b3860;
+    }
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Gallery Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    #imageModal {
+      display: none;
+    }
+    #imageModal.show {
+      display: flex;
+    }
+    
+    /* Increased image sizes in gallery */
+    .gallery-item {
+      height: 200px !important;
+    }
+    
+    @media (min-width: 640px) {
+      .gallery-item {
+        height: 250px !important;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .gallery-item {
+        height: 300px !important;
+      }
+    }
+    
+    /* Increased modal image size */
+    #modalImg {
+      max-width: 800px !important;
+      max-height: 600px !important;
+    }
+    
+    /* Increased video thumbnail size */
+    video {
+      height: 250px !important;
+    }
+    
+    @media (min-width: 640px) {
+      video {
+        height: 300px !important;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      video {
+        height: 350px !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black">
+
+  <!-- Header Section -->
+  <div class="header-wrapper">
+    <!-- Top Header -->
+    <div class="top-header">
+      <div class="max-w-screen-xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-4 mb-2 md:mb-0">
+          <a href="tel:+919234241407" class="flex items-center">
+            <i class="fas fa-phone-alt mr-2"></i>
+            <span>+91-9234241407</span>
+          </a>
+          <a href="mailto:hrjafranchi@gmail.com" class="flex items-center">
+            <i class="fas fa-envelope mr-2"></i>
+            <span>hrjafranchi@gmail.com</span>
+          </a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <li>
+           <a href="./donate_now.html"> <button class="feedback-btn">
+             <i class="fas fa-donate mr-2"></i>
+             Donate-Now
+            </button></a>
+          </li>
+          <a href="https://www.facebook.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <nav class="main-header text-black text-[14px] px-4 z-50">
+      <div class="max-w-screen-xl mx-auto py-4 flex items-center justify-between h-[90px]">
+        <div class="logo-container">
+          <a href="./index.html" class="flex items-center">
+            <img
+              src="./image/logo/logo.png"
+              alt="JAN AKANKSHA FOUNDATION Logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <div class="md:hidden">
+          <button onclick="toggleMenu()" class="focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 items-center" style="font-size:16px;font-weight:600">
+          <li><a href="./index.html" class="nav-link"><i class="fas fa-home menu-icon"></i>Home</a></li>
+          <li class="dropdown relative">
+            <a href="#" class="nav-link inline-block flex items-center dropdown-toggle" data-menu="aboutMenu" onclick="toggleDropdown(event, 'aboutMenu')">
+              <i class="fas fa-info-circle menu-icon"></i>About Us
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <ul id="aboutMenu" class="dropdown-menu hidden">
+              <li><a href="./about.html" class="hover:bg-[orange]"><i class="fas fa-building mr-2"></i>About</a></li>
+              <li><a href="./director-disk.html" class="hover:bg-[orange]"><i class="fas fa-user-tie mr-2"></i>Director Desk</a></li>
+              <li><a href="./mission-vision.html" class="hover:bg-[orange]"><i class="fas fa-bullseye mr-2"></i>Mission</a></li>
+            </ul>
+          </li>
+          <li><a href="./service.html" class="nav-link"><i class="fas fa-concierge-bell menu-icon"></i>Service</a></li>
+          <li><a href="./our-product.html" class="nav-link"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
+           <li><a href="./gallery.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Gallery</a></li>
+          <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+          <li><a href="./career.html" class="nav-link"><i class="fas fa-briefcase menu-icon"></i>Career</a></li>
+          <li><a href="./contect.html" class="nav-link"><i class="fas fa-envelope menu-icon"></i>Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden py-4 bg-white">
+        <ul class="flex flex-col space-y-2 px-4" style="font-size:20px;font-weight:700">
+          <li><a href="./index.html" class="hover:underline block py-2"><i class="fas fa-home mr-2"></i>Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="hover:underline inline-block flex items-center dropdown-toggle" data-menu="mobileAboutMenu" onclick="toggleDropdown(event, 'mobileAboutMenu')">
+              <i class="fas fa-info-circle mr-2"></i>About Us
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <ul id="mobileAboutMenu" class="dropdown-menu hidden bg-blue-600">
+              <li><a href="./about.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-building mr-2"></i>About</a></li>
+              <li><a href="./director-disk.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-user-tie mr-2"></i>Director Desk</a></li>
+              <li><a href="./mission-vision.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-bullseye mr-2"></i>Mission</a></li>
+            </ul>
+          </li>
+           <li><a href="./service.html" class="hover:underline block py-2"><i class="fas fa-concierge-bell mr-2"></i>Service</a></li>
+          <li><a href="./gallery.html" class="hover:underline block py-2"><i class="fas fa-images mr-2"></i>Gallery</a></li>
+          <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+          <li><a href="./our-product.html" class="hover:underline block py-2"><i class="fas fa-project-diagram mr-2"></i>Project</a></li>
+          <li><a href="./career.html" class="hover:underline block py-2"><i class="fas fa-briefcase mr-2"></i>Career</a></li>
+          <li><a href="./contect.html" class="hover:underline block py-2"><i class="fas fa-envelope mr-2"></i>Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="feedback-modal">
+    <div class="feedback-modal-content">
+      <div class="feedback-modal-header">
+        <i class="fas fa-comment-dots"></i>
+        <h2 class="text-xl font-bold">Send Feedback</h2>
+        <span class="feedback-close">&times;</span>
+      </div>
+      <div class="feedback-body">
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Type</label>
+            <select id="service" name="service">
+              <option value="">Select a service</option>
+              <option value="Education & Literacy">Education & Literacy</option>
+              <option value="Health & Family Welfare">Health & Family Welfare</option>
+              <option value="Agriculture & Animal Welfare">Agriculture & Animal Welfare</option>
+              <option value="Environment & Forests">Environment & Forests</option>
+              <option value="Rural Development">Rural Development</option>
+              <option value="Urban Development">Urban Development</option>
+              <option value="Akanksha Kendra">Akanksha Kendra</option>
+              <option value="Gramin-e-Vikas Pariyojana">Gramin-e-Vikas Pariyojana</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Please share your feedback or inquiry..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- banner-start -->
+<section>
+  <div class="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-[400px]">
+    <img src="./image/banner/gallery.jpeg" alt="Community development initiatives by JAN AKANKSHA FOUNDATION" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24">
+      <h1 class="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl max-w-3xl">Gallery</h1>
+      <p class="text-white text-sm sm:text-base max-w-3xl mt-2">
+        <strong class="font-bold">"Empowering Communities, Creating Sustainable Change"</strong>
+      </p>
+    </div>
+  </div>
+</section>
+<!-- banner-end -->
+
+
+ <!-- GALLERY-SECTION-START -->
+  <section class="text-gray-400 py-8">
+    <div class="w-full px-4">
+      <h2 class="text-[#1b3860] text-xl md:text-2xl font-bold text-center mb-8">GALLERY</h2>
+
+      <!-- Responsive Circle Gallery in grid -->
+      <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <img onclick="openImage(this.src)" alt="Education Program"
+          class="gallery-item w-full h-32 sm:h-40 md:h-48 object-cover cursor-pointer transition duration-300 ease-in-out hover:scale-105"
+          src="./image/banner/education (1).webp"style="border-top-left-radius: 20px; border-bottom-right-radius: 20px;" />
+        <img onclick="openImage(this.src)" alt="Health Camp"
+          class="gallery-item w-full h-32 sm:h-40 md:h-48 object-cover cursor-pointer transition duration-300 ease-in-out hover:scale-105"
+          src="./image/banner/agruc.jpg" style="border-top-left-radius: 20px; border-bottom-right-radius: 20px;"/>
+        <img onclick="openImage(this.src)" alt="Agriculture Training"
+          class="gallery-item w-full h-32 sm:h-40 md:h-48 object-cover cursor-pointer transition duration-300 ease-in-out hover:scale-105"
+          src="./image/banner/ruler.jpg" style="border-top-left-radius: 20px; border-bottom-right-radius: 20px;"/>
+        <img onclick="openImage(this.src)" alt="Community Meeting"
+          class="gallery-item w-full h-32 sm:h-40 md:h-48 object-cover cursor-pointer transition duration-300 ease-in-out hover:scale-105"
+          src="./image/banner/gramin (1).jpg" style="border-top-left-radius: 20px; border-bottom-right-radius: 20px;" />
+        <img onclick="openImage(this.src)" alt="Plantation Drive"
+          class="gallery-item w-full h-32 sm:h-40 md:h-48 object-cover cursor-pointer transition duration-300 ease-in-out hover:scale-105"
+          src="./image/banner/abo.png" style="border-top-left-radius: 20px; border-bottom-right-radius: 20px;"/>
+        
+      </div>
+    </div>
+
+    <!-- Modal for zoom -->
+    <div id="imageModal" class="fixed inset-0 bg-[#1b3860] bg-opacity-80 hidden items-center justify-center z-50 p-4">
+      <img id="modalImg" class="max-w-full max-h-[90vh] transition-transform duration-300 transform scale-100" />
+    </div>
+  </section>
+
+
+   
+ <section class="py-6 px-4 sm:px-6 md:px-8 lg:px-10 bg-gray-100">
+  <h2 class="text-2xl font-bold mb-6 text-center">Video Gallery</h2>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Video Thumbnail with Visible Video -->
+    <div class="relative group cursor-pointer overflow-hidden rounded-lg" onclick="openVideo('')">
+      <!-- Video as thumbnail (autoplay muted loop) -->
+      <video class="w-full object-cover" autoplay muted loop playsinline>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- Play button overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </div>
+      <p class="mt-2 text-center font-medium">Education Program</p>
+    </div>
+    
+    <!-- Add more video thumbnails as needed -->
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+    <div class="relative w-full max-w-4xl px-4">
+      <span class="absolute -top-10 right-0 text-white text-3xl cursor-pointer hover:text-red-500" onclick="closeVideoModal()">&times;</span>
+      <div class="w-full aspect-w-16 aspect-h-9 bg-black">
+        <video id="modalVideo" class="w-full h-auto max-h-[80vh]" controls>
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Counter Section -->
+ <section class="py-6">
+    <div class="max-w-9xl mx-auto px-4 bg-[#1b3860] text-white text-center py-8 rounded">
+      <div class="flex flex-wrap justify-center items-center gap-y-6">
+        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
+          <i class="fas fa-map-marker-alt text-xl md:text-2xl mb-1"></i>
+          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="24">0</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Districts</span>
+        </div>
+        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
+          <i class="fas fa-users text-xl md:text-2xl mb-1"></i>
+          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="500000">0</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Beneficiaries</span>
+        </div>
+        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
+          <i class="fas fa-project-diagram text-xl md:text-2xl mb-1"></i>
+          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="100">0</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Projects</span>
+        </div>
+        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
+          <i class="fas fa-handshake text-xl md:text-2xl mb-1"></i>
+          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="50">0</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Partners</span>
+        </div>
+      </div>  
+    </div>
+  </section>
+
+<!-- Footer Section -->
+<footer class="bg-gray-50 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Column 1: Logo and Statement -->
+      <div class="md:w-1/4 flex flex-col items-start" style="margin-top: -30px;">
+        <a href="./index.html"><img
+          src="./image/logo/logo.png"
+          alt="JAN AKANKSHA FOUNDATION Logo"
+          class="w-24 h-auto mb-4"
+        /></a>
+        <div class="space-y-2">
+          <p class="text-gray-700 italic">"Saving Lives, Every Second Counts."</p>
+          <p class="text-gray-700 italic">"Your Emergency, Our Priority."</p>
+          <p class="text-gray-700 italic">"Critical Care on Wheels."</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="md:w-1/4">
+        <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="./index.html" class="footer-link text-gray-600 hover:text-blue-700 block">Home</a></li>
+          <li><a href="./about.html" class="footer-link text-gray-600 hover:text-blue-700 block">About</a></li>
+          <li><a href="./gallery.html" class="footer-link text-gray-600 hover:text-blue-700 block">Gallery</a></li>
+          <li><a href="./service.html" class="footer-link text-gray-600 hover:text-blue-700 block">Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: More Quick Links -->
+      <div class="md:w-1/4">
+        <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="./our-product.html" class="footer-link text-gray-600 hover:text-blue-700 block">Project</a></li>
+          <li><a href="./career.html" class="footer-link text-gray-600 hover:text-blue-700 block">Careers</a></li>
+          <li><a href="./contect.html" class="footer-link text-gray-600 hover:text-blue-700 block">Contact</a></li>
+          <li><a href="./mission-vision.html" class="footer-link text-gray-600 hover:text-blue-700 block">Mission</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact and Social -->
+      <div class="md:w-1/4">
+        <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Contact Us</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <i class="fas fa-map-marker-alt text-[#1b3860] mt-1 mr-3"></i>
+            <span class="text-gray-600">Jharkhand, India </span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-phone text-[#1b3860] mr-3"></i>
+            <span class="text-gray-600">9234241407</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
+            <span class="text-gray-600">info@domain.name</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Copyright Section -->
+  <div class="bg-gray-100 border-t border-gray-300 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-gray-600 text-sm mb-2 md:mb-0">
+          Copyright © 2025 Ambulance service. All Rights Reserved
+        </div>
+        <div class="text-gray-600 text-sm">
+          Design &amp; developed by 
+          <a class="text-blue-600 hover:underline font-medium" href="https://erainfotech.in/">Era Infotech</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<script>
+  // Header Functions
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+
+  // Improved dropdown toggle function
+  function toggleDropdown(event, menuId) {
+    event.preventDefault();
+    const menu = document.getElementById(menuId);
+    menu.classList.toggle('hidden');
+    
+    // Close other dropdowns when opening a new one
+    if (!menu.classList.contains('hidden')) {
+      document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+        if (otherMenu.id !== menuId && !otherMenu.classList.contains('hidden')) {
+          otherMenu.classList.add('hidden');
+        }
+      });
+    }
+  }
+  
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropdown-toggle')) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        if (!menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+        }
+      });
+    }
+  });
+  
+  // Sticky header functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.main-header');
+    const stickyNav = document.createElement('div');
+    stickyNav.className = 'sticky-nav';
+    stickyNav.innerHTML = header.innerHTML;
+    document.querySelector('.header-wrapper').appendChild(stickyNav);
+    
+    // Clone mobile menu functionality for sticky header
+    const stickyMobileMenu = stickyNav.querySelector('#mobile-menu');
+    if (stickyMobileMenu) {
+      stickyNav.querySelector('.md\\:hidden button').onclick = function() {
+        stickyMobileMenu.classList.toggle('hidden');
+      };
+    }
+    
+    // Update dropdown toggle functions for sticky header
+    stickyNav.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      const menuId = toggle.getAttribute('data-menu');
+      toggle.onclick = function(e) {
+        e.preventDefault();
+        const menu = document.getElementById(menuId);
+        menu.classList.toggle('hidden');
+      };
+    });
+    
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+      const stickyHeader = document.querySelector('.sticky-nav');
+      
+      if (scrollPosition > 100) {
+        stickyHeader.classList.add('visible');
+        document.body.classList.add('sticky-header-active');
+      } else {
+        stickyHeader.classList.remove('visible');
+        document.body.classList.remove('sticky-header-active');
+      }
+    });
+  });
+  
+  // Feedback form functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const feedbackBtn = document.querySelector('.feedback-btn');
+    const feedbackModal = document.querySelector('.feedback-modal');
+    const feedbackClose = document.querySelector('.feedback-close');
+    const feedbackForm = document.querySelector('#feedbackForm');
+    
+    // Open feedback modal
+    feedbackBtn.addEventListener('click', function() {
+      feedbackModal.style.display = 'block';
+    });
+    
+    // Close feedback modal
+    feedbackClose.addEventListener('click', function() {
+      feedbackModal.style.display = 'none';
+    });
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+      if (event.target === feedbackModal) {
+        feedbackModal.style.display = 'none';
+      }
+    });
+    
+    // Handle form submission
+    feedbackForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+      
+      // Create WhatsApp message
+      const whatsappMessage = `Hello JAN AKANKSHA FOUNDATION, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+      
+      // Open WhatsApp with pre-filled message
+      const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;
+      window.open(whatsappURL, '_blank');
+      
+      // Close the modal
+      feedbackModal.style.display = 'none';
+      
+      // Reset the form
+      feedbackForm.reset();
+    });
+  });
+  
+  // Search functionality
+  function performSearch() {
+    const searchTerm = document.getElementById('searchInput').value;
+    if (searchTerm.trim() !== '') {
+      alert('Searching for: ' + searchTerm);
+      // In a real implementation, you would redirect to a search results page
+      // window.location.href = './search.html?q=' + encodeURIComponent(searchTerm);
+    }
+  }
+  
+  // Handle Enter key in search input
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          performSearch();
+        }
+      });
+    }
+  });
+
+  // Counter animation
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+    counter.innerText = '0';
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText.replace(/,/g, '');
+      const increment = target / 200;
+
+      if (current < target) {
+        const newValue = Math.ceil(current + increment);
+        counter.innerText = newValue.toLocaleString();
+        setTimeout(updateCounter, 10);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+
+    updateCounter();
+  });
+
+  // Image modal functions
+  function openImage(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    modalImg.src = src;
+    modal.classList.add('show');
+    
+    // Prevent modal close when clicking on image
+    modalImg.onclick = function(e) {
+      e.stopPropagation();
+    };
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('show');
+  }
+
+  // Close modal when clicking outside image
+  document.getElementById('imageModal').onclick = function() {
+    closeModal();
+  };
+
+  // Video modal functions
+  function openVideo(src) {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modalVideo.src = src;
+    modal.classList.remove('hidden');
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modalVideo.pause();
+    modalVideo.src = '';
+    modal.classList.add('hidden');
+  }
+</script>
+
+</body>
+</html>

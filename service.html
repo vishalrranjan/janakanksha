@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Initiatives | JAN AKANKSHA FOUNDATION</title>
+  
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="JAN AKANKSHA FOUNDATION offers comprehensive community development initiatives in education, health, agriculture, environment, and rural-urban development across Jharkhand. Learn about our flagship programs and projects.">
+  <meta name="keywords" content="JAN AKANKSHA FOUNDATION, non-profit organization, education, health, agriculture, environment, rural development, Jharkhand, NGO, charity, social work, Akanksha Kendra, Gramin-e-Vikas Pariyojana">
+  <meta name="author" content="JAN AKANKSHA FOUNDATION">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fredoka+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  
+  <style>
+    /* Header Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+    *{
+      font-family:cambria;
+    }
+    
+    /* Top Header Styles */
+    .top-header {
+      background: linear-gradient(135deg, #88b852 45%, #1b3860 30%);
+      color: white;
+      padding: 8px 0;
+    }
+    
+    .top-header a {
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .top-header a:hover {
+      color: #e9a86b;
+    }
+    
+    /* Main Header Styles */
+    .main-header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    /* Sticky header styles */
+    .header-wrapper {
+      position: relative;
+    }
+    
+    .sticky-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .sticky-nav.visible {
+      transform: translateY(0);
+    }
+    
+    /* Add padding to body to prevent content jump */
+    body.sticky-header-active {
+      padding-top: 120px; /* Adjusted to match combined header height */
+    }
+    
+    /* Dropdown styles */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: #1b3860;
+      color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      min-width: 150px;
+      z-index: 100;
+    }
+    
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 16px;
+    }
+    
+    .dropdown-menu a:hover {
+      background-color: #e9a86b;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+    }
+    
+    /* Logo styles */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 0; /* Added padding above and below logo */
+    }
+    
+    .logo-img {
+      max-height: 100px;
+      width: auto;
+      object-fit: contain;
+      transition: all 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Sticky header logo adjustments */
+    .sticky-nav .logo-img {
+      max-height: 60px;
+    }
+    
+    /* Added padding for sticky header logo container */
+    .sticky-nav .logo-container {
+      padding: 10px 0; /* Reduced padding for sticky header */
+    }
+    
+    /* Navigation link styles */
+    .nav-link {
+      position: relative;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #e9a86b;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Feedback button styles */
+    .feedback-btn {
+      background-color: #e9a86b;
+      color: white;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-weight: bold;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+    
+    .feedback-btn:hover {
+      background-color: #1b3860;
+      transform: scale(1.05);
+    }
+    
+    /* Feedback modal styles */
+    .feedback-modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      animation: fadeIn 0.3s;
+    }
+    
+    .feedback-modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: slideIn 0.4s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .feedback-modal-header {
+      background-color: #e9a86b;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 12px 12px 0 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .feedback-close {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .feedback-close:hover {
+      opacity: 0.7;
+    }
+    
+    .feedback-body {
+      padding: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .submit-btn {
+      background-color: #e9a86b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+      background-color: #1b3860;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    /* Search bar styles */
+    .search-container {
+      position: relative;
+    }
+    
+    .search-input {
+      padding: 8px 35px 8px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      width: 200px;
+      transition: all 0.3s ease;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: #1b3860;
+      width: 250px;
+    }
+    
+    .search-btn {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #1b3860;
+      cursor: pointer;
+    }
+    
+    /* Menu icon styles */
+    .menu-icon {
+      margin-right: 6px;
+      color: #1b3860;
+    }
+    
+    .nav-link:hover .menu-icon {
+      color: #e9a86b;
+    }
+
+    /* Footer Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .footer-link {
+      transition: all 0.3s ease;
+    }
+    .footer-link:hover {
+      transform: translateX(5px);
+      color: #1b3860;
+    }
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Main Content Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      animation: fadeIn 0.3s;
+    }
+    
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 85vh;
+      overflow-y: auto;
+      animation: slideIn 0.4s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .modal-header {
+      background-color: #e74c3c;
+      color: white;
+      padding: 20px;
+      border-radius: 12px 12px 0 0;
+      position: relative;
+    }
+    
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .close:hover {
+      opacity: 0.7;
+    }
+    
+    .modal-body {
+      padding: 25px;
+    }
+    
+    .feature-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .feature-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .feature-list li i {
+      color: #e74c3c;
+      margin-right: 10px;
+      margin-top: 3px;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black">
+
+  <!-- Header Section -->
+  <div class="header-wrapper">
+    <!-- Top Header -->
+    <div class="top-header">
+      <div class="max-w-screen-xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-4 mb-2 md:mb-0">
+          <a href="tel:+919234241407" class="flex items-center">
+            <i class="fas fa-phone-alt mr-2"></i>
+            <span>+91-9234241407</span>
+          </a>
+          <a href="mailto:hrjafranchi@gmail.com" class="flex items-center">
+            <i class="fas fa-envelope mr-2"></i>
+            <span>hrjafranchi@gmail.com</span>
+          </a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <li>
+           <a href="./donate_now.html"> <button class="feedback-btn">
+             <i class="fas fa-donate mr-2"></i>
+             Donate-Now
+            </button></a>
+          </li>
+          <a href="https://www.facebook.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <nav class="main-header text-black text-[14px] px-4 z-50">
+      <div class="max-w-screen-xl mx-auto py-4 flex items-center justify-between h-[90px]">
+        <div class="logo-container">
+          <a href="./index.html" class="flex items-center">
+            <img
+              src="./image/logo/logo.png"
+              alt="Geeta Ambulance Logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <div class="md:hidden">
+          <button onclick="toggleMenu()" class="focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 items-center" style="font-size:16px;font-weight:600">
+          <li><a href="./index.html" class="nav-link"><i class="fas fa-home menu-icon"></i>Home</a></li>
+          <li class="dropdown relative">
+            <a href="#" class="nav-link inline-block flex items-center dropdown-toggle" data-menu="aboutMenu" onclick="toggleDropdown(event, 'aboutMenu')">
+              <i class="fas fa-info-circle menu-icon"></i>About Us
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <ul id="aboutMenu" class="dropdown-menu hidden">
+              <li><a href="./about.html" class="hover:bg-[orange]"><i class="fas fa-building mr-2"></i>About</a></li>
+              <li><a href="./director-disk.html" class="hover:bg-[orange]"><i class="fas fa-user-tie mr-2"></i>Director Desk</a></li>
+              <li><a href="./mission-vision.html" class="hover:bg-[orange]"><i class="fas fa-bullseye mr-2"></i>Mission</a></li>
+            </ul>
+          </li>
+          <li><a href="./service.html" class="nav-link"><i class="fas fa-concierge-bell menu-icon"></i>Service</a></li>
+          <li><a href="./our-product.html" class="nav-link"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
+           <li><a href="./gallery.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Gallery</a></li>
+          <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+          <li><a href="./career.html" class="nav-link"><i class="fas fa-briefcase menu-icon"></i>Career</a></li>
+          <li><a href="./contect.html" class="nav-link"><i class="fas fa-envelope menu-icon"></i>Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden py-4 bg-white">
+        <ul class="flex flex-col space-y-2 px-4" style="font-size:20px;font-weight:700">
+          <li><a href="./index.html" class="hover:underline block py-2"><i class="fas fa-home mr-2"></i>Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="hover:underline inline-block flex items-center dropdown-toggle" data-menu="mobileAboutMenu" onclick="toggleDropdown(event, 'mobileAboutMenu')">
+              <i class="fas fa-info-circle mr-2"></i>About Us
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <ul id="mobileAboutMenu" class="dropdown-menu hidden bg-blue-600">
+              <li><a href="./about.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-building mr-2"></i>About</a></li>
+              <li><a href="./director-disk.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-user-tie mr-2"></i>Director Desk</a></li>
+              <li><a href="./mission-vision.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-bullseye mr-2"></i>Mission</a></li>
+            </ul>
+          </li>
+           <li><a href="./service.html" class="hover:underline block py-2"><i class="fas fa-concierge-bell mr-2"></i>Service</a></li>
+          <li><a href="./gallery.html" class="hover:underline block py-2"><i class="fas fa-images mr-2"></i>Gallery</a></li>
+          <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+          <li><a href="./our-product.html" class="hover:underline block py-2"><i class="fas fa-project-diagram mr-2"></i>Project</a></li>
+          <li><a href="./career.html" class="hover:underline block py-2"><i class="fas fa-briefcase mr-2"></i>Career</a></li>
+          <li><a href="./contect.html" class="hover:underline block py-2"><i class="fas fa-envelope mr-2"></i>Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Banner Start -->
+  <section>
+    <div class="relative w-full h-[200px] sm:h-72 md:h-80 lg:h-96 xl:h-[400px] overflow-hidden">
+      <img
+        src="./image/banner/service.jpg"
+        alt="Community development initiatives by JAN AKANKSHA FOUNDATION"
+        class="w-full h-full object-contain sm:object-cover"
+      />
+    </div>
+  </section>
+  <!-- Banner End -->
+
+  <!-- Initiatives Section -->
+  <div class="max-w-7xl mx-auto px-4 py-12" style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+    <div class="text-center mb-12">
+      <h2 class="font-extrabold text-3xl uppercase mb-4">
+        <span class="text-[#e74c3c]">OUR</span> INITIATIVES
+      </h2>
+      <p class="text-gray-600 max-w-3xl mx-auto text-base">
+        JAN AKANKSHA FOUNDATION implements diverse programs across education, health, agriculture, environment, and rural development sectors to create sustainable change in Jharkhand.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Initiative 1 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+        <div class="p-6 flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-book text-3xl text-[#e74c3c]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Education & Literacy</h3>
+          <p class="text-gray-600 mb-4">Promoting quality education and literacy programs for all age groups across Jharkhand.</p>
+          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="education">
+            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Initiative 2 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+        <div class="p-6 flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-heartbeat text-3xl text-[#e74c3c]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Health & Welfare</h3>
+          <p class="text-gray-600 mb-4">Improving healthcare access and promoting family welfare initiatives in rural and urban areas.</p>
+          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="health">
+            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Initiative 3 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+        <div class="p-6 flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-seedling text-3xl text-[#e74c3c]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Agriculture</h3>
+          <p class="text-gray-600 mb-4">Supporting sustainable agriculture and animal welfare practices to enhance rural livelihoods.</p>
+          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="agriculture">
+            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Initiative 4 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+        <div class="p-6 flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-tree text-3xl text-[#e74c3c]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Environment</h3>
+          <p class="text-gray-600 mb-4">Conserving natural resources and promoting environmental awareness across Jharkhand.</p>
+          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="environment">
+            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Initiative 5 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+        <div class="p-6 flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-home text-3xl text-[#e74c3c]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Rural Development</h3>
+          <p class="text-gray-600 mb-4">Enhancing infrastructure and livelihood opportunities in rural areas of Jharkhand.</p>
+          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="rural">
+            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Initiative 6 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+        <div class="p-6 flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-city text-3xl text-[#e74c3c]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Urban Development</h3>
+          <p class="text-gray-600 mb-4">Creating sustainable and inclusive urban communities in Jharkhand's cities and towns.</p>
+          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="urban">
+            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Initiatives Section End -->
+
+  <!-- COUNTER-SECTION-START -->
+  <section class="py-6">
+    <div class="max-w-9xl mx-auto px-4 bg-[#1b3860] text-white text-center py-8 rounded">
+      <div class="flex flex-wrap justify-center items-center gap-y-6">
+        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
+          <i class="fas fa-map-marker-alt text-xl md:text-2xl mb-1"></i>
+          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="24">0</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Districts</span>
+        </div>
+        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
+          <i class="fas fa-users text-xl md:text-2xl mb-1"></i>
+          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="500000">0</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Beneficiaries</span>
+        </div>
+        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
+          <i class="fas fa-project-diagram text-xl md:text-2xl mb-1"></i>
+          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="100">0</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Projects</span>
+        </div>
+        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
+          <i class="fas fa-handshake text-xl md:text-2xl mb-1"></i>
+          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="50">0</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Partners</span>
+        </div>
+      </div>  
+    </div>
+  </section>
+  <!-- COUNTER-SECTION-END -->
+
+  <!-- Initiative Modals -->
+  <!-- Education & Literacy Modal -->
+  <div id="educationModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold">Education & Literacy Programs</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">JAN AKANKSHA FOUNDATION is committed to promoting education and literacy across all age groups in Jharkhand. Our education initiatives focus on improving access to quality education, enhancing learning outcomes, and promoting lifelong learning opportunities for community members.</p>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
+        <ul class="feature-list mb-6">
+          <li><i class="fas fa-check-circle"></i> <strong>Non-formal Education Centers:</strong> For out-of-school children and youth</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Remedial Coaching:</strong> Academic support programs for improved learning outcomes</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Adult Literacy Classes:</strong> Empowering adults through basic education</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Educational Infrastructure:</strong> Development of school facilities</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Teacher Training:</strong> Capacity building for educators</li>
+        </ul>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
+        <ul class="feature-list">
+          <li><i class="fas fa-arrow-right"></i> Increased enrollment rates by 35% in intervention areas</li>
+          <li><i class="fas fa-arrow-right"></i> 70% of students showing grade-appropriate competency levels</li>
+          <li><i class="fas fa-arrow-right"></i> Established 200 learning centers across all districts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Health & Welfare Modal -->
+  <div id="healthModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold">Health & Family Welfare Programs</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">JAN AKANKSHA FOUNDATION works to improve healthcare access and promote family welfare initiatives across Jharkhand. Our health programs focus on preventive healthcare, maternal and child health, nutrition, and awareness about government health schemes.</p>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
+        <ul class="feature-list mb-6">
+          <li><i class="fas fa-check-circle"></i> <strong>Health Camps:</strong> Medical check-ups in remote areas</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Maternal & Child Health:</strong> Specialized interventions for mothers and children</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Nutrition Programs:</strong> For women and children</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Health Awareness:</strong> Campaigns on preventive healthcare</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Health Worker Training:</strong> Building community health capacity</li>
+        </ul>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
+        <ul class="feature-list">
+          <li><i class="fas fa-arrow-right"></i> Provided healthcare services to over 50,000 beneficiaries</li>
+          <li><i class="fas fa-arrow-right"></i> Reduced maternal mortality ratio by 25% in intervention districts</li>
+          <li><i class="fas fa-arrow-right"></i> Trained 500 community health workers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Agriculture Modal -->
+  <div id="agricultureModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold">Agriculture & Animal Welfare Programs</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">JAN AKANKSHA FOUNDATION supports sustainable agriculture and animal welfare practices to enhance rural livelihoods. Our agriculture programs focus on improving agricultural productivity, promoting sustainable farming practices, and enhancing animal health and welfare.</p>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
+        <ul class="feature-list mb-6">
+          <li><i class="fas fa-check-circle"></i> <strong>Sustainable Farming Training:</strong> Modern agricultural techniques</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Organic Farming:</strong> Natural farming methods promotion</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Animal Health Camps:</strong> Veterinary services and care</li>
+          <li><i class="fas fa-check-circle"></i> <strong>High-Value Crops:</strong> Diversification and improved practices</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Water Conservation:</strong> Irrigation and watershed management</li>
+        </ul>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
+        <ul class="feature-list">
+          <li><i class="fas fa-arrow-right"></i> Increased agricultural productivity by 40%</li>
+          <li><i class="fas fa-arrow-right"></i> Enhanced farmer incomes by 35%</li>
+          <li><i class="fas fa-arrow-right"></i> Promoted organic farming in 100 villages</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Environment Modal -->
+  <div id="environmentModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold">Environment & Forest Conservation Programs</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">JAN AKANKSHA FOUNDATION is dedicated to conserving natural resources and promoting environmental awareness in Jharkhand. Our environment programs focus on afforestation, water conservation, waste management, and promoting sustainable practices among communities.</p>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
+        <ul class="feature-list mb-6">
+          <li><i class="fas fa-check-circle"></i> <strong>Afforestation Drives:</strong> Large-scale plantation initiatives</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Water Conservation:</strong> Harvesting structures and watershed management</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Waste Management:</strong> Recycling and proper disposal systems</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Environmental Awareness:</strong> Campaigns and education</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Biodiversity Conservation:</strong> Protection of local flora and fauna</li>
+        </ul>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
+        <ul class="feature-list">
+          <li><i class="fas fa-arrow-right"></i> Planted over 100,000 trees with 85% survival rate</li>
+          <li><i class="fas fa-arrow-right"></i> Constructed 250 water harvesting structures</li>
+          <li><i class="fas fa-arrow-right"></i> Benefited 15,000 households with improved water access</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rural Development Modal -->
+  <div id="ruralModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold">Rural Development Programs</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">JAN AKANKSHA FOUNDATION works towards enhancing infrastructure and livelihood opportunities in rural areas of Jharkhand. Our rural development programs focus on improving basic infrastructure, creating sustainable livelihood opportunities, and strengthening local governance.</p>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
+        <ul class="feature-list mb-6">
+          <li><i class="fas fa-check-circle"></i> <strong>Infrastructure Development:</strong> Roads, drainage, and sanitation</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Livelihood Training:</strong> Skill development and enterprise creation</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Self-Help Groups:</strong> Formation and capacity building</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Water & Sanitation:</strong> Facilities in rural areas</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Panchayat Strengthening:</strong> Local governance support</li>
+        </ul>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
+        <ul class="feature-list">
+          <li><i class="fas fa-arrow-right"></i> Improved infrastructure in 200 villages</li>
+          <li><i class="fas fa-arrow-right"></i> Created livelihoods for 15,000 families</li>
+          <li><i class="fas fa-arrow-right"></i> Formed 500 self-help groups across the state</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Urban Development Modal -->
+  <div id="urbanModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold">Urban Development Programs</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">JAN AKANKSHA FOUNDATION works towards creating sustainable and inclusive urban communities in Jharkhand. Our urban development programs focus on improving urban infrastructure, promoting sustainable urban planning, and enhancing the quality of life for urban residents, especially in slum areas.</p>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
+        <ul class="feature-list mb-6">
+          <li><i class="fas fa-check-circle"></i> <strong>Slum Improvement:</strong> Rehabilitation and infrastructure development</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Urban Services:</strong> Water supply and sanitation initiatives</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Skill Development:</strong> Training for urban youth and women</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Waste Management:</strong> Cleanliness and environmental programs</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Community Mobilization:</strong> Participation in urban planning</li>
+        </ul>
+        
+        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
+        <ul class="feature-list">
+          <li><i class="fas fa-arrow-right"></i> Improved conditions in 50 slum clusters</li>
+          <li><i class="fas fa-arrow-right"></i> Provided skill training to 10,000 urban youth</li>
+          <li><i class="fas fa-arrow-right"></i> 70% of trained youth secured employment or started businesses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Column 1: Logo and Statement -->
+        <div class="md:w-1/4 flex flex-col items-start" style="margin-top: -30px;">
+          <a href="./index.html"><img
+            src="./image/logo/logo.png"
+            alt="One Square Lifesciences Logo"
+            class="w-24 h-auto mb-4"
+          /></a>
+          <div class="space-y-2">
+            <p class="text-gray-700 italic">"Saving Lives, Every Second Counts."</p>
+            <p class="text-gray-700 italic">"Your Emergency, Our Priority."</p>
+            <p class="text-gray-700 italic">"Critical Care on Wheels."</p>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="md:w-1/4">
+          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="footer-link text-gray-600 hover:text-blue-700 block">Home</a></li>
+            <li><a href="./about.html" class="footer-link text-gray-600 hover:text-blue-700 block">About</a></li>
+            <li><a href="./gallery.html" class="footer-link text-gray-600 hover:text-blue-700 block">Gallery</a></li>
+            <li><a href="./service.html" class="footer-link text-gray-600 hover:text-blue-700 block">Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: More Quick Links -->
+        <div class="md:w-1/4">
+          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="./our-product.html" class="footer-link text-gray-600 hover:text-blue-700 block">Project</a></li>
+            <li><a href="./career.html" class="footer-link text-gray-600 hover:text-blue-700 block">Careers</a></li>
+            <li><a href="./contect.html" class="footer-link text-gray-600 hover:text-blue-700 block">Contact</a></li>
+            <li><a href="./mission-vision.html" class="footer-link text-gray-600 hover:text-blue-700 block">Mission</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact and Social -->
+        <div class="md:w-1/4">
+          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Contact Us</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-[#1b3860] mt-1 mr-3"></i>
+              <span class="text-gray-600">Jharkhand, India </span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-[#1b3860] mr-3"></i>
+              <span class="text-gray-600">9234241407</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
+              <span class="text-gray-600">info@domain.name</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Copyright Section -->
+    <div class="bg-gray-100 border-t border-gray-300 py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-gray-600 text-sm mb-2 md:mb-0">
+            Copyright © 2025 Ambulance service. All Rights Reserved
+          </div>
+          <div class="text-gray-600 text-sm">
+            Design &amp; developed by 
+            <a class="text-blue-600 hover:underline font-medium" href="https://globias.com/">globias</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  
+  <script>
+    // Header Functions
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Improved dropdown toggle function
+    function toggleDropdown(event, menuId) {
+      event.preventDefault();
+      const menu = document.getElementById(menuId);
+      menu.classList.toggle('hidden');
+      
+      // Close other dropdowns when opening a new one
+      if (!menu.classList.contains('hidden')) {
+        document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+          if (otherMenu.id !== menuId && !otherMenu.classList.contains('hidden')) {
+            otherMenu.classList.add('hidden');
+          }
+        });
+      }
+    }
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.matches('.dropdown-toggle')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          if (!menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+          }
+        });
+      }
+    });
+    
+    // Sticky header functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.main-header');
+      const stickyNav = document.createElement('div');
+      stickyNav.className = 'sticky-nav';
+      stickyNav.innerHTML = header.innerHTML;
+      document.querySelector('.header-wrapper').appendChild(stickyNav);
+      
+      // Clone mobile menu functionality for sticky header
+      const stickyMobileMenu = stickyNav.querySelector('#mobile-menu');
+      if (stickyMobileMenu) {
+        stickyNav.querySelector('.md\\:hidden button').onclick = function() {
+          stickyMobileMenu.classList.toggle('hidden');
+        };
+      }
+      
+      // Update dropdown toggle functions for sticky header
+      stickyNav.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        const menuId = toggle.getAttribute('data-menu');
+        toggle.onclick = function(e) {
+          e.preventDefault();
+          const menu = document.getElementById(menuId);
+          menu.classList.toggle('hidden');
+        };
+      });
+      
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const stickyHeader = document.querySelector('.sticky-nav');
+        
+        if (scrollPosition > 100) {
+          stickyHeader.classList.add('visible');
+          document.body.classList.add('sticky-header-active');
+        } else {
+          stickyHeader.classList.remove('visible');
+          document.body.classList.remove('sticky-header-active');
+        }
+      });
+    });
+    
+    // Feedback form functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const feedbackBtn = document.querySelector('.feedback-btn');
+      const feedbackModal = document.querySelector('.feedback-modal');
+      const feedbackClose = document.querySelector('.feedback-close');
+      const feedbackForm = document.querySelector('#feedbackForm');
+      
+      // Open feedback modal
+      feedbackBtn.addEventListener('click', function() {
+        feedbackModal.style.display = 'block';
+      });
+      
+      // Close feedback modal
+      feedbackClose.addEventListener('click', function() {
+        feedbackModal.style.display = 'none';
+      });
+      
+      // Close modal when clicking outside
+      window.addEventListener('click', function(event) {
+        if (event.target === feedbackModal) {
+          feedbackModal.style.display = 'none';
+        }
+      });
+      
+      // Handle form submission
+      feedbackForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
+        
+        // Create WhatsApp message
+        const whatsappMessage = `Hello SHARGAM ELEVATOR, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+        
+        // Open WhatsApp with pre-filled message
+        const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;
+        window.open(whatsappURL, '_blank');
+        
+        // Close the modal
+        feedbackModal.style.display = 'none';
+        
+        // Reset the form
+        feedbackForm.reset();
+      });
+    });
+    
+    // Search functionality
+    function performSearch() {
+      const searchTerm = document.getElementById('searchInput').value;
+      if (searchTerm.trim() !== '') {
+        alert('Searching for: ' + searchTerm);
+        // In a real implementation, you would redirect to a search results page
+        // window.location.href = './search.html?q=' + encodeURIComponent(searchTerm);
+      }
+    }
+    
+    // Handle Enter key in search input
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+      }
+    });
+
+    // Counter Script
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText.replace(/,/g, '');
+        const increment = target / 200;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment).toLocaleString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+      updateCounter();
+    });
+
+    // Modal Script
+    // Get all service links
+    const serviceLinks = document.querySelectorAll('.service-link');
+    
+    // Get all modals
+    const modals = document.querySelectorAll('.modal');
+    
+    // Get all close buttons
+    const closeButtons = document.querySelectorAll('.close');
+    
+    // Add click event to each service link
+    serviceLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const serviceType = this.getAttribute('data-service');
+        const modal = document.getElementById(serviceType + 'Modal');
+        if (modal) {
+          modal.style.display = 'block';
+        }
+      });
+    });
+    
+    // Add click event to each close button
+    closeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        this.closest('.modal').style.display = 'none';
+      });
+    });
+    
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

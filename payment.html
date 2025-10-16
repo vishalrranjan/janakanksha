@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPI QR Payment</title>
+    <style>
+        .upi-page * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .upi-page {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        .upi-page .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+
+        .upi-page .tabs {
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            gap: 150px;
+            justify-content: center;
+        }
+
+        .upi-page .tab {
+            padding: 10px 26px;
+            background: #f1f1f1;
+            color: #333;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+        }
+
+        .upi-page .tab.active {
+            background: #dedede;
+            font-weight: bold;
+            color: blue;
+        }
+
+        .upi-page h3 {
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .upi-page .subtitle {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .upi-page .steps-container {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        .upi-page .line {
+            position: absolute;
+            top: 22px;
+            left: 15%;
+            width: 70%;
+            height: 2px;
+            background-color: black;
+            z-index: 0;
+        }
+
+        .upi-page .line2 {
+            position: absolute;
+            left: 45%;
+            width: 10%;
+            height: 1px;
+            background-color: black;
+        }
+
+        .upi-page .steps {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .upi-page .steps div {
+            width: 32%;
+            font-size: 13px;
+        }
+
+        .upi-page .circle {
+            width: 20px;
+            height: 40px;
+            margin: 0 auto 8px;
+            border-radius: 50%;
+            background-color: white;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid black;
+        }
+
+        .upi-page .qr-box {
+            text-align: center;
+        }
+
+        .upi-page .qr-box img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .upi-page .name,
+        .upi-page .phone,
+        .upi-page .amount {
+            margin-bottom: 6px;
+        }
+
+        .upi-page .amount {
+            font-size: 13px;
+        }
+
+        .upi-page .submit-btn {
+            background-color: #007bff;
+            width: 200px;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .upi-page .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .upi-page .upi-id-box {
+            text-align: left;
+            padding: 10px;
+        }
+
+        .upi-page .upi-id-box .upi-option {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .upi-page .upi-id-box .upi-option img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 540px) {
+            .upi-page {
+                overflow: hidden;
+            }
+
+            #site-header .close-btn {
+                position: fixed;
+                top: 15px;
+                right: 20px;
+                font-size: 30px;
+                color: #333;
+                z-index: 1001;
+            }
+
+            #site-header #cssmenu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100vw;
+                /* Full screen width */
+                background: #fff;
+                padding-top: 60px;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            #site-header #cssmenu.active {
+                transform: translateX(0);
+            }
+
+
+            .upi-page .tabs {
+                flex-direction: column;
+                gap: 40px;
+                align-items: center;
+            }
+
+            .upi-page .tab {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+
+            .upi-page .submit-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .upi-page .qr-box img {
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+            }
+
+            .upi-page .upi-id-box .upi-option {
+                flex-direction: row;
+                align-items: center;
+                word-break: break-word;
+                flex-wrap: wrap;
+            }
+
+            .upi-page>div {
+                transform: none !important;
+            }
+
+        }
+    </style>
+
+<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .about-page {
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .about-page .banner {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-page .banner img {
+            width: 100%;
+            height: 350px;
+            display: block;
+        }
+
+        .about-page .footer-bar {
+            background-color: #ff4b4b;
+            color: white;
+            text-align: right;
+            padding: 10px 0;
+            font-size: 12px;
+        }
+
+        .about-page .footer-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 4px;
+        }
+
+        @media (max-width: 768px) {
+            .about-page .footer-bar {
+                font-size: 14px;
+                padding: 8px 0;
+            }
+
+            .about-page .banner img {
+             
+             height: 200px;
+            
+         }
+        }
+    </style>
+
+</head>
+
+<body>
+ 
+<?html include 'header.html'?>
+<div class="about-page">
+        <div class="banner">
+            <img src="./imge/pay.jpg" alt="About Us Banner" style="height: 50vh;" />
+        </div>
+        
+    </div><br>
+    <body class="bg-white text-gray-800">
+    <div class="container mx-auto p-4">
+    <div class="flex items-center mb-8">
+     <div class="border-b-4 border-blue-500 w-12 mr-4">
+     </div>
+     <h2 class="text-3xl font-bold text-gray-800">
+     Payments Portal
+     </h2>
+    </div>
+    </div>
+
+    <div class="upi-page">
+        <div style="transform: scale(1); transform-origin: top center;">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab active" onclick="showQR()">SCAN QR CODE</button>
+                    <button class="tab" onclick="showUPI()">UPI ID</button>
+                </div>
+
+                <p style="text-align: center;">Accept UPI Payments</p><br>
+                <div class="subtitle">How does it work?</div>
+
+                <div class="steps-container">
+                    <div class="line"></div>
+                    <div class="steps">
+                        <div>
+                            <div class="circle">1</div>
+                            <b>Scan the QR code</b>
+                        </div>
+                        <div>
+                            <div class="circle">2</div>
+                            <b>Validate details & confirm payment</b>
+                        </div>
+                        <div>
+                            <div class="circle">3</div>
+                            <b>Enter PIN in your bank app</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="qrSection" class="qr-box">
+                    <div class="name"><b>Parvatveda</b></div>
+                    <center><img src="./imge/qr.png" alt="QR Code"></center>
+                    <div class="line2"></div>
+                    <div class="amount">Pay Your Amount Here</div>
+                    <div class="line2"></div>
+                </div>
+
+                <div id="upiSection" class="upi-id-box" style="display: none;">
+                    <div class="upi-option"><img src="./imge/phone-pay.png" alt=""> PhonePe: XXXXX</div>
+                    <div class="upi-option"><img src="./imge/google-pay.png" alt=""> Google Pay: XXXXXX</div>
+                    <div class="upi-option"><img src="./imge/paytm-icon.png" alt=""> Paytm: XXXXX</div>
+                    <div class="upi-option"><img src="./imge/bharatpe.webp" alt=""> BharatPe: XXXXXX</div>
+                    <hr style="margin: 15px 0;">
+                    <div class="upi-option"><img src="./imge/bank.jpg" alt="">Bank Name: XXXXX. </div>
+                    <div class="upi-option">Account Name:PARVATVEDA</div>
+                    <div class="upi-option">Account Number: XXXXX</div>
+                    <div class="upi-option">IFSC Code: XXXXX </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showQR() {
+            document.querySelector('.tab:nth-child(1)').classList.add('active');
+            document.querySelector('.tab:nth-child(2)').classList.remove('active');
+            document.getElementById('qrSection').style.display = 'block';
+            document.getElementById('upiSection').style.display = 'none';
+        }
+
+        function showUPI() {
+            document.querySelector('.tab:nth-child(1)').classList.remove('active');
+            document.querySelector('.tab:nth-child(2)').classList.add('active');
+            document.getElementById('qrSection').style.display = 'none';
+            document.getElementById('upiSection').style.display = 'block';
+        }
+    </script>
+
+    <!-- <script>
+        const menu = document.getElementById('cssmenu');
+        const hamburger = document.querySelector('.hamburger');
+        const closeBtn = document.querySelector('.close-btn');
+
+        function toggleMenu(open) {
+            if (open) {
+                menu.classList.add('active');
+                hamburger.style.display = 'none';
+                closeBtn.style.display = 'block';
+            } else {
+                menu.classList.remove('active');
+                hamburger.style.display = 'block';
+                closeBtn.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                menu.classList.remove('active');
+                hamburger.style.display = 'none';
+                closeBtn.style.display = 'none';
+            } else {
+                hamburger.style.display = 'block';
+            }
+        });
+
+        // Initial check
+        if (window.innerWidth <= 768) {
+            hamburger.style.display = 'block';
+        }
+    </script> -->
+    <?html include 'footer.html'?>
+</body>
+
+</html>
