@@ -1,0 +1,5 @@
+name = "janakanksha-deployment-dstatic"
+compatibility_date = "2025-10-16"
+
+[assets]
+directory = "."
