@@ -1,987 +1,1411 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | JAN AKANKSHA FOUNDATION</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | JAN AKANKSHA FOUNDATION</title>
 
-  <!-- Meta Tags for SEO -->
-  <meta name="description" content="JAN AKANKSHA FOUNDATION is a reputed non-profit organization working in education, health, agriculture, environment, and rural development across Jharkhand. Learn more about our mission and values.">
-  <meta name="keywords" content="JAN AKANKSHA FOUNDATION, non-profit organization, education, health, agriculture, environment, rural development, Jharkhand, NGO, charity, social work">
-  <meta name="author" content="JAN AKANKSHA FOUNDATION">
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="JAN AKANKSHA FOUNDATION is a reputed non-profit organization working in education, health, agriculture, environment, and rural development across Jharkhand. Learn more about our mission and values."
+    />
+    <meta
+      name="keywords"
+      content="JAN AKANKSHA FOUNDATION, non-profit organization, education, health, agriculture, environment, rural development, Jharkhand, NGO, charity, social work"
+    />
+    <meta name="author" content="JAN AKANKSHA FOUNDATION" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    
-    /* Top Header Styles */
-    .top-header {
-      background: linear-gradient(135deg, #88b852 45%, #1b3860 30%);
-      color: white;
-      padding: 8px 0;
-    }
-    
-    .top-header a {
-      color: white;
-      transition: all 0.3s ease;
-    }
-    
-    .top-header a:hover {
-      color: #e9a86b;
-    }
-    
-    /* Main Header Styles */
-    .main-header {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-    
-    /* Sticky header styles */
-    .header-wrapper {
-      position: relative;
-    }
-    
-    .sticky-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transform: translateY(-100%);
-      transition: transform 0.3s ease;
-    }
-    
-    .sticky-nav.visible {
-      transform: translateY(0);
-    }
-    
-    /* Add padding to body to prevent content jump */
-    body.sticky-header-active {
-      padding-top: 120px; /* Adjusted to match combined header height */
-    }
-    
-    /* Dropdown styles */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 100%;
-      background-color: #1b3860;
-      color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      min-width: 150px;
-      z-index: 100;
-    }
-    
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 16px;
-    }
-    
-    .dropdown-menu a:hover {
-      background-color: #e9a86b;
-    }
-    
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-    
-    @media (max-width: 768px) {
-      .dropdown-menu {
-        position: static;
-        box-shadow: none;
-      }
-    }
-    
-    /* Logo styles */
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 0; /* Added padding above and below logo */
-    }
-    
-    .logo-img {
-      max-height: 100px;
-      width: auto;
-      object-fit: contain;
-      transition: all 0.3s ease;
-    }
-    
-    .logo-img:hover {
-      transform: scale(1.05);
-    }
-    
-    /* Sticky header logo adjustments */
-    .sticky-nav .logo-img {
-      max-height: 60px;
-    }
-    
-    /* Added padding for sticky header logo container */
-    .sticky-nav .logo-container {
-      padding: 10px 0; /* Reduced padding for sticky header */
-    }
-    
-    /* Navigation link styles */
-    .nav-link {
-      position: relative;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 50%;
-      background-color: #e9a86b;
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-    
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    
-    /* Feedback button styles */
-    .feedback-btn {
-      background-color: #e9a86b;
-      color: white;
-      border-radius: 50px;
-      padding: 8px 16px;
-      font-weight: bold;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 14px;
-    }
-    
-    .feedback-btn:hover {
-      background-color: #1b3860;
-      transform: scale(1.05);
-    }
-    
-    /* Feedback modal styles */
-    .feedback-modal {
-      display: none;
-      position: fixed;
-      z-index: 1001;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      animation: fadeIn 0.3s;
-    }
-    
-    .feedback-modal-content {
-      background-color: #fff;
-      margin: 5% auto;
-      padding: 0;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 500px;
-      max-height: 90vh;
-      overflow-y: auto;
-      animation: slideIn 0.4s;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    .feedback-modal-header {
-      background-color: #e9a86b;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 12px 12px 0 0;
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .feedback-close {
-      position: absolute;
-      right: 20px;
-      top: 15px;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    
-    .feedback-close:hover {
-      opacity: 0.7;
-    }
-    
-    .feedback-body {
-      padding: 20px;
-    }
-    
-    .form-group {
-      margin-bottom: 15px;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-      color: #333;
-    }
-    
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-    
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    
-    .submit-btn {
-      background-color: #e9a86b;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      width: 100%;
-      transition: background-color 0.3s;
-    }
-    
-    .submit-btn:hover {
-      background-color: #1b3860;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    
-    /* Search bar styles */
-    .search-container {
-      position: relative;
-    }
-    
-    .search-input {
-      padding: 8px 35px 8px 15px;
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      width: 200px;
-      transition: all 0.3s ease;
-    }
-    
-    .search-input:focus {
-      outline: none;
-      border-color: #1b3860;
-      width: 250px;
-    }
-    
-    .search-btn {
-      position: absolute;
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #1b3860;
-      cursor: pointer;
-    }
-    
-    /* Menu icon styles */
-    .menu-icon {
-      margin-right: 6px;
-      color: #1b3860;
-    }
-    
-    .nav-link:hover .menu-icon {
-      color: #e9a86b;
-    }
-    
-    /* Footer styles */
-    .footer-link {
-      transition: all 0.3s ease;
-    }
-    .footer-link:hover {
-      transform: translateX(5px);
-      color: #1b3860;
-    }
-    .social-icon {
-      transition: all 0.3s ease;
-    }
-    .social-icon:hover {
-      transform: translateY(-3px);
-    }
-    
-    /* Registration info styles */
-    .registration-info {
-      background-color: #f8f9fa;
-      border-left: 4px solid #e74c3c;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 4px;
-    }
-    
-    .registration-info h3 {
-      color: #1b3860;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-    
-    .registration-info p {
-      margin-bottom: 8px;
-      font-size: 15px;
-    }
-    
-    .registration-info strong {
-      color: #e74c3c;
-    }
-  </style>
-  
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    }
-
-    // Improved dropdown toggle function
-    function toggleDropdown(event, menuId) {
-      event.preventDefault();
-      const menu = document.getElementById(menuId);
-      menu.classList.toggle('hidden');
-      
-      // Close other dropdowns when opening a new one
-      if (!menu.classList.contains('hidden')) {
-        document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
-          if (otherMenu.id !== menuId && !otherMenu.classList.contains('hidden')) {
-            otherMenu.classList.add('hidden');
-          }
-        });
-      }
-    }
-    
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!event.target.matches('.dropdown-toggle')) {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          if (!menu.classList.contains('hidden')) {
-            menu.classList.add('hidden');
-          }
-        });
-      }
-    });
-    
-    // Sticky header functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const header = document.querySelector('.main-header');
-      const stickyNav = document.createElement('div');
-      stickyNav.className = 'sticky-nav';
-      stickyNav.innerHTML = header.innerHTML;
-      document.querySelector('.header-wrapper').appendChild(stickyNav);
-      
-      // Clone mobile menu functionality for sticky header
-      const stickyMobileMenu = stickyNav.querySelector('#mobile-menu');
-      if (stickyMobileMenu) {
-        stickyNav.querySelector('.md\\:hidden button').onclick = function() {
-          stickyMobileMenu.classList.toggle('hidden');
-        };
-      }
-      
-      // Update dropdown toggle functions for sticky header
-      stickyNav.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-        const menuId = toggle.getAttribute('data-menu');
-        toggle.onclick = function(e) {
-          e.preventDefault();
-          const menu = document.getElementById(menuId);
-          menu.classList.toggle('hidden');
-        };
-      });
-      
-      window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-        const stickyHeader = document.querySelector('.sticky-nav');
-        
-        if (scrollPosition > 100) {
-          stickyHeader.classList.add('visible');
-          document.body.classList.add('sticky-header-active');
-        } else {
-          stickyHeader.classList.remove('visible');
-          document.body.classList.remove('sticky-header-active');
-        }
-      });
-    });
-    
-    // Feedback form functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const feedbackBtn = document.querySelector('.feedback-btn');
-      const feedbackModal = document.querySelector('.feedback-modal');
-      const feedbackClose = document.querySelector('.feedback-close');
-      const feedbackForm = document.querySelector('#feedbackForm');
-      
-      // Open feedback modal
-      feedbackBtn.addEventListener('click', function() {
-        feedbackModal.style.display = 'block';
-      });
-      
-      // Close feedback modal
-      feedbackClose.addEventListener('click', function() {
-        feedbackModal.style.display = 'none';
-      });
-      
-      // Close modal when clicking outside
-      window.addEventListener('click', function(event) {
-        if (event.target === feedbackModal) {
-          feedbackModal.style.display = 'none';
-        }
-      });
-      
-      // Handle form submission
-      feedbackForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
-        
-        // Create WhatsApp message
-        const whatsappMessage = `Hello JAN AKANKSHA FOUNDATION, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
-        
-        // Open WhatsApp with pre-filled message
-        const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;
-        window.open(whatsappURL, '_blank');
-        
-        // Close the modal
-        feedbackModal.style.display = 'none';
-        
-        // Reset the form
-        feedbackForm.reset();
-      });
-    });
-    
-    // Search functionality
-    function performSearch() {
-      const searchTerm = document.getElementById('searchInput').value;
-      if (searchTerm.trim() !== '') {
-        alert('Searching for: ' + searchTerm);
-        // In a real implementation, you would redirect to a search results page
-        // window.location.href = './search.html?q=' + encodeURIComponent(searchTerm);
-      }
-    }
-    
-    // Handle Enter key in search input
-    document.addEventListener('DOMContentLoaded', function() {
-      const searchInput = document.getElementById('searchInput');
-      if (searchInput) {
-        searchInput.addEventListener('keypress', function(e) {
-          if (e.key === 'Enter') {
-            performSearch();
-          }
-        });
-      }
-    });
-  </script>
-</head>
-
-<body class="bg-white text-black">
-
-  <!-- Header Section -->
-  <div class="header-wrapper">
-    <!-- Top Header -->
-    <div class="top-header">
-      <div class="max-w-screen-xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center">
-        <div class="flex items-center space-x-4 mb-2 md:mb-0">
-          <a href="tel:+919234241407" class="flex items-center">
-            <i class="fas fa-phone-alt mr-2"></i>
-            <span>+91-9234241407</span>
-          </a>
-          <a href="mailto: jafpatna@gmail.com" class="flex items-center">
-            <i class="fas fa-envelope mr-2"></i>
-            <span> jafpatna@gmail.com</span>
-          </a>
-        </div>
-        <div class="flex items-center space-x-4">
-          <li>
-           <a href="./donate_now.html"> <button class="feedback-btn">
-             <i class="fas fa-donate mr-2"></i>
-             Donate-Now
-            </button></a>
-          </li>
-          <!-- Call Icon -->
-          <a href="tel:+919234241407" class="hover:text-[#e9a86b]">
-            <i class="fas fa-phone-alt"></i>
-          </a>
-          <!-- YouTube Icon -->
-          <a href="https://www.youtube.com/@JANAKANKSHAFOUNDATION" target="_blank" class="hover:text-[#e9a86b]">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.facebook.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://twitter.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Header -->
-    <nav class="main-header text-black text-[14px] px-4 z-50">
-      <div class="max-w-screen-xl mx-auto py-4 flex items-center justify-between h-[90px]">
-        <div class="logo-container">
-          <a href="./index.html" class="flex items-center">
-            <img
-              src="./image/logo/logo.png"
-              alt="JAN AKANKSHA FOUNDATION Logo"
-              class="logo-img"
-            />
-          </a>
-        </div>
-        <div class="md:hidden">
-          <button onclick="toggleMenu()" class="focus:outline-none">
-            <i class="fas fa-bars text-2xl"></i>
-          </button>
-        </div>
-
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-6 items-center" style="font-size:16px;font-weight:600">
-          <li><a href="./index.html" class="nav-link"><i class="fas fa-home menu-icon"></i>Home</a></li>
-          <li class="dropdown relative">
-            <a href="#" class="nav-link inline-block flex items-center dropdown-toggle" data-menu="aboutMenu" onclick="toggleDropdown(event, 'aboutMenu')">
-              <i class="fas fa-info-circle menu-icon"></i>About Us
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-            <ul id="aboutMenu" class="dropdown-menu hidden">
-              <li><a href="./about.html" class="hover:bg-[orange]"><i class="fas fa-building mr-2"></i>About</a></li>
-              <li><a href="./director-disk.html" class="hover:bg-[orange]"><i class="fas fa-user-tie mr-2"></i>Director Desk</a></li>
-              <li><a href="./mission-vision.html" class="hover:bg-[orange]"><i class="fas fa-bullseye mr-2"></i>Mission</a></li>
-            </ul>
-          </li>
-          <li><a href="./service.html" class="nav-link"><i class="fas fa-concierge-bell menu-icon"></i>Service</a></li>
-          <li><a href="./our-product.html" class="nav-link"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
-           <li><a href="./gallery.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Gallery</a></li>
-          <!-- <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li> -->
-          <li><a href="./career.html" class="nav-link"><i class="fas fa-briefcase menu-icon"></i>Career</a></li>
-          <li><a href="./contect.html" class="nav-link"><i class="fas fa-envelope menu-icon"></i>Contact Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden hidden py-4 bg-white">
-        <ul class="flex flex-col space-y-2 px-4" style="font-size:20px;font-weight:700">
-          <li><a href="./index.html" class="hover:underline block py-2"><i class="fas fa-home mr-2"></i>Home</a></li>
-          <li class="dropdown">
-            <a href="#" class="hover:underline inline-block flex items-center dropdown-toggle" data-menu="mobileAboutMenu" onclick="toggleDropdown(event, 'mobileAboutMenu')">
-              <i class="fas fa-info-circle mr-2"></i>About Us
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-            <ul id="mobileAboutMenu" class="dropdown-menu hidden bg-blue-600">
-              <li><a href="./about.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-building mr-2"></i>About</a></li>
-              <li><a href="./director-disk.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-user-tie mr-2"></i>Director Desk</a></li>
-              <li><a href="./mission-vision.html" class="hover:bg-[orange] block px-4 py-2"><i class="fas fa-bullseye mr-2"></i>Mission</a></li>
-            </ul>
-          </li>
-           <li><a href="./service.html" class="hover:underline block py-2"><i class="fas fa-concierge-bell mr-2"></i>Service</a></li>
-          <li><a href="./gallery.html" class="hover:underline block py-2"><i class="fas fa-images mr-2"></i>Gallery</a></li>
-                      <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
-
-         <li><a href="./our-product.html" class="hover:underline block py-2"><i class="fas fa-project-diagram mr-2"></i>Project</a></li>
-          <li><a href="./career.html" class="hover:underline block py-2"><i class="fas fa-briefcase mr-2"></i>Career</a></li>
-          <li><a href="./contect.html" class="hover:underline block py-2"><i class="fas fa-envelope mr-2"></i>Contact Us</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <!-- Banner Start -->
-  <section>
-    <div class="relative w-full h-[200px] sm:h-72 md:h-80 lg:h-96 xl:h-[400px] overflow-hidden">
-      <img
-        src="./image/banner/about.jpg"
-        alt="Community development initiatives by JAN AKANKSHA FOUNDATION"
-        class="w-full h-full object-contain sm:object-cover"
-      />
-    </div>
-  </section>
-  <!-- Banner End -->
-
-  <!-- Ribbon Style -->
-  <style>
-    .ribbon {
-      font-size: 28px;
-      font-weight: bold;
-      color: #fff;
-    }
-    #ribbon {
-      --s: 1.8em;
-      --d: .8em;
-      --c: .8em;
-      padding: var(--d) calc(var(--s) + .5em) 0;
-      background:
-        conic-gradient(from 45deg at left var(--s) top var(--d), #0008 12.5%,#0000 0 37.5%,#0004 0) 0 /50% 100% no-repeat,
-        conic-gradient(from -45deg at right var(--s) top var(--d), #0004 62.5%,#0000 0 87.5%,#0008 0) 100%/50% 100% no-repeat;
-      clip-path: polygon(0 0,calc(var(--s) + var(--d)) 0,calc(var(--s) + var(--d)) var(--d),calc(100% - var(--s) - var(--d)) var(--d),calc(100% - var(--s) - var(--d)) 0,100% 0, calc(100% - var(--c)) calc(50% - var(--d)/2),100% calc(100% - var(--d)),calc(100% - var(--s)) calc(100% - var(--d)),calc(100% - var(--s)) 100%,var(--s) 100%,var(--s) calc(100% - var(--d)),0 calc(100% - var(--d)),var(--c) calc(50% - var(--d)/2));
-      background-color: #e74c3c;
-      width: fit-content;
-    }
-  </style>
-
-  <!-- About Section -->
-  <div class="max-w-7xl mx-auto px-4 py-8" style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
     <style>
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* Top Header Styles */
+      .top-header {
+        background: linear-gradient(135deg, #88b852 45%, #1b3860 30%);
+        color: white;
+        padding: 8px 0;
+      }
+
+      .top-header a {
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .top-header a:hover {
+        color: #e9a86b;
+      }
+
+      /* Main Header Styles */
+      .main-header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      /* Sticky header styles */
+      .header-wrapper {
+        position: relative;
+      }
+
+      .sticky-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .sticky-nav.visible {
+        transform: translateY(0);
+      }
+
+      /* Add padding to body to prevent content jump */
+      body.sticky-header-active {
+        padding-top: 120px; /* Adjusted to match combined header height */
+      }
+
+      /* Dropdown styles */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: #1b3860;
+        color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        min-width: 150px;
+        z-index: 100;
+      }
+
+      .dropdown-menu a {
+        display: block;
+        padding: 8px 16px;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: #e9a86b;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          position: static;
+          box-shadow: none;
         }
-        
-        .floating-image {
-            animation: float 3s ease-in-out infinite;
+      }
+
+      /* Logo styles */
+      .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0; /* Added padding above and below logo */
+      }
+
+      .logo-img {
+        max-height: 100px;
+        width: auto;
+        object-fit: contain;
+        transition: all 0.3s ease;
+      }
+
+      .logo-img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Sticky header logo adjustments */
+      .sticky-nav .logo-img {
+        max-height: 60px;
+      }
+
+      /* Added padding for sticky header logo container */
+      .sticky-nav .logo-container {
+        padding: 10px 0; /* Reduced padding for sticky header */
+      }
+
+      /* Navigation link styles */
+      .nav-link {
+        position: relative;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 50%;
+        background-color: #e9a86b;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Feedback button styles */
+      .feedback-btn {
+        background-color: #e9a86b;
+        color: white;
+        border-radius: 50px;
+        padding: 8px 16px;
+        font-weight: bold;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .feedback-btn:hover {
+        background-color: #1b3860;
+        transform: scale(1.05);
+      }
+
+      /* Feedback modal styles */
+      .feedback-modal {
+        display: none;
+        position: fixed;
+        z-index: 1001;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        animation: fadeIn 0.3s;
+      }
+
+      .feedback-modal-content {
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 0;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow-y: auto;
+        animation: slideIn 0.4s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .feedback-modal-header {
+        background-color: #e9a86b;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 12px 12px 0 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .feedback-close {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .feedback-close:hover {
+        opacity: 0.7;
+      }
+
+      .feedback-body {
+        padding: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .submit-btn {
+        background-color: #e9a86b;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #1b3860;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Search bar styles */
+      .search-container {
+        position: relative;
+      }
+
+      .search-input {
+        padding: 8px 35px 8px 15px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        width: 200px;
+        transition: all 0.3s ease;
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: #1b3860;
+        width: 250px;
+      }
+
+      .search-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #1b3860;
+        cursor: pointer;
+      }
+
+      /* Menu icon styles */
+      .menu-icon {
+        margin-right: 6px;
+        color: #1b3860;
+      }
+
+      .nav-link:hover .menu-icon {
+        color: #e9a86b;
+      }
+
+      /* Footer styles */
+      .footer-link {
+        transition: all 0.3s ease;
+      }
+      .footer-link:hover {
+        transform: translateX(5px);
+        color: #1b3860;
+      }
+      .social-icon {
+        transition: all 0.3s ease;
+      }
+      .social-icon:hover {
+        transform: translateY(-3px);
+      }
+
+      /* Registration info styles */
+      .registration-info {
+        background-color: #f8f9fa;
+        border-left: 4px solid #e74c3c;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+
+      .registration-info h3 {
+        color: #1b3860;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .registration-info p {
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .registration-info strong {
+        color: #e74c3c;
+      }
     </style>
-    
-    <section class="flex flex-col lg:flex-row gap-6 lg:gap-10 text-sm">
-      <div class="w-full lg:w-1/2">
-        <h2 class="font-extrabold text-xl uppercase mb-4" >
-          <span class="text-[#e74c3c]">WELCOME TO</span> JAN AKANKSHA FOUNDATION
-        </h2>
-        <p class="mb-4 text-justify text-[16px]">
-          JAN AKANKSHA FOUNDATION is a reputed non-profit organization dedicated to creating sustainable change in the communities of Jharkhand. Founded with a vision to empower marginalized sections of society, we work across multiple sectors including education, health, agriculture, environment, and rural development.
-        </p>
-        <p class="mb-4 text-justify text-[16px]">
-          At JAN AKANKSHA FOUNDATION, our core philosophy revolves around community participation, sustainable development, and inclusive growth. We implement flagship initiatives like Akanksha Kendra and Gramin-e-Vikas Pariyojana to address critical challenges faced by rural and urban communities in Jharkhand.
-        </p>
-        <p class="text-justify text-[16px]">
-          Driven by a team of dedicated professionals and community volunteers, we strive to create lasting impact through our programs that reach all districts and panchayats of Jharkhand. Our approach combines traditional wisdom with modern techniques to ensure holistic development of the communities we serve.
-        </p>
-        
-        <!-- Registration Information Section -->
-        <div class="registration-info">
-          <h3><i class="fas fa-certificate mr-2"></i>Registration Details</h3>
-          <p><strong>Established:</strong> Under the Companies Act</p>
-          <p><strong>Registration Status:</strong> Active with Ministry of Corporate Affairs (MCA)</p>
-          <p><strong>Date of Incorporation:</strong> 05-Apr-2022</p>
-          <p><strong>Corporate Identification Number (CIN):</strong> U85300BR2022NPL057293</p>
-          <p><strong>Entity Type:</strong> Non-government Organization</p>
-          <p><strong>Focus Area:</strong> Community, Personal & Social Services</p>
-          <p>JAN AKANKSHA FOUNDATION operates with a defined focus on Community, personal & Social services, aligning its goals with the standards of India's evolving corporate ecosystem.</p>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+
+      // Improved dropdown toggle function
+      function toggleDropdown(event, menuId) {
+        event.preventDefault();
+        const menu = document.getElementById(menuId);
+        menu.classList.toggle("hidden");
+
+        // Close other dropdowns when opening a new one
+        if (!menu.classList.contains("hidden")) {
+          document.querySelectorAll(".dropdown-menu").forEach((otherMenu) => {
+            if (
+              otherMenu.id !== menuId &&
+              !otherMenu.classList.contains("hidden")
+            ) {
+              otherMenu.classList.add("hidden");
+            }
+          });
+        }
+      }
+
+      // Close dropdowns when clicking outside
+      document.addEventListener("click", function (event) {
+        if (!event.target.matches(".dropdown-toggle")) {
+          document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+            if (!menu.classList.contains("hidden")) {
+              menu.classList.add("hidden");
+            }
+          });
+        }
+      });
+
+      // Sticky header functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector(".main-header");
+        const stickyNav = document.createElement("div");
+        stickyNav.className = "sticky-nav";
+        stickyNav.innerHTML = header.innerHTML;
+        document.querySelector(".header-wrapper").appendChild(stickyNav);
+
+        // Clone mobile menu functionality for sticky header
+        const stickyMobileMenu = stickyNav.querySelector("#mobile-menu");
+        if (stickyMobileMenu) {
+          stickyNav.querySelector(".md\\:hidden button").onclick = function () {
+            stickyMobileMenu.classList.toggle("hidden");
+          };
+        }
+
+        // Update dropdown toggle functions for sticky header
+        stickyNav.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+          const menuId = toggle.getAttribute("data-menu");
+          toggle.onclick = function (e) {
+            e.preventDefault();
+            const menu = document.getElementById(menuId);
+            menu.classList.toggle("hidden");
+          };
+        });
+
+        window.addEventListener("scroll", function () {
+          const scrollPosition =
+            window.scrollY || document.documentElement.scrollTop;
+          const stickyHeader = document.querySelector(".sticky-nav");
+
+          if (scrollPosition > 100) {
+            stickyHeader.classList.add("visible");
+            document.body.classList.add("sticky-header-active");
+          } else {
+            stickyHeader.classList.remove("visible");
+            document.body.classList.remove("sticky-header-active");
+          }
+        });
+      });
+
+      // Feedback form functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const feedbackBtn = document.querySelector(".feedback-btn");
+        const feedbackModal = document.querySelector(".feedback-modal");
+        const feedbackClose = document.querySelector(".feedback-close");
+        const feedbackForm = document.querySelector("#feedbackForm");
+
+        // Open feedback modal
+        feedbackBtn.addEventListener("click", function () {
+          feedbackModal.style.display = "block";
+        });
+
+        // Close feedback modal
+        feedbackClose.addEventListener("click", function () {
+          feedbackModal.style.display = "none";
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener("click", function (event) {
+          if (event.target === feedbackModal) {
+            feedbackModal.style.display = "none";
+          }
+        });
+
+        // Handle form submission
+        feedbackForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const service = document.getElementById("service").value;
+          const message = document.getElementById("message").value;
+
+          // Create WhatsApp message
+          const whatsappMessage = `Hello JAN AKANKSHA FOUNDATION, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+
+          // Open WhatsApp with pre-filled message
+          const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;
+          window.open(whatsappURL, "_blank");
+
+          // Close the modal
+          feedbackModal.style.display = "none";
+
+          // Reset the form
+          feedbackForm.reset();
+        });
+      });
+
+      // Search functionality
+      function performSearch() {
+        const searchTerm = document.getElementById("searchInput").value;
+        if (searchTerm.trim() !== "") {
+          alert("Searching for: " + searchTerm);
+          // In a real implementation, you would redirect to a search results page
+          // window.location.href = './search.html?q=' + encodeURIComponent(searchTerm);
+        }
+      }
+
+      // Handle Enter key in search input
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        if (searchInput) {
+          searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+              performSearch();
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+
+  <body class="bg-white text-black">
+    <!-- Header Section -->
+    <div class="header-wrapper">
+      <!-- Top Header -->
+      <div class="top-header">
+        <div
+          class="max-w-screen-xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center"
+        >
+          <div class="flex items-center space-x-4 mb-2 md:mb-0">
+            <a href="tel:+919234241407" class="flex items-center">
+              <i class="fas fa-phone-alt mr-2"></i>
+              <span>+91-9234241407</span>
+            </a>
+            <a href="mailto: jafpatna@gmail.com" class="flex items-center">
+              <i class="fas fa-envelope mr-2"></i>
+              <span> jafpatna@gmail.com</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <li>
+              <a href="./donate_now.html">
+                <button class="feedback-btn">
+                  <i class="fas fa-donate mr-2"></i>
+                  Donate-Now
+                </button></a
+              >
+            </li>
+            <!-- Call Icon -->
+            <a href="tel:+919234241407" class="hover:text-[#e9a86b]">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+            <!-- YouTube Icon -->
+            <a
+              href="https://www.youtube.com/@JANAKANKSHAFOUNDATION"
+              target="_blank"
+              class="hover:text-[#e9a86b]"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/geetaambulance"
+              target="_blank"
+              class="hover:text-[#e9a86b]"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://twitter.com/geetaambulance"
+              target="_blank"
+              class="hover:text-[#e9a86b]"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/geetaambulance"
+              target="_blank"
+              class="hover:text-[#e9a86b]"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/geetaambulance"
+              target="_blank"
+              class="hover:text-[#e9a86b]"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="w-full lg:w-1/2 flex justify-center items-center">
+
+      <!-- Main Header -->
+      <nav class="main-header text-black text-[14px] px-4 z-50">
+        <div
+          class="max-w-screen-xl mx-auto py-4 flex items-center justify-between h-[90px]"
+        >
+          <div class="logo-container">
+            <a href="./index.html" class="flex items-center">
+              <img
+                src="./image/logo/logo.png"
+                alt="JAN AKANKSHA FOUNDATION Logo"
+                class="logo-img"
+              />
+            </a>
+          </div>
+          <div class="md:hidden">
+            <button onclick="toggleMenu()" class="focus:outline-none">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+
+          <!-- Desktop Menu -->
+          <ul
+            class="hidden md:flex space-x-6 items-center"
+            style="font-size: 16px; font-weight: 600"
+          >
+            <li>
+              <a href="./index.html" class="nav-link"
+                ><i class="fas fa-home menu-icon"></i>Home</a
+              >
+            </li>
+            <li class="dropdown relative">
+              <a
+                href="#"
+                class="nav-link inline-block flex items-center dropdown-toggle"
+                data-menu="aboutMenu"
+                onclick="toggleDropdown(event, 'aboutMenu')"
+              >
+                <i class="fas fa-info-circle menu-icon"></i>About Us
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <ul id="aboutMenu" class="dropdown-menu hidden">
+                <li>
+                  <a href="./about.html" class="hover:bg-[orange]"
+                    ><i class="fas fa-building mr-2"></i>About</a
+                  >
+                </li>
+                <li>
+                  <a href="./director-disk.html" class="hover:bg-[orange]"
+                    ><i class="fas fa-user-tie mr-2"></i>Director Desk</a
+                  >
+                </li>
+                <li>
+                  <a href="./mission-vision.html" class="hover:bg-[orange]"
+                    ><i class="fas fa-bullseye mr-2"></i>Mission</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./service.html" class="nav-link"
+                ><i class="fas fa-concierge-bell menu-icon"></i>Service</a
+              >
+            </li>
+            <li>
+              <a href="./our-product.html" class="nav-link"
+                ><i class="fas fa-project-diagram menu-icon"></i>Project</a
+              >
+            </li>
+            <li>
+              <a href="./gallery.html" class="nav-link"
+                ><i class="fas fa-images menu-icon"></i>Gallery</a
+              >
+            </li>
+            <!-- <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li> -->
+            <li>
+              <a href="./career.html" class="nav-link"
+                ><i class="fas fa-briefcase menu-icon"></i>Career</a
+              >
+            </li>
+            <li>
+              <a href="./contect.html" class="nav-link"
+                ><i class="fas fa-envelope menu-icon"></i>Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden py-4 bg-white">
+          <ul
+            class="flex flex-col space-y-2 px-4"
+            style="font-size: 20px; font-weight: 700"
+          >
+            <li>
+              <a href="./index.html" class="hover:underline block py-2"
+                ><i class="fas fa-home mr-2"></i>Home</a
+              >
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="hover:underline inline-block flex items-center dropdown-toggle"
+                data-menu="mobileAboutMenu"
+                onclick="toggleDropdown(event, 'mobileAboutMenu')"
+              >
+                <i class="fas fa-info-circle mr-2"></i>About Us
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <ul id="mobileAboutMenu" class="dropdown-menu hidden bg-blue-600">
+                <li>
+                  <a
+                    href="./about.html"
+                    class="hover:bg-[orange] block px-4 py-2"
+                    ><i class="fas fa-building mr-2"></i>About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./director-disk.html"
+                    class="hover:bg-[orange] block px-4 py-2"
+                    ><i class="fas fa-user-tie mr-2"></i>Director Desk</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./mission-vision.html"
+                    class="hover:bg-[orange] block px-4 py-2"
+                    ><i class="fas fa-bullseye mr-2"></i>Mission</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./service.html" class="hover:underline block py-2"
+                ><i class="fas fa-concierge-bell mr-2"></i>Service</a
+              >
+            </li>
+            <li>
+              <a href="./gallery.html" class="hover:underline block py-2"
+                ><i class="fas fa-images mr-2"></i>Gallery</a
+              >
+            </li>
+            <li>
+              <a href="./blog.html" class="nav-link"
+                ><i class="fas fa-images menu-icon"></i>Blog</a
+              >
+            </li>
+
+            <li>
+              <a href="./our-product.html" class="hover:underline block py-2"
+                ><i class="fas fa-project-diagram mr-2"></i>Project</a
+              >
+            </li>
+            <li>
+              <a href="./career.html" class="hover:underline block py-2"
+                ><i class="fas fa-briefcase mr-2"></i>Career</a
+              >
+            </li>
+            <li>
+              <a href="./contect.html" class="hover:underline block py-2"
+                ><i class="fas fa-envelope mr-2"></i>Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Banner Start -->
+    <section>
+      <div
+        class="relative w-full h-[200px] sm:h-72 md:h-80 lg:h-96 xl:h-[400px] overflow-hidden"
+      >
         <img
-          src="./image/banner/ab (1).jpeg"
-          alt="Community Development by JAN AKANKSHA FOUNDATION"
-          class="w-[600px] h-[500px] max-w-[700px] sm:max-w-sm md:max-w-md object-cover rounded-md shadow-lg floating-image"
-          style="border-top-right-radius: 60px;  border-bottom-left-radius: 60px;"
+          src="./image/banner/about.jpg"
+          alt="Community development initiatives by JAN AKANKSHA FOUNDATION"
+          class="w-full h-full object-contain sm:object-cover"
         />
       </div>
     </section>
-  </div>
-  <!-- About Section End -->
+    <!-- Banner End -->
 
-  <!-- Related Services Section -->
-  <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
-    <!-- Background decoration -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-      <div class="absolute -top-40 -right-40 w-80 h-80 bg-[#e74c3c] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
-      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-[#e74c3c] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-[#e74c3c] uppercase mb-4 relative inline-block">
-          Related Initiatives
-          <span class="absolute bottom-0 left-0 w-full h-1 bg-[#e74c3c] transform scale-x-50"></span>
-        </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg mt-6">
-          Complementary programs that support our core mission of community development
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Related Service 1 -->
-        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl">
-          <div class="p-6">
-            <div class="w-16 h-16 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-[#e74c3c] transition-colors duration-300">
-              <i class="fas fa-female text-2xl text-[#e74c3c] group-hover:text-white transition-colors duration-300"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-[#e74c3c] transition-colors duration-300">Women Empowerment</h3>
-            <p class="text-gray-600 text-center mb-4">Programs focused on gender equality, economic independence, and leadership development for women.</p>
-            
-          </div>
-        </div>
-        
-        <!-- Related Service 2 -->
-        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl">
-          <div class="p-6">
-            <div class="w-16 h-16 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-[#e74c3c] transition-colors duration-300">
-              <i class="fas fa-child text-2xl text-[#e74c3c] group-hover:text-white transition-colors duration-300"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-[#e74c3c] transition-colors duration-300">Child Development</h3>
-            <p class="text-gray-600 text-center mb-4">Holistic development programs for children focusing on education, health, and nutrition.</p>
-            
-          </div>
-        </div>
-        
-        <!-- Related Service 3 -->
-        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl">
-          <div class="p-6">
-            <div class="w-16 h-16 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-[#e74c3c] transition-colors duration-300">
-              <i class="fas fa-users text-2xl text-[#e74c3c] group-hover:text-white transition-colors duration-300"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-[#e74c3c] transition-colors duration-300">Community Mobilization</h3>
-            <p class="text-gray-600 text-center mb-4">Strengthening community institutions and promoting collective action for development.</p>
-            
-          </div>
-        </div>
-        
-        <!-- Related Service 4 -->
-        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl">
-          <div class="p-6">
-            <div class="w-16 h-16 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-[#e74c3c] transition-colors duration-300">
-              <i class="fas fa-graduation-cap text-2xl text-[#e74c3c] group-hover:text-white transition-colors duration-300"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-[#e74c3c] transition-colors duration-300">Capacity Building</h3>
-            <p class="text-gray-600 text-center mb-4">Training and skill development programs for community members and local institutions.</p>
-            
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-12">
-        <button class="bg-[#e74c3c] hover:bg-[#c0392b] text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-          View All Initiatives
-        </button>
-      </div>
-    </div>
-  </section>
-  <!-- Related Services Section End -->
+    <!-- Ribbon Style -->
+    <style>
+      .ribbon {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+      }
+      #ribbon {
+        --s: 1.8em;
+        --d: 0.8em;
+        --c: 0.8em;
+        padding: var(--d) calc(var(--s) + 0.5em) 0;
+        background: conic-gradient(
+              from 45deg at left var(--s) top var(--d),
+              #0008 12.5%,
+              #0000 0 37.5%,
+              #0004 0
+            )
+            0 /50% 100% no-repeat,
+          conic-gradient(
+              from -45deg at right var(--s) top var(--d),
+              #0004 62.5%,
+              #0000 0 87.5%,
+              #0008 0
+            )
+            100%/50% 100% no-repeat;
+        clip-path: polygon(
+          0 0,
+          calc(var(--s) + var(--d)) 0,
+          calc(var(--s) + var(--d)) var(--d),
+          calc(100% - var(--s) - var(--d)) var(--d),
+          calc(100% - var(--s) - var(--d)) 0,
+          100% 0,
+          calc(100% - var(--c)) calc(50% - var(--d) / 2),
+          100% calc(100% - var(--d)),
+          calc(100% - var(--s)) calc(100% - var(--d)),
+          calc(100% - var(--s)) 100%,
+          var(--s) 100%,
+          var(--s) calc(100% - var(--d)),
+          0 calc(100% - var(--d)),
+          var(--c) calc(50% - var(--d) / 2)
+        );
+        background-color: #e74c3c;
+        width: fit-content;
+      }
+    </style>
 
-  <!-- COUNTER-SECTION-START -->
-   <section class="py-6">
-    <div class="max-w-9xl mx-auto px-4 bg-[#1b3860] text-white text-center py-8 rounded">
-      <div class="flex flex-wrap justify-center items-center gap-y-6">
-        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-          <i class="fas fa-map-marker-alt text-xl md:text-2xl mb-1"></i>
-          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="24">0</span>
-          <span class="text-xs md:text-sm font-bold uppercase mt-1">Districts</span>
-        </div>
-        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-          <i class="fas fa-users text-xl md:text-2xl mb-1"></i>
-          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="500000">0</span>
-          <span class="text-xs md:text-sm font-bold uppercase mt-1">Beneficiaries</span>
-        </div>
-        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-          <i class="fas fa-project-diagram text-xl md:text-2xl mb-1"></i>
-          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="100">0</span>
-          <span class="text-xs md:text-sm font-bold uppercase mt-1">Projects</span>
-        </div>
-        <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-          <i class="fas fa-handshake text-xl md:text-2xl mb-1"></i>
-          <span class="counter text-[16px] md:text-[18px] font-bold" data-target="50">0</span>
-          <span class="text-xs md:text-sm font-bold uppercase mt-1">Partners</span>
-        </div>
-      </div>  
-    </div>
-  </section>
-  <!-- COUNTER-SECTION-END -->
-
-  <!-- Footer Section -->
-  <footer class="bg-gray-50 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="flex flex-col md:flex-row gap-8">
-        <!-- Column 1: Logo and Statement -->
-        <div class="md:w-1/4 flex flex-col items-start" style="margin-top: -30px;">
-          <a href="./index.html"><img
-            src="./image/logo/logo.png"
-            alt="JAN AKANKSHA FOUNDATION Logo"
-            class="w-24 h-auto mb-4"
-          /></a>
-          <div class="space-y-2">
-            <p class="text-gray-700 italic">"Empowering Communities, Transforming Lives."</p>
-            <p class="text-gray-700 italic">"Sustainable Development for All."</p>
-            <p class="text-gray-700 italic">"Creating Opportunities, Building Futures."</p>
-          </div>
-        </div>
-
-        <!-- Column 2: Quick Links -->
-        <div class="md:w-1/4">
-          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
-          <ul class="space-y-3">
-            <li><a href="./index.html" class="footer-link text-gray-600 hover:text-blue-700 block">Home</a></li>
-            <li><a href="./about.html" class="footer-link text-gray-600 hover:text-blue-700 block">About</a></li>
-            <li><a href="./gallery.html" class="footer-link text-gray-600 hover:text-blue-700 block">Gallery</a></li>
-            <li><a href="./service.html" class="footer-link text-gray-600 hover:text-blue-700 block">Services</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 3: More Quick Links -->
-        <div class="md:w-1/4">
-          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
-          <ul class="space-y-3">
-            <li><a href="./our-product.html" class="footer-link text-gray-600 hover:text-blue-700 block">Projects</a></li>
-            <li><a href="./career.html" class="footer-link text-gray-600 hover:text-blue-700 block">Careers</a></li>
-            <li><a href="./contect.html" class="footer-link text-gray-600 hover:text-blue-700 block">Contact</a></li>
-            <li><a href="./blog.html" class="footer-link text-gray-600 hover:text-blue-700 block">Blog</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Contact and Social -->
-        <div class="md:w-1/4">
-          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Contact Us</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <i class="fas fa-map-marker-alt text-[#1b3860] mt-1 mr-3"></i>
-              <span class="text-gray-600">LIC More, B. Deoghar, Jharkhand </span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-phone text-[#1b3860] mr-3"></i>
-              <span class="text-gray-600">+91-9234241407</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
-              <span class="text-gray-600"> jafpatna@gmail.com</span>
-            </li>
-          </ul>
-          
-          <!-- Social Media Icons -->
-          <div class="mt-4 flex space-x-4">
-            <a href="https://www.facebook.com/geetaambulance" target="_blank" class="social-icon text-gray-600 hover:text-[#1b3860]">
-              <i class="fab fa-facebook-f text-xl"></i>
-            </a>
-            <a href="https://twitter.com/geetaambulance" target="_blank" class="social-icon text-gray-600 hover:text-[#1b3860]">
-              <i class="fab fa-twitter text-xl"></i>
-            </a>
-            <a href="https://www.instagram.com/geetaambulance" target="_blank" class="social-icon text-gray-600 hover:text-[#1b3860]">
-              <i class="fab fa-instagram text-xl"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/geetaambulance" target="_blank" class="social-icon text-gray-600 hover:text-[#1b3860]">
-              <i class="fab fa-linkedin-in text-xl"></i>
-            </a>
-            <a href="https://www.youtube.com/@JANAKANKSHAFOUNDATION" target="_blank" class="social-icon text-gray-600 hover:text-[#1b3860]">
-              <i class="fab fa-youtube text-xl"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Copyright Section -->
-    <div class="bg-gray-100 border-t border-gray-300 py-4">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="text-gray-600 text-sm mb-2 md:mb-0">
-            Copyright © 2025 JAN AKANKSHA FOUNDATION. All Rights Reserved
-          </div>
-          <div class="text-gray-600 text-sm">
-            Design &amp; developed by 
-            <a class="text-blue-600 hover:underline font-medium" href="https://globias.com/">globias</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Counter Script -->
-  <script>
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        const current = +counter.innerText.replace(/,/g, '');
-        const increment = target / 200;
-
-        if (current < target) {
-          counter.innerText = Math.ceil(current + increment).toLocaleString();
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.innerText = target.toLocaleString();
+    <!-- About Section -->
+    <div
+      class="max-w-7xl mx-auto px-4 py-8"
+      style="
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+      "
+    >
+      <style>
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
         }
-      };
-      updateCounter();
-    });
-  </script>
 
-  <!-- Animation Script for Related Services -->
-  <script>
-    // Function to check if element is in viewport
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
-
-    // Function to add animation class when elements are in viewport
-    function animateRelatedServices() {
-      const relatedServiceCards = document.querySelectorAll('.group');
-      
-      relatedServiceCards.forEach(card => {
-        if (isInViewport(card)) {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
+        .floating-image {
+          animation: float 3s ease-in-out infinite;
         }
-      });
-    }
+      </style>
 
-    // Set initial state
-    document.addEventListener('DOMContentLoaded', function() {
-      const relatedServiceCards = document.querySelectorAll('.group');
-      relatedServiceCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      });
-      
-      // Run animation on page load and scroll
-      animateRelatedServices();
-      window.addEventListener('scroll', animateRelatedServices);
-    });
-  </script>
+      <section class="flex flex-col lg:flex-row gap-6 lg:gap-10 text-sm">
+        <div class="w-full lg:w-1/2">
+          <h2 class="font-extrabold text-xl uppercase mb-4">
+            <span class="text-[#e74c3c]">WELCOME TO OUR</span> JAN AKANKSHA
+            FOUNDATION
+          </h2>
+          <p class="mb-4 text-justify text-[16px]">
+            JAN AKANKSHA FOUNDATION is a reputed non-profit organization
+            dedicated to creating sustainable change in the communities of
+            Jharkhand. Founded with a vision to empower marginalized sections of
+            society, we work across multiple sectors including education,
+            health, agriculture, environment, and rural development.
+          </p>
+          <p class="mb-4 text-justify text-[16px]">
+            At JAN AKANKSHA FOUNDATION, our core philosophy revolves around
+            community participation, sustainable development, and inclusive
+            growth. We implement flagship initiatives like Akanksha Kendra and
+            Gramin-e-Vikas Pariyojana to address critical challenges faced by
+            rural and urban communities in Jharkhand.
+          </p>
+          <p class="text-justify text-[16px]">
+            Driven by a team of dedicated professionals and community
+            volunteers, we strive to create lasting impact through our programs
+            that reach all districts and panchayats of Jharkhand. Our approach
+            combines traditional wisdom with modern techniques to ensure
+            holistic development of the communities we serve.
+          </p>
 
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-</body>
+          <!-- Registration Information Section -->
+          <div class="registration-info">
+            <h3><i class="fas fa-certificate mr-2"></i>Registration Details</h3>
+            <p><strong>Established:</strong> Under the Companies Act</p>
+            <p>
+              <strong>Registration Status:</strong> Active with Ministry of
+              Corporate Affairs (MCA)
+            </p>
+            <p><strong>Date of Incorporation:</strong> 05-Apr-2022</p>
+            <p>
+              <strong>Corporate Identification Number (CIN):</strong>
+              U85300BR2022NPL057293
+            </p>
+            <p><strong>Entity Type:</strong> Non-government Organization</p>
+            <p>
+              <strong>Focus Area:</strong> Community, Personal & Social Services
+            </p>
+            <p>
+              JAN AKANKSHA FOUNDATION operates with a defined focus on
+              Community, personal & Social services, aligning its goals with the
+              standards of India's evolving corporate ecosystem.
+            </p>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2 flex justify-center items-center">
+          <img
+            src="./image/banner/ab (1).jpeg"
+            alt="Community Development by JAN AKANKSHA FOUNDATION"
+            class="w-[600px] h-[500px] max-w-[700px] sm:max-w-sm md:max-w-md object-cover rounded-md shadow-lg floating-image"
+            style="
+              border-top-right-radius: 60px;
+              border-bottom-left-radius: 60px;
+            "
+          />
+        </div>
+      </section>
+    </div>
+    <!-- About Section End -->
+
+    <!-- Related Services Section -->
+    <section
+      class="py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden"
+    >
+      <!-- Background decoration -->
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 bg-[#e74c3c] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"
+        ></div>
+        <div
+          class="absolute -bottom-40 -left-40 w-80 h-80 bg-[#e74c3c] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-[#e74c3c] uppercase mb-4 relative inline-block"
+          >
+            Related Initiatives
+            <span
+              class="absolute bottom-0 left-0 w-full h-1 bg-[#e74c3c] transform scale-x-50"
+            ></span>
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg mt-6">
+            Complementary programs that support our core mission of community
+            development
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Related Service 1 -->
+          <div
+            class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl"
+          >
+            <div class="p-6">
+              <div
+                class="w-16 h-16 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-[#e74c3c] transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-female text-2xl text-[#e74c3c] group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3
+                class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-[#e74c3c] transition-colors duration-300"
+              >
+                Women Empowerment
+              </h3>
+              <p class="text-gray-600 text-center mb-4">
+                Programs focused on gender equality, economic independence, and
+                leadership development for women.
+              </p>
+            </div>
+          </div>
+
+          <!-- Related Service 2 -->
+          <div
+            class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl"
+          >
+            <div class="p-6">
+              <div
+                class="w-16 h-16 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-[#e74c3c] transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-child text-2xl text-[#e74c3c] group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3
+                class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-[#e74c3c] transition-colors duration-300"
+              >
+                Child Development
+              </h3>
+              <p class="text-gray-600 text-center mb-4">
+                Holistic development programs for children focusing on
+                education, health, and nutrition.
+              </p>
+            </div>
+          </div>
+
+          <!-- Related Service 3 -->
+          <div
+            class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl"
+          >
+            <div class="p-6">
+              <div
+                class="w-16 h-16 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-[#e74c3c] transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-users text-2xl text-[#e74c3c] group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3
+                class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-[#e74c3c] transition-colors duration-300"
+              >
+                Community Mobilization
+              </h3>
+              <p class="text-gray-600 text-center mb-4">
+                Strengthening community institutions and promoting collective
+                action for development.
+              </p>
+            </div>
+          </div>
+
+          <!-- Related Service 4 -->
+          <div
+            class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:shadow-xl"
+          >
+            <div class="p-6">
+              <div
+                class="w-16 h-16 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-[#e74c3c] transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-graduation-cap text-2xl text-[#e74c3c] group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3
+                class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-[#e74c3c] transition-colors duration-300"
+              >
+                Capacity Building
+              </h3>
+              <p class="text-gray-600 text-center mb-4">
+                Training and skill development programs for community members
+                and local institutions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <button
+            class="bg-[#e74c3c] hover:bg-[#c0392b] text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            View All Initiatives
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Related Services Section End -->
+
+    <!-- COUNTER-SECTION-START -->
+    <section class="py-6">
+      <div
+        class="max-w-9xl mx-auto px-4 bg-[#1b3860] text-white text-center py-8 rounded"
+      >
+        <div class="flex flex-wrap justify-center items-center gap-y-6">
+          <div
+            class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2"
+          >
+            <i class="fas fa-map-marker-alt text-xl md:text-2xl mb-1"></i>
+            <span
+              class="counter text-[16px] md:text-[18px] font-bold"
+              data-target="24"
+              >0</span
+            >
+            <span class="text-xs md:text-sm font-bold uppercase mt-1"
+              >Districts</span
+            >
+          </div>
+          <div
+            class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2"
+          >
+            <i class="fas fa-users text-xl md:text-2xl mb-1"></i>
+            <span
+              class="counter text-[16px] md:text-[18px] font-bold"
+              data-target="500000"
+              >0</span
+            >
+            <span class="text-xs md:text-sm font-bold uppercase mt-1"
+              >Beneficiaries</span
+            >
+          </div>
+          <div
+            class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2"
+          >
+            <i class="fas fa-project-diagram text-xl md:text-2xl mb-1"></i>
+            <span
+              class="counter text-[16px] md:text-[18px] font-bold"
+              data-target="100"
+              >0</span
+            >
+            <span class="text-xs md:text-sm font-bold uppercase mt-1"
+              >Projects</span
+            >
+          </div>
+          <div
+            class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2"
+          >
+            <i class="fas fa-handshake text-xl md:text-2xl mb-1"></i>
+            <span
+              class="counter text-[16px] md:text-[18px] font-bold"
+              data-target="50"
+              >0</span
+            >
+            <span class="text-xs md:text-sm font-bold uppercase mt-1"
+              >Partners</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- COUNTER-SECTION-END -->
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-50 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Column 1: Logo and Statement -->
+          <div
+            class="md:w-1/4 flex flex-col items-start"
+            style="margin-top: -30px"
+          >
+            <a href="./index.html"
+              ><img
+                src="./image/logo/logo.png"
+                alt="JAN AKANKSHA FOUNDATION Logo"
+                class="w-24 h-auto mb-4"
+            /></a>
+            <div class="space-y-2">
+              <p class="text-gray-700 italic">
+                "Empowering Communities, Transforming Lives."
+              </p>
+              <p class="text-gray-700 italic">
+                "Sustainable Development for All."
+              </p>
+              <p class="text-gray-700 italic">
+                "Creating Opportunities, Building Futures."
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="md:w-1/4">
+            <h3
+              class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300"
+            >
+              Quick Links
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./index.html"
+                  class="footer-link text-gray-600 hover:text-blue-700 block"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="footer-link text-gray-600 hover:text-blue-700 block"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./gallery.html"
+                  class="footer-link text-gray-600 hover:text-blue-700 block"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./service.html"
+                  class="footer-link text-gray-600 hover:text-blue-700 block"
+                  >Services</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: More Quick Links -->
+          <div class="md:w-1/4">
+            <h3
+              class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300"
+            >
+              Quick Links
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./our-product.html"
+                  class="footer-link text-gray-600 hover:text-blue-700 block"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./career.html"
+                  class="footer-link text-gray-600 hover:text-blue-700 block"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./contect.html"
+                  class="footer-link text-gray-600 hover:text-blue-700 block"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./blog.html"
+                  class="footer-link text-gray-600 hover:text-blue-700 block"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact and Social -->
+          <div class="md:w-1/4">
+            <h3
+              class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300"
+            >
+              Contact Us
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-[#1b3860] mt-1 mr-3"></i>
+                <span class="text-gray-600"
+                  >LIC More, B. Deoghar, Jharkhand
+                </span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone text-[#1b3860] mr-3"></i>
+                <span class="text-gray-600">+91-9234241407</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
+                <span class="text-gray-600"> jafpatna@gmail.com</span>
+              </li>
+            </ul>
+
+            <!-- Social Media Icons -->
+            <div class="mt-4 flex space-x-4">
+              <a
+                href="https://www.facebook.com/geetaambulance"
+                target="_blank"
+                class="social-icon text-gray-600 hover:text-[#1b3860]"
+              >
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a
+                href="https://twitter.com/geetaambulance"
+                target="_blank"
+                class="social-icon text-gray-600 hover:text-[#1b3860]"
+              >
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/geetaambulance"
+                target="_blank"
+                class="social-icon text-gray-600 hover:text-[#1b3860]"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/geetaambulance"
+                target="_blank"
+                class="social-icon text-gray-600 hover:text-[#1b3860]"
+              >
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@JANAKANKSHAFOUNDATION"
+                target="_blank"
+                class="social-icon text-gray-600 hover:text-[#1b3860]"
+              >
+                <i class="fab fa-youtube text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Section -->
+      <div class="bg-gray-100 border-t border-gray-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="text-gray-600 text-sm mb-2 md:mb-0">
+              Copyright © 2025 JAN AKANKSHA FOUNDATION. All Rights Reserved
+            </div>
+            <div class="text-gray-600 text-sm">
+              Design &amp; developed by
+              <a
+                class="text-blue-600 hover:underline font-medium"
+                href="https://globias.com/"
+                >globias</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Counter Script -->
+    <script>
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        const updateCounter = () => {
+          const target = +counter.getAttribute("data-target");
+          const current = +counter.innerText.replace(/,/g, "");
+          const increment = target / 200;
+
+          if (current < target) {
+            counter.innerText = Math.ceil(current + increment).toLocaleString();
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target.toLocaleString();
+          }
+        };
+        updateCounter();
+      });
+    </script>
+
+    <!-- Animation Script for Related Services -->
+    <script>
+      // Function to check if element is in viewport
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      // Function to add animation class when elements are in viewport
+      function animateRelatedServices() {
+        const relatedServiceCards = document.querySelectorAll(".group");
+
+        relatedServiceCards.forEach((card) => {
+          if (isInViewport(card)) {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }
+        });
+      }
+
+      // Set initial state
+      document.addEventListener("DOMContentLoaded", function () {
+        const relatedServiceCards = document.querySelectorAll(".group");
+        relatedServiceCards.forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        });
+
+        // Run animation on page load and scroll
+        animateRelatedServices();
+        window.addEventListener("scroll", animateRelatedServices);
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+  </body>
 </html>
