@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Careers | JAN AKANKSHA FOUNDATION</title>
-    <meta name="description" content="Join JAN AKANKSHA FOUNDATION - Explore career opportunities in education, health, agriculture, environment, and rural development." />
-    <meta name="keywords" content="JAN AKANKSHA FOUNDATION, careers, jobs, non-profit, education, health, agriculture, environment, rural development" />
-    <meta name="author" content="JAN AKANKSHA FOUNDATION" />
+    <title>Careers | JAN AKANSHA KENDRA</title>
+    <meta name="description" content="Find current job vacancies at JAN AKANSHA KENDRA. Search and apply for positions in banking, government services, and more." />
+    <meta name="keywords" content="JAN AKANSHA KENDRA, careers, jobs, vacancies, employment, banking services, government services, CSP" />
+    <meta name="author" content="JAN AKANSHA KENDRA" />
     <meta name="robots" content="index, follow" />
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -434,6 +434,91 @@
         margin-right: auto;
       }
       
+      /* Vacancy Search Section */
+      .vacancy-search {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+      
+      .search-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      
+      .filter-group {
+        flex: 1;
+        min-width: 200px;
+      }
+      
+      .filter-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #333;
+      }
+      
+      .filter-group input,
+      .filter-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      
+      .search-btn-vacancy {
+        background-color: #1b3860;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        align-self: flex-end;
+      }
+      
+      .search-btn-vacancy:hover {
+        background-color: #e9a86b;
+      }
+      
+      .job-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+      }
+      
+      .job-meta-item {
+        display: flex;
+        align-items: center;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      
+      .job-meta-item i {
+        margin-right: 5px;
+        color: #e9a86b;
+      }
+      
+      .job-description {
+        margin-bottom: 15px;
+        color: #555;
+      }
+      
+      .no-results {
+        text-align: center;
+        padding: 30px;
+        color: #666;
+        font-size: 1.1rem;
+      }
+      
       /* Highlight effect for form */
       .highlight-form {
         animation: highlight 2s ease;
@@ -555,7 +640,7 @@
           const message = document.getElementById('message').value;
           
           // Create WhatsApp message
-          const whatsappMessage = `Hello JAN AKANKSHA FOUNDATION, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+          const whatsappMessage = `Hello JAN AKANSHA KENDRA, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
           
           // Open WhatsApp with pre-filled message
           const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;
@@ -608,7 +693,7 @@
           const message = document.getElementById('appMessage').value;
           
           // Create WhatsApp message
-          const whatsappMessage = `Hello JAN AKANKSHA FOUNDATION, I would like to apply for a position:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0APosition: ${position}%0AExperience: ${experience}%0AMessage: ${message}`;
+          const whatsappMessage = `Hello JAN AKANSHA KENDRA, I would like to apply for a position:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0APosition: ${position}%0AExperience: ${experience}%0AMessage: ${message}`;
           
           // Open WhatsApp with pre-filled message
           const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;
@@ -655,6 +740,53 @@
             }, 2000);
           });
         });
+        
+        // Vacancy search functionality
+        const searchVacancyBtn = document.getElementById('searchVacancyBtn');
+        const positionFilter = document.getElementById('positionFilter');
+        const locationFilter = document.getElementById('locationFilter');
+        const departmentFilter = document.getElementById('departmentFilter');
+        const jobCards = document.querySelectorAll('.job-card');
+        const noResults = document.getElementById('noResults');
+        
+        // Function to filter job cards
+        function filterJobs() {
+          const positionValue = positionFilter.value.toLowerCase();
+          const locationValue = locationFilter.value.toLowerCase();
+          const departmentValue = departmentFilter.value.toLowerCase();
+          
+          let hasResults = false;
+          
+          jobCards.forEach(card => {
+            const title = card.querySelector('.job-title').textContent.toLowerCase();
+            const location = card.querySelector('.job-location').textContent.toLowerCase();
+            const department = card.getAttribute('data-department').toLowerCase();
+            
+            if (
+              (positionValue === '' || title.includes(positionValue)) &&
+              (locationValue === '' || location.includes(locationValue)) &&
+              (departmentValue === '' || department.includes(departmentValue))
+            ) {
+              card.style.display = 'block';
+              hasResults = true;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+          
+          // Show or hide no results message
+          if (hasResults) {
+            noResults.style.display = 'none';
+          } else {
+            noResults.style.display = 'block';
+          }
+        }
+        
+        // Add event listeners to filters
+        searchVacancyBtn.addEventListener('click', filterJobs);
+        positionFilter.addEventListener('input', filterJobs);
+        locationFilter.addEventListener('input', filterJobs);
+        departmentFilter.addEventListener('change', filterJobs);
       });
     </script>
   </head>
@@ -670,9 +802,9 @@
               <i class="fas fa-phone-alt mr-2"></i>
               <span>+91-9234241407</span>
             </a>
-            <a href="mailto:hrjafranchi@gmail.com" class="flex items-center">
+            <a href="mailto: jafpatna@gmail.com" class="flex items-center">
               <i class="fas fa-envelope mr-2"></i>
-              <span>hrjafranchi@gmail.com</span>
+              <span> jafpatna@gmail.com</span>
             </a>
           </div>
           <div class="flex items-center space-x-4">
@@ -705,7 +837,7 @@
             <a href="./index.html" class="flex items-center">
               <img
                 src="./image/logo/logo.png"
-                alt="JAN AKANKSHA FOUNDATION Logo"
+                alt="JAN AKANSHA KENDRA Logo"
                 class="logo-img"
               />
             </a>
@@ -735,7 +867,7 @@
             <li><a href="./service.html" class="nav-link"><i class="fas fa-concierge-bell menu-icon"></i>Service</a></li>
             <li><a href="./our-product.html" class="nav-link"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
              <li><a href="./gallery.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Gallery</a></li>
-            <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+            <!-- <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li> -->
             <li><a href="./career.html" class="nav-link"><i class="fas fa-briefcase menu-icon"></i>Career</a></li>
             <li><a href="./contect.html" class="nav-link"><i class="fas fa-envelope menu-icon"></i>Contact Us</a></li>
           </ul>
@@ -797,14 +929,45 @@
               <label for="service">Service Type</label>
               <select id="service" name="service">
                 <option value="">Select a service</option>
-                <option value="Education & Literacy">Education & Literacy</option>
-                <option value="Health & Family Welfare">Health & Family Welfare</option>
-                <option value="Agriculture & Animal Welfare">Agriculture & Animal Welfare</option>
-                <option value="Environment & Forests">Environment & Forests</option>
-                <option value="Rural Development">Rural Development</option>
-                <option value="Urban Development">Urban Development</option>
-                <option value="Akanksha Kendra">Akanksha Kendra</option>
-                <option value="Gramin-e-Vikas Pariyojana">Gramin-e-Vikas Pariyojana</option>
+                <option value="E-District Services">E-District Services</option>
+                <option value="Aadhar Card Correction">Aadhar Card Correction</option>
+                <option value="Banking CSP">Banking CSP</option>
+                <option value="Ayushman Bharat Card">Ayushman Bharat Card</option>
+                <option value="E-sharm & LABOUR Card">E-sharm & LABOUR Card</option>
+                <option value="PM Kisan Yojna">PM Kisan Yojna</option>
+                <option value="AEPS">AEPS</option>
+                <option value="BBPS">BBPS</option>
+                <option value="Money Transfer">Money Transfer</option>
+                <option value="Bank Account Opening">Bank Account Opening</option>
+                <option value="Mobile Recharge">Mobile Recharge</option>
+                <option value="Bus Booking">Bus Booking</option>
+                <option value="Flight Booking">Flight Booking</option>
+                <option value="IRCTC">IRCTC</option>
+                <option value="Pan Card">Pan Card</option>
+                <option value="Voter Card">Voter Card</option>
+                <option value="Driving License">Driving License</option>
+                <option value="Kisan Mandhan Yojna">Kisan Mandhan Yojna</option>
+                <option value="GST Registration">GST Registration</option>
+                <option value="Income Tax Return">Income Tax Return</option>
+                <option value="Fasal Bima Yojna">Fasal Bima Yojna</option>
+                <option value="Insurance">Insurance</option>
+                <option value="Loan">Loan</option>
+                <option value="ATM Services">ATM Services</option>
+                <option value="Hotel Booking">Hotel Booking</option>
+                <option value="DTH Recharge">DTH Recharge</option>
+                <option value="Kisok Banking CSP">Kisok Banking CSP</option>
+                <option value="New Insurance">New Insurance</option>
+                <option value="Insurance Premium">Insurance Premium</option>
+                <option value="FSSAI Registration">FSSAI Registration</option>
+                <option value="Business Loan">Business Loan</option>
+                <option value="Credit Card Bill Payment">Credit Card Bill Payment</option>
+                <option value="Passport">Passport</option>
+                <option value="Online Shopping">Online Shopping</option>
+                <option value="MPOS Machine">MPOS Machine</option>
+                <option value="Residential Certificate">Residential Certificate</option>
+                <option value="Metro Card Recharge">Metro Card Recharge</option>
+                <option value="Wallet Transfer">Wallet Transfer</option>
+                <option value="NSDL Payments Bank">NSDL Payments Bank</option>
                 <option value="General Inquiry">General Inquiry</option>
               </select>
             </div>
@@ -822,21 +985,21 @@
     <!-- Hero Section -->
     <div class="hero-section">
       <div class="container mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Careers at JAN AKANKSHA FOUNDATION</h1>
-        <p class="text-xl max-w-3xl mx-auto">Join our team of dedicated professionals committed to empowering communities and creating sustainable change across Jharkhand.</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Careers at JAN AKANSHA KENDRA</h1>
+        <p class="text-xl max-w-3xl mx-auto">Join our team of dedicated professionals committed to providing essential services to communities across Jharkhand.</p>
       </div>
     </div>
     
-    <!-- About Working at JAN AKANKSHA FOUNDATION -->
+    <!-- About Working at JAN AKANSHA KENDRA -->
     <div class="container mx-auto px-4 py-16">
       <h2 class="section-title">Why Work With Us?</h2>
-      <p class="section-subtitle">At JAN AKANKSHA FOUNDATION, we believe our employees are our greatest asset. We offer a supportive work environment where you can grow professionally while making a real difference in people's lives.</p>
+      <p class="section-subtitle">At JAN AKANSHA KENDRA, we believe our employees are our greatest asset. We offer a supportive work environment where you can grow professionally while making a real difference in people's lives.</p>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
         <div class="benefit-card">
           <i class="fas fa-hands-helping benefit-icon"></i>
-          <h3 class="text-xl font-bold mb-3">Meaningful Impact</h3>
-          <p>Every day, you'll have the opportunity to create positive change in communities across Jharkhand, empowering marginalized sections of society.</p>
+          <h3 class="text-xl font-bold mb-3">Community Impact</h3>
+          <p>Every day, you'll have the opportunity to provide essential services that make a real difference in people's lives across Jharkhand.</p>
         </div>
         
         <div class="benefit-card">
@@ -848,43 +1011,175 @@
         <div class="benefit-card">
           <i class="fas fa-users benefit-icon"></i>
           <h3 class="text-xl font-bold mb-3">Collaborative Team</h3>
-          <p>Join a team of passionate professionals who support each other and work together to achieve our mission of sustainable community development.</p>
+          <p>Join a team of passionate professionals who support each other and work together to achieve our mission of serving communities.</p>
         </div>
       </div>
     </div>
     
-    <!-- Current Job Openings -->
+    <!-- Vacancy Search Section -->
     <div class="bg-gray-100 py-16">
       <div class="container mx-auto px-4">
-        <h2 class="section-title">Current Job Openings</h2>
-        <p class="section-subtitle">We're always looking for talented individuals to join our team. Check out our current openings below.</p>
+        <h2 class="section-title">Find Your Perfect Job</h2>
+        <p class="section-subtitle">Search through our current vacancies to find the position that's right for you.</p>
         
         <div class="max-w-4xl mx-auto mt-8">
-          <div class="job-card">
-            <h3 class="job-title">Program Coordinator</h3>
+          <div class="vacancy-search">
+            <div class="search-filters">
+              <div class="filter-group">
+                <label for="positionFilter">Position</label>
+                <input type="text" id="positionFilter" placeholder="Search by position...">
+              </div>
+              <div class="filter-group">
+                <label for="locationFilter">Location</label>
+                <input type="text" id="locationFilter" placeholder="Search by location...">
+              </div>
+              <div class="filter-group">
+                <label for="departmentFilter">Department</label>
+                <select id="departmentFilter">
+                  <option value="">All Departments</option>
+                  <option value="Banking">Banking</option>
+                  <option value="Government Services">Government Services</option>
+                  <option value="Travel & Tourism">Travel & Tourism</option>
+                  <option value="Insurance">Insurance</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Administrative">Administrative</option>
+                </select>
+              </div>
+              <button id="searchVacancyBtn" class="search-btn-vacancy">
+                <i class="fas fa-search mr-2"></i>Search
+              </button>
+            </div>
+          </div>
+          
+          <div id="noResults" class="no-results" style="display: none;">
+            <i class="fas fa-search fa-3x mb-4 text-gray-400"></i>
+            <p>No vacancies found matching your criteria. Please try different search terms.</p>
+          </div>
+          
+          <!-- Job Listings -->
+          <div class="job-card" data-department="Banking">
+            <h3 class="job-title">Banking CSP Executive</h3>
             <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>All Districts</p>
-            <p>We're looking for experienced Program Coordinators to manage our community development initiatives across various sectors including education, health, and rural development.</p>
+            <div class="job-meta">
+              <div class="job-meta-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Full Time</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>₹15,000 - ₹25,000/month</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Graduate</span>
+              </div>
+            </div>
+            <p class="job-description">We're looking for Banking CSP Executives to manage our banking services across various banks including ICICI, YES Bank, Punjab National Bank, and more.</p>
             <button class="apply-btn mt-4 apply-now-btn">Apply Now</button>
           </div>
           
-          <div class="job-card">
-            <h3 class="job-title">Field Officer</h3>
-            <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>Rural Areas</p>
-            <p>Seeking dedicated Field Officers to implement our programs at the grassroots level, working directly with communities to ensure project success.</p>
+          <div class="job-card" data-department="Government Services">
+            <h3 class="job-title">E-District Service Officer</h3>
+            <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>All Districts</p>
+            <div class="job-meta">
+              <div class="job-meta-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Full Time</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>₹12,000 - ₹20,000/month</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Intermediate</span>
+              </div>
+            </div>
+            <p class="job-description">Seeking E-District Service Officers to assist citizens with various government services like birth certificates, income certificates, and other documentation.</p>
             <button class="apply-btn mt-4 apply-now-btn">Apply Now</button>
           </div>
           
-          <div class="job-card">
-            <h3 class="job-title">Training Specialist</h3>
-            <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>Regional Offices</p>
-            <p>We need skilled Training Specialists to develop and deliver training programs for community members, staff, and volunteers across our focus areas.</p>
+          <div class="job-card" data-department="Travel & Tourism">
+            <h3 class="job-title">Travel & Booking Executive</h3>
+            <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>Urban Areas</p>
+            <div class="job-meta">
+              <div class="job-meta-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Full Time</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>₹10,000 - ₹18,000/month</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Intermediate</span>
+              </div>
+            </div>
+            <p class="job-description">We need Travel & Booking Executives to handle flight, bus, and hotel booking services for our customers. Good communication skills required.</p>
             <button class="apply-btn mt-4 apply-now-btn">Apply Now</button>
           </div>
           
-          <div class="job-card">
-            <h3 class="job-title">Monitoring & Evaluation Officer</h3>
-            <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>Head Office</p>
-            <p>Looking for M&E Officers to track program progress, measure impact, and ensure accountability across all our initiatives.</p>
+          <div class="job-card" data-department="Insurance">
+            <h3 class="job-title">Insurance Advisor</h3>
+            <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>All Districts</p>
+            <div class="job-meta">
+              <div class="job-meta-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Full Time</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>₹15,000 - ₹30,000/month + Commission</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Graduate</span>
+              </div>
+            </div>
+            <p class="job-description">Looking for Insurance Advisors to promote and sell various insurance products including life, health, car, and bike insurance.</p>
+            <button class="apply-btn mt-4 apply-now-btn">Apply Now</button>
+          </div>
+          
+          <div class="job-card" data-department="Finance">
+            <h3 class="job-title">Financial Services Executive</h3>
+            <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>All Districts</p>
+            <div class="job-meta">
+              <div class="job-meta-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Full Time</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>₹12,000 - ₹22,000/month</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Graduate</span>
+              </div>
+            </div>
+            <p class="job-description">We need Financial Services Executives to handle money transfers, AEPS services, and other financial transactions at our centers.</p>
+            <button class="apply-btn mt-4 apply-now-btn">Apply Now</button>
+          </div>
+          
+          <div class="job-card" data-department="Administrative">
+            <h3 class="job-title">Center Manager</h3>
+            <p class="job-location"><i class="fas fa-map-marker-alt mr-2 text-[#e9a86b]"></i>All Districts</p>
+            <div class="job-meta">
+              <div class="job-meta-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Full Time</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>₹20,000 - ₹35,000/month</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Graduate</span>
+              </div>
+            </div>
+            <p class="job-description">Seeking experienced Center Managers to oversee daily operations at our JAN AKANSHA KENDRA centers and ensure quality service delivery.</p>
             <button class="apply-btn mt-4 apply-now-btn">Apply Now</button>
           </div>
         </div>
@@ -894,7 +1189,7 @@
     <!-- Job Application Form -->
     <div class="container mx-auto px-4 py-16">
       <h2 class="section-title">Join Our Team</h2>
-      <p class="section-subtitle">Interested in working with JAN AKANKSHA FOUNDATION? Fill out the form below and we'll get in touch with you.</p>
+      <p class="section-subtitle">Interested in working with JAN AKANSHA KENDRA? Fill out the form below and we'll get in touch with you.</p>
       
       <div class="max-w-3xl mx-auto mt-8">
         <div class="application-form" id="jobApplicationForm">
@@ -916,10 +1211,12 @@
                 <label for="appPosition">Position Applied For *</label>
                 <select id="appPosition" name="appPosition" required>
                   <option value="">Select a position</option>
-                  <option value="Program Coordinator">Program Coordinator</option>
-                  <option value="Field Officer">Field Officer</option>
-                  <option value="Training Specialist">Training Specialist</option>
-                  <option value="Monitoring & Evaluation Officer">Monitoring & Evaluation Officer</option>
+                  <option value="Banking CSP Executive">Banking CSP Executive</option>
+                  <option value="E-District Service Officer">E-District Service Officer</option>
+                  <option value="Travel & Booking Executive">Travel & Booking Executive</option>
+                  <option value="Insurance Advisor">Insurance Advisor</option>
+                  <option value="Financial Services Executive">Financial Services Executive</option>
+                  <option value="Center Manager">Center Manager</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -941,7 +1238,7 @@
             </div>
             <div class="form-group mt-6">
               <label for="appMessage">Cover Letter / Additional Information</label>
-              <textarea id="appMessage" name="appMessage" placeholder="Tell us why you're interested in joining JAN AKANKSHA FOUNDATION and what makes you a great fit for the position..."></textarea>
+              <textarea id="appMessage" name="appMessage" placeholder="Tell us why you're interested in joining JAN AKANSHA KENDRA and what makes you a great fit for the position..."></textarea>
             </div>
             <button type="submit" class="submit-btn mt-4">Submit Application</button>
           </form>
@@ -957,13 +1254,13 @@
           <div class="md:w-1/4 flex flex-col items-start" style="margin-top: -30px;">
             <a href="./index.html"><img
               src="./image/logo/logo.png"
-              alt="JAN AKANKSHA FOUNDATION Logo"
+              alt="JAN AKANSHA KENDRA Logo"
               class="w-24 h-auto mb-4"
             /></a>
             <div class="space-y-2">
-              <p class="text-gray-700 italic">"Empowering Communities, Transforming Lives."</p>
-              <p class="text-gray-700 italic">"Sustainable Development for All."</p>
-              <p class="text-gray-700 italic">"Creating Opportunities, Building Futures."</p>
+              <p class="text-gray-700 italic">"Your One-Stop Service Center"</p>
+              <p class="text-gray-700 italic">"Simplifying Government Services"</p>
+              <p class="text-gray-700 italic">"Empowering Communities"</p>
             </div>
           </div>
 
@@ -985,7 +1282,7 @@
               <li><a href="./our-product.html" class="footer-link text-gray-600 hover:text-blue-700 block">Projects</a></li>
               <li><a href="./career.html" class="footer-link text-gray-600 hover:text-blue-700 block">Careers</a></li>
               <li><a href="./contect.html" class="footer-link text-gray-600 hover:text-blue-700 block">Contact</a></li>
-              <li><a href="./blog.html" class="footer-link text-gray-600 hover:text-blue-700 block">Blog</a></li>
+              <li><a href="./mission-vision.html" class="footer-link text-gray-600 hover:text-blue-700 block">Mission</a></li>
             </ul>
           </div>
 
@@ -999,11 +1296,11 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-phone text-[#1b3860] mr-3"></i>
-                <span class="text-gray-600">+91-9234241407</span>
+                <span class="text-gray-600">9234241407</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
-                <span class="text-gray-600">hrjafranchi@gmail.com</span>
+                <span class="text-gray-600"> www.janakanksha.net</span>
               </li>
             </ul>
             
@@ -1031,7 +1328,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row justify-between items-center">
             <div class="text-gray-600 text-sm mb-2 md:mb-0">
-              Copyright © 2025 JAN AKANKSHA FOUNDATION. All Rights Reserved
+              Copyright © 2025 JAN AKANSHA KENDRA. All Rights Reserved
             </div>
             <div class="text-gray-600 text-sm">
               Design &amp; developed by 

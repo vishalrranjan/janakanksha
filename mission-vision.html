@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mission-Vision - Geeta Ambulance Services</title>
+  <title>Mission-Vision - Jan Akanksha Foundation</title>
   
   <!-- Meta Tags for SEO -->
-  <meta name="description" content="Geeta Ambulance Services - Our mission is to provide rapid, reliable emergency medical transportation. Our vision is to be the leading emergency medical service provider.">
-  <meta name="keywords" content="Geeta Ambulance, mission, vision, emergency medical services, ambulance, core values, healthcare">
-  <meta name="author" content="Geeta Ambulance Services">
+  <meta name="description" content="Jan Akanksha Foundation - Our mission is to build an empowered, educated, and self-reliant society. Our vision is to create a socially just, economically strong, and environmentally responsible India.">
+  <meta name="keywords" content="Jan Akanksha Foundation, mission, vision, social development, education, healthcare, empowerment, rural development">
+  <meta name="author" content="Jan Akanksha Foundation">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -344,6 +344,83 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+    
+    /* Custom section styles */
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background-color: #e9a86b;
+      bottom: -8px;
+      left: 0;
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .objective-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    
+    .objective-icon {
+      color: #1b3860;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    
+    .team-structure {
+      background-color: #f8f9fa;
+      border-left: 4px solid #1b3860;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 0 5px 5px 0;
+    }
+    
+    .team-title {
+      font-weight: 600;
+      color: #1b3860;
+      margin-bottom: 5px;
+    }
+    
+    /* Image positioning styles */
+    .content-image {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .content-image:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .content-with-image {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .content-with-image {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -359,9 +436,9 @@
             <i class="fas fa-phone-alt mr-2"></i>
             <span>+91-9234241407</span>
           </a>
-          <a href="mailto:hrjafranchi@gmail.com" class="flex items-center">
+          <a href="mailto: jafpatna@gmail.com" class="flex items-center">
             <i class="fas fa-envelope mr-2"></i>
-            <span>hrjafranchi@gmail.com</span>
+            <span> jafpatna@gmail.com</span>
           </a>
         </div>
         <div class="flex items-center space-x-4">
@@ -371,17 +448,17 @@
              Donate-Now
             </button></a>
           </li>
-          <a href="https://www.facebook.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+          <a href="#" target="_blank" class="hover:text-[#e9a86b]">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://twitter.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+          <a href="#" target="_blank" class="hover:text-[#e9a86b]">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="https://www.linkedin.com/company/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+          <a href="#" target="_blank" class="hover:text-[#e9a86b]">
             <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-youtube"></i>
           </a>
         </div>
       </div>
@@ -394,7 +471,7 @@
           <a href="./index.html" class="flex items-center">
             <img
               src="./image/logo/logo.png"
-              alt="Geeta Ambulance Logo"
+              alt="Jan Akanksha Foundation Logo"
               class="logo-img"
             />
           </a>
@@ -424,7 +501,7 @@
           <li><a href="./service.html" class="nav-link"><i class="fas fa-concierge-bell menu-icon"></i>Service</a></li>
           <li><a href="./our-product.html" class="nav-link"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
            <li><a href="./gallery.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Gallery</a></li>
-          <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+          <!-- <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li> -->
           <li><a href="./career.html" class="nav-link"><i class="fas fa-briefcase menu-icon"></i>Career</a></li>
           <li><a href="./contect.html" class="nav-link"><i class="fas fa-envelope menu-icon"></i>Contact Us</a></li>
         </ul>
@@ -461,13 +538,13 @@
   <!-- banner-start -->
   <section>
     <div class="relative w-full h-56 sm:h-64 md:h-72 lg:h-80 xl:h-[400px]">
-      <img src="./image/about/vission-bann.png" alt="Ambulance in emergency" class="w-full h-full object-cover" />
+      <img src="./image/about/vission-bann.png" alt="Jan Akanksha Foundation" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center px-8 sm:px-8 md:px-12 lg:px-16 xl:px-24">
         <h1 class="text-white font-extrabold text-2xl sm:text-3xl md:text-xl lg:text-xl  max-w-3xl mt-[150px]">
-          Mission-Vision
+          Our Mission, Vision & Team
         </h1>
         <p class="text-white text-sm sm:text-base max-w-3xl mt-2">
-          <strong class="font-bold">"Saving Lives, Every Second Counts." &amp;</strong> "Your Emergency, Our Priority."
+          <strong class="font-bold">"Building an empowered, educated, and self-reliant society"</strong>
         </p>
       </div>
     </div>
@@ -475,56 +552,162 @@
   <!-- banner-end -->
 
   <!-- Mission Section -->
-  <section class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start md:gap-8 px-4 sm:px-6 lg:px-8 text-[14px] my-10">
-    <div class="md:w-1/2">
-      <h2 class="font-extrabold text-3xl sm:text-4xl uppercase mb-3 text-[#f3984a]">Mission</h2>
-      <p class="mb-2 text-[16px] text-justify">
-        To provide rapid, reliable, and compassionate emergency medical transportation services to save lives and reduce suffering. We are committed to delivering critical care on wheels with highly trained professionals, state-of-the-art equipment, and a 24/7 response system that ensures no life is lost due to delayed medical attention.
-      </p>
-    </div>
-    <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-      <img src="./image/about/mission.webp" alt="Ambulance Mission" class="w-[300px] max-w-md h-[200px] object-cover rounded-md shadow-lg" />
-    </div>
-  </section>
-
-  <!-- Vision Section (Alternated Layout) -->
-  <section class="max-w-6xl mx-auto flex flex-col md:flex-row-reverse md:items-start md:gap-8 px-4 sm:px-6 lg:px-8 text-[14px] my-10">
-    <div class="md:w-1/2">
-      <h2 class="font-extrabold text-xl sm:text-4xl uppercase mb-3 text-[#f3984a]">Vision</h2>
-      <p class="mb-2 text-[16px] text-justify">
-        To be the leading emergency medical service provider recognized for our exceptional response time, advanced life support capabilities, and unwavering commitment to saving lives. We envision a future where every individual in our service area has immediate access to high-quality emergency medical care, setting new standards in pre-hospital emergency services.
-      </p>
-    </div>
-    <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-      <img src="./image/about/vission.jpeg" alt="Ambulance Vision" class="w-[300px] max-w-md h-[200px] object-cover rounded-md shadow-lg" />
-    </div>
-  </section>
-
-  <!-- Core Values Section -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-[14px] my-10">
-    <h2 class="font-extrabold text-3xl sm:text-4xl uppercase mb-6 text-center text-[#f3984a]">Core Values</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-        <div class="text-[#f3984a] mb-3">
-          <i class="fas fa-heartbeat text-3xl"></i>
+    <div class="text-center mb-8">
+      <h2 class="section-title font-extrabold text-3xl sm:text-4xl uppercase text-[#1b3860]">Our Mission</h2>
+    </div>
+    
+    <div class="content-with-image">
+      <div class="md:w-2/3">
+        <div class="bg-blue-50 rounded-lg p-6 mb-6">
+          <p class="mb-4 text-[16px] text-justify">
+            Our mission is to build an empowered, educated, and self-reliant society by ensuring that every individual — especially those at the grassroots level — has access to education, healthcare, livelihood, and development opportunities.
+          </p>
+          <p class="mb-4 text-[16px] text-justify">
+            We aim to bring government, corporate, and community efforts together for sustainable social progress. Through our flagship initiatives — Jan Akanksha Kendra and Gramin "E" Vikas Pariyojana — we strive to make every welfare scheme and development service accessible, transparent, and free of cost to the last person in society.
+          </p>
         </div>
-        <h3 class="font-bold text-lg mb-2">Compassion</h3>
-        <p class="text-[16px] text-justify">We approach every emergency with empathy and care, treating patients with dignity and respect during their most vulnerable moments.</p>
-      </div>
-      <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-        <div class="text-[#f3984a] mb-3">
-          <i class="fas fa-stopwatch text-3xl"></i>
+        
+        <div>
+          <h3 class="font-bold text-xl mb-4 text-[#1b3860]">Core Mission Objectives:</h3>
+          <div class="space-y-3">
+            <div class="objective-item">
+              <i class="fas fa-graduation-cap objective-icon text-xl"></i>
+              <p class="text-[16px]">To promote education, literacy, and skill development for youth and women.</p>
+            </div>
+            <div class="objective-item">
+              <i class="fas fa-heartbeat objective-icon text-xl"></i>
+              <p class="text-[16px]">To improve health, sanitation, and family welfare in rural and urban areas.</p>
+            </div>
+            <div class="objective-item">
+              <i class="fas fa-seedling objective-icon text-xl"></i>
+              <p class="text-[16px]">To support sustainable agriculture, animal welfare, and environmental protection.</p>
+            </div>
+            <div class="objective-item">
+              <i class="fas fa-briefcase objective-icon text-xl"></i>
+              <p class="text-[16px]">To generate employment, entrepreneurship, and digital empowerment through innovation.</p>
+            </div>
+            <div class="objective-item">
+              <i class="fas fa-users objective-icon text-xl"></i>
+              <p class="text-[16px]">To ensure inclusive development by connecting citizens with government and CSR welfare schemes.</p>
+            </div>
+          </div>
         </div>
-        <h3 class="font-bold text-lg mb-2">Rapid Response</h3>
-        <p class="text-[16px] text-justify">We understand that in emergencies, every second counts. Our teams are trained to respond swiftly and efficiently to save precious time.</p>
       </div>
-      <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-        <div class="text-[#f3984a] mb-3">
-          <i class="fas fa-user-md text-3xl"></i>
+      
+      <div class="md:w-1/3 flex justify-center">
+        <img src="./image/about/mission.webp" alt="Jan Akanksha Foundation Mission" class="content-image w-full h-auto max-w-xs" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-[14px] my-10">
+    <div class="text-center mb-8">
+      <h2 class="section-title font-extrabold text-3xl sm:text-4xl uppercase text-[#1b3860]">Our Vision</h2>
+    </div>
+    
+    <div class="content-with-image flex-row-reverse">
+      <div class="md:w-2/3">
+        <div class="bg-blue-50 rounded-lg p-6 mb-6">
+          <p class="mb-4 text-[16px] text-justify">
+            Our vision is to create a socially just, economically strong, and environmentally responsible India, where every citizen — regardless of background — can live with dignity, opportunity, and self-reliance.
+          </p>
+          <p class="mb-4 text-[16px] text-justify">
+            We aspire to be a national model organization for social transformation by integrating technology, community participation, and transparent governance.
+          </p>
         </div>
-        <h3 class="font-bold text-lg mb-2">Excellence</h3>
-        <p class="text-[16px] text-justify">We maintain the highest standards of medical care through continuous training, advanced equipment, and evidence-based practices.</p>
+        
+        <div>
+          <h3 class="font-bold text-xl mb-4 text-[#1b3860]">We envision an India where:</h3>
+          <div class="space-y-3">
+            <div class="objective-item">
+              <i class="fas fa-book-reader objective-icon text-xl"></i>
+              <p class="text-[16px]">No child remains uneducated.</p>
+            </div>
+            <div class="objective-item">
+              <i class="fas fa-hand-holding-medical objective-icon text-xl"></i>
+              <p class="text-[16px]">No family is deprived of health and welfare services.</p>
+            </div>
+            <div class="objective-item">
+              <i class="fas fa-wifi objective-icon text-xl"></i>
+              <p class="text-[16px]">Every village becomes self-sufficient and digitally connected.</p>
+            </div>
+            <div class="objective-item">
+              <i class="fas fa-gift objective-icon text-xl"></i>
+              <p class="text-[16px]">Every citizen has access to government benefits and livelihood opportunities.</p>
+            </div>
+            <div class="objective-item">
+              <i class="fas fa-balance-scale objective-icon text-xl"></i>
+              <p class="text-[16px]">Development reaches the last person — truly achieving the spirit of "Sabka Saath, Sabka Vikas".</p>
+            </div>
+          </div>
+        </div>
       </div>
+      
+      <div class="md:w-1/3 flex justify-center">
+        <img src="./image/about/vission.jpeg" alt="Jan Akanksha Foundation Vision" class="content-image w-full h-auto max-w-xs" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-[14px] my-10">
+    <div class="text-center mb-8">
+      <h2 class="section-title font-extrabold text-3xl sm:text-4xl uppercase text-[#1b3860]">Our Team</h2>
+    </div>
+    
+    <div class="bg-blue-50 rounded-lg p-6 mb-8">
+      <p class="mb-4 text-[16px] text-justify">
+        The strength of Jan Akanksha Foundation lies in its dedicated and skilled team working across Bihar, Jharkhand, and other Indian states. Our team includes professionals from education, management, social work, IT, and development sectors, who share a common passion for public service and social transformation.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="team-structure">
+        <h3 class="team-title">State Resource Team</h3>
+        <p class="text-[16px]">Experienced professionals providing leadership, strategy, and monitoring support.</p>
+      </div>
+      
+      <div class="team-structure">
+        <h3 class="team-title">District & Block Resource Persons</h3>
+        <p class="text-[16px]">Implementing programs and coordinating with local administration.</p>
+      </div>
+      
+      <div class="team-structure">
+        <h3 class="team-title">Panchayat Resource Persons & Volunteers</h3>
+        <p class="text-[16px]">Working at the grassroots level to deliver services directly to citizens.</p>
+      </div>
+      
+      <div class="team-structure">
+        <h3 class="team-title">Technical & MIS Team</h3>
+        <p class="text-[16px]">Managing data, technology, and communication systems for transparency and efficiency.</p>
+      </div>
+      
+      <div class="team-structure md:col-span-2">
+        <h3 class="team-title">Advisory Board & Management Committee</h3>
+        <p class="text-[16px]">Guiding the foundation's vision, partnerships, and policy direction.</p>
+      </div>
+    </div>
+    
+    <p class="mt-6 text-[16px] text-center italic">
+      Together, this team forms a strong network of changemakers committed to transforming rural and urban India through honesty, dedication, and innovation.
+    </p>
+  </section>
+
+  <!-- Commitment Section -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-[14px] my-10">
+    <div class="text-center mb-8">
+      <h2 class="section-title font-extrabold text-3xl sm:text-4xl uppercase text-[#1b3860]">Our Commitment</h2>
+    </div>
+    
+    <div class="bg-green-50 rounded-lg p-6 text-center">
+      <div class="text-green-600 mb-4">
+        <i class="fas fa-heart text-4xl"></i>
+      </div>
+      <p class="mb-4 text-[16px] text-justify">
+        At Jan Akanksha Foundation, we work not for profit but for people. Our commitment is to ensure that every service, every program, and every project we undertake remains transparent, impactful, and free of exploitation — reaching the hearts and homes of those who need it most.
+      </p>
     </div>
   </section>
 
@@ -533,24 +716,24 @@
     <div class="max-w-9xl mx-auto px-4 bg-[#1b3860] text-white text-center py-8 rounded">
       <div class="flex flex-wrap justify-center items-center gap-y-6">
         <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-          <i class="fas fa-ambulance text-xl md:text-2xl mb-1"></i>
+          <i class="fas fa-project-diagram text-xl md:text-2xl mb-1"></i>
           <span class="counter text-[16px] md:text-[18px] font-bold" data-target="150">0</span>
-          <span class="text-xs md:text-sm font-bold uppercase mt-1">Ambulances</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Projects</span>
         </div>
         <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-          <i class="fas fa-heartbeat text-xl md:text-2xl mb-1"></i>
+          <i class="fas fa-users text-xl md:text-2xl mb-1"></i>
           <span class="counter text-[16px] md:text-[18px] font-bold" data-target="50000">0</span>
-          <span class="text-xs md:text-sm font-bold uppercase mt-1">Lives Saved</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Beneficiaries</span>
         </div>
         <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-          <i class="fas fa-user-md text-xl md:text-2xl mb-1"></i>
+          <i class="fas fa-hands-helping text-xl md:text-2xl mb-1"></i>
           <span class="counter text-[16px] md:text-[18px] font-bold" data-target="200">0</span>
-          <span class="text-xs md:text-sm font-bold uppercase mt-1">Medical Staff</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Volunteers</span>
         </div>
         <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-          <i class="fas fa-hospital text-xl md:text-2xl mb-1"></i>
+          <i class="fas fa-handshake text-xl md:text-2xl mb-1"></i>
           <span class="counter text-[16px] md:text-[18px] font-bold" data-target="25">0</span>
-          <span class="text-xs md:text-sm font-bold uppercase mt-1">Hospitals Served</span>
+          <span class="text-xs md:text-sm font-bold uppercase mt-1">Partners</span>
         </div>
       </div>  
     </div>
@@ -564,13 +747,13 @@
         <div class="md:w-1/4 flex flex-col items-start" style="margin-top: -30px;">
           <a href="./index.html"><img
             src="./image/logo/logo.png"
-            alt="One Square Lifesciences Logo"
+            alt="Jan Akanksha Foundation Logo"
             class="w-24 h-auto mb-4"
           /></a>
           <div class="space-y-2">
-            <p class="text-gray-700 italic">"Saving Lives, Every Second Counts."</p>
-            <p class="text-gray-700 italic">"Your Emergency, Our Priority."</p>
-            <p class="text-gray-700 italic">"Critical Care on Wheels."</p>
+            <p class="text-gray-700 italic">"Building an empowered, educated, and self-reliant society."</p>
+            <p class="text-gray-700 italic">"Working together for social development."</p>
+            <p class="text-gray-700 italic">"Creating opportunities for everyone, everywhere."</p>
           </div>
         </div>
 
@@ -602,17 +785,23 @@
           <ul class="space-y-3">
             <li class="flex items-start">
               <i class="fas fa-map-marker-alt text-[#1b3860] mt-1 mr-3"></i>
-              <span class="text-gray-600">Jharkhand, India </span>
+              <span class="text-gray-600">Jan Akanksha Foundation, Ranchi, LIC More, B. Deoghar, Jharkhand, PIN: 834001</span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-phone text-[#1b3860] mr-3"></i>
-              <span class="text-gray-600">9234241407</span>
+              <span class="text-gray-600">+91 9234241407</span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
-              <span class="text-gray-600">info@domain.name</span>
+              <span class="text-gray-600"> jafpatna@gmail.com</span>
             </li>
           </ul>
+          <div class="flex space-x-3 mt-4">
+            <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank" class="text-pink-600 hover:text-pink-800 text-lg"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" class="text-blue-700 hover:text-blue-900 text-lg"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" class="text-red-600 hover:text-red-800 text-lg"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -622,7 +811,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="text-gray-600 text-sm mb-2 md:mb-0">
-            Copyright © 2025 Ambulance service. All Rights Reserved
+            Copyright © 2025 Jan Akanksha Foundation. All Rights Reserved
           </div>
           <div class="text-gray-600 text-sm">
             Design &amp; developed by 
@@ -746,7 +935,7 @@
         const message = document.getElementById('message').value;
         
         // Create WhatsApp message
-        const whatsappMessage = `Hello SHARGAM ELEVATOR, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+        const whatsappMessage = `Hello Jan Akanksha Foundation, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
         
         // Open WhatsApp with pre-filled message
         const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;

@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Our Initiatives | JAN AKANKSHA FOUNDATION</title>
-  <meta name="description" content="Explore our initiatives including education, health, agriculture, environment, and rural development programs for sustainable community development in Jharkhand." />
-  <meta name="keywords" content="JAN AKANKSHA FOUNDATION, education programs, health initiatives, agriculture development, environment conservation, rural development, Jharkhand, NGO" />
-  <meta name="author" content="JAN AKANKSHA FOUNDATION" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Projects | Jan Akanksha Foundation</title>
+  
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="Explore Jan Akanksha Foundation's projects including Gramin 'E' Vikas Pariyojana, our flagship rural e-development initiative providing free access to government welfare schemes." />
+  <meta name="keywords" content="Jan Akanksha Foundation, Gramin E Vikas Pariyojana, rural development, e-governance, welfare schemes, digital literacy, Jharkhand, NGO projects" />
+  <meta name="author" content="Jan Akanksha Foundation" />
   <meta name="robots" content="index, follow" />
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fredoka+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fredoka+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body {
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
@@ -173,227 +175,56 @@
       transform: scale(1.05);
     }
     
-    /* Feedback modal styles */
-    .feedback-modal {
-      display: none;
-      position: fixed;
-      z-index: 1001;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      animation: fadeIn 0.3s;
-    }
-    
-    .feedback-modal-content {
-      background-color: #fff;
-      margin: 5% auto;
-      padding: 0;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 500px;
-      max-height: 90vh;
-      overflow-y: auto;
-      animation: slideIn 0.4s;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    .feedback-modal-header {
-      background-color: #e9a86b;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 12px 12px 0 0;
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .feedback-close {
-      position: absolute;
-      right: 20px;
-      top: 15px;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    
-    .feedback-close:hover {
-      opacity: 0.7;
-    }
-    
-    .feedback-body {
-      padding: 20px;
-    }
-    
-    .form-group {
-      margin-bottom: 15px;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-      color: #333;
-    }
-    
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-    
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    
-    .submit-btn {
-      background-color: #e9a86b;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      width: 100%;
-      transition: background-color 0.3s;
-    }
-    
-    .submit-btn:hover {
-      background-color: #1b3860;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    
-    /* Search bar styles */
-    .search-container {
-      position: relative;
-    }
-    
-    .search-input {
-      padding: 8px 35px 8px 15px;
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      width: 200px;
-      transition: all 0.3s ease;
-    }
-    
-    .search-input:focus {
-      outline: none;
-      border-color: #1b3860;
-      width: 250px;
-    }
-    
-    .search-btn {
-      position: absolute;
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #1b3860;
-      cursor: pointer;
-    }
-    
-    /* Menu icon styles */
-    .menu-icon {
-      margin-right: 6px;
-      color: #1b3860;
-    }
-    
-    .nav-link:hover .menu-icon {
-      color: #e9a86b;
-    }
-    
-    /* Footer styles */
-    .footer-link {
-      transition: all 0.3s ease;
-    }
-    .footer-link:hover {
-      transform: translateX(5px);
-      color: #1b3860;
-    }
-    .social-icon {
-      transition: all 0.3s ease;
-    }
-    .social-icon:hover {
-      transform: translateY(-3px);
-    }
-    
-    /* Ambulance section styles */
-    .ambulance-section {
-      background: linear-gradient(to bottom, #f9fafb, #ffffff);
-    }
-
-    .ambulance-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 30px;
-    }
-
-    .ambulance-card {
+    /* Project card styles - IMPROVED */
+    .project-card {
       background: white;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
+      height: 100%;
+      border: 1px solid #e2e8f0;
       display: flex;
       flex-direction: column;
-      height: 100%;
     }
 
-    .ambulance-card:hover {
+    .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .ambulance-image {
+    .project-image {
       height: 220px;
       overflow: hidden;
       position: relative;
     }
 
-    .ambulance-image img {
+    .project-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
-    .ambulance-card:hover .ambulance-image img {
+    .project-card:hover .project-image img {
       transform: scale(1.05);
     }
 
-    .ambulance-info {
+    .project-info {
       padding: 20px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
 
-    .ambulance-name {
+    .project-name {
       font-size: 20px;
       font-weight: 600;
       color: #1a202c;
       margin-bottom: 5px;
     }
 
-    .ambulance-location {
+    .project-location {
       font-size: 14px;
       color: #1b3860;
       font-weight: 500;
@@ -402,38 +233,40 @@
       align-items: center;
     }
 
-    .ambulance-location::before {
+    .project-location::before {
       content: "\f3c5";
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       margin-right: 5px;
     }
 
-    .ambulance-description {
+    .project-description {
       color: #4a5568;
       font-size: 14px;
       margin-bottom: 15px;
       flex-grow: 1;
+      line-height: 1.5;
     }
 
-    .ambulance-details {
+    .project-details {
       display: flex;
       gap: 15px;
       margin-bottom: 15px;
+      flex-wrap: wrap;
     }
 
-    .ambulance-detail {
+    .project-detail {
       display: flex;
       align-items: center;
       font-size: 13px;
       color: #718096;
     }
 
-    .ambulance-detail i {
+    .project-detail i {
       margin-right: 5px;
     }
 
-    .ambulance-action {
+    .project-action {
       margin-top: auto;
     }
 
@@ -447,6 +280,10 @@
       cursor: pointer;
       transition: background 0.3s ease;
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
     .view-btn:hover {
@@ -458,27 +295,207 @@
       color: white;
     }
 
+    /* Project highlight section - IMPROVED */
+    .project-highlight {
+      background: linear-gradient(to right, #1b3860, #2c5282);
+      color: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .highlight-description {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .highlight-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .highlight-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .highlight-feature i {
+      color: #e9a86b;
+      font-size: 20px;
+      margin-top: 2px;
+    }
+
+    /* NEW: Project grid layout */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    /* NEW: Category navigation improvements */
+    .category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .category-btn {
+      padding: 10px 20px;
+      border-radius: 50px;
+      background-color: #f7fafc;
+      color: #4a5568;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
+
+    .category-btn:hover {
+      background-color: #1b3860;
+      color: white;
+    }
+
+    .category-btn.active {
+      background-color: #1b3860;
+      color: white;
+      border-color: #1b3860;
+    }
+
+    /* NEW: Section header improvements */
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1b3860;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: #718096;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* NEW: Counter section improvements */
+    .counter-section {
+      background-color: #1b3860;
+      color: white;
+      padding: 40px 0;
+      border-radius: 12px;
+      margin: 60px 0;
+    }
+
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .counter-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .counter-icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #e9a86b;
+    }
+
+    .counter-value {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .counter-label {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* NEW: No results message */
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      color: #718096;
+      font-size: 18px;
+      display: none;
+    }
+
     /* Responsive adjustments */
-    @media (max-width: 640px) {
-      .ambulance-grid {
+    @media (max-width: 768px) {
+      .project-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 20px;
       }
       
       .category-btn {
         font-size: 14px;
-        padding: 8px 12px;
+        padding: 8px 16px;
+      }
+      
+      .highlight-title {
+        font-size: 24px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 480px) {
-      .ambulance-grid {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .highlight-features {
+        grid-template-columns: 1fr;
+      }
+      
+      .counter-grid {
         grid-template-columns: 1fr;
       }
     }
 
     /* Animation for filtering */
-    .ambulance-card {
+    .project-card {
       animation: fadeIn 0.5s ease forwards;
     }
 
@@ -493,195 +510,6 @@
       }
     }
   </style>
-  
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    }
-
-    // Improved dropdown toggle function
-    function toggleDropdown(event, menuId) {
-      event.preventDefault();
-      const menu = document.getElementById(menuId);
-      menu.classList.toggle('hidden');
-      
-      // Close other dropdowns when opening a new one
-      if (!menu.classList.contains('hidden')) {
-        document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
-          if (otherMenu.id !== menuId && !otherMenu.classList.contains('hidden')) {
-            otherMenu.classList.add('hidden');
-          }
-        });
-      }
-    }
-    
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!event.target.matches('.dropdown-toggle')) {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          if (!menu.classList.contains('hidden')) {
-            menu.classList.add('hidden');
-          }
-        });
-      }
-    });
-    
-    // Sticky header functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const header = document.querySelector('.main-header');
-      const stickyNav = document.createElement('div');
-      stickyNav.className = 'sticky-nav';
-      stickyNav.innerHTML = header.innerHTML;
-      document.querySelector('.header-wrapper').appendChild(stickyNav);
-      
-      // Clone mobile menu functionality for sticky header
-      const stickyMobileMenu = stickyNav.querySelector('#mobile-menu');
-      if (stickyMobileMenu) {
-        stickyNav.querySelector('.md\\:hidden button').onclick = function() {
-          stickyMobileMenu.classList.toggle('hidden');
-        };
-      }
-      
-      // Update dropdown toggle functions for sticky header
-      stickyNav.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-        const menuId = toggle.getAttribute('data-menu');
-        toggle.onclick = function(e) {
-          e.preventDefault();
-          const menu = document.getElementById(menuId);
-          menu.classList.toggle('hidden');
-        };
-      });
-      
-      window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-        const stickyHeader = document.querySelector('.sticky-nav');
-        
-        if (scrollPosition > 100) {
-          stickyHeader.classList.add('visible');
-          document.body.classList.add('sticky-header-active');
-        } else {
-          stickyHeader.classList.remove('visible');
-          document.body.classList.remove('sticky-header-active');
-        }
-      });
-    });
-    
-    // Feedback form functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const feedbackBtn = document.querySelector('.feedback-btn');
-      const feedbackModal = document.querySelector('.feedback-modal');
-      const feedbackClose = document.querySelector('.feedback-close');
-      const feedbackForm = document.querySelector('#feedbackForm');
-      
-      // Open feedback modal
-      feedbackBtn.addEventListener('click', function() {
-        feedbackModal.style.display = 'block';
-      });
-      
-      // Close feedback modal
-      feedbackClose.addEventListener('click', function() {
-        feedbackModal.style.display = 'none';
-      });
-      
-      // Close modal when clicking outside
-      window.addEventListener('click', function(event) {
-        if (event.target === feedbackModal) {
-          feedbackModal.style.display = 'none';
-        }
-      });
-      
-      // Handle form submission
-      feedbackForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
-        
-        // Create WhatsApp message
-        const whatsappMessage = `Hello JAN AKANKSHA FOUNDATION, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
-        
-        // Open WhatsApp with pre-filled message
-        const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;
-        window.open(whatsappURL, '_blank');
-        
-        // Close the modal
-        feedbackModal.style.display = 'none';
-        
-        // Reset the form
-        feedbackForm.reset();
-      });
-    });
-    
-    // Search functionality
-    function performSearch() {
-      const searchTerm = document.getElementById('searchInput').value;
-      if (searchTerm.trim() !== '') {
-        alert('Searching for: ' + searchTerm);
-        // In a real implementation, you would redirect to a search results page
-        // window.location.href = './search.html?q=' + encodeURIComponent(searchTerm);
-      }
-    }
-    
-    // Handle Enter key in search input
-    document.addEventListener('DOMContentLoaded', function() {
-      const searchInput = document.getElementById('searchInput');
-      if (searchInput) {
-        searchInput.addEventListener('keypress', function(e) {
-          if (e.key === 'Enter') {
-            performSearch();
-          }
-        });
-      }
-    });
-    
-    // Filter functionality for initiatives
-    document.addEventListener('DOMContentLoaded', function() {
-      const categoryButtons = document.querySelectorAll('.category-btn');
-      const ambulanceCards = document.querySelectorAll('.ambulance-card');
-      
-      // Filter initiatives by category
-      function filterInitiatives(category) {
-        ambulanceCards.forEach(card => {
-          if (category === 'all' || card.dataset.category === category) {
-            card.style.display = 'block';
-            // Add animation
-            card.style.animation = 'fadeIn 0.5s ease forwards';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-        
-        // Update active button
-        categoryButtons.forEach(button => {
-          if (button.dataset.category === category) {
-            button.classList.add('active');
-            button.classList.remove('bg-gray-100', 'text-gray-700');
-            button.classList.add('bg-[#1b3860]', 'text-white');
-          } else {
-            button.classList.remove('active');
-            button.classList.remove('bg-[#1b3860]', 'text-white');
-            button.classList.add('bg-gray-100', 'text-gray-700');
-          }
-        });
-      }
-      
-      // Add event listeners to category buttons
-      categoryButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const category = this.dataset.category;
-          filterInitiatives(category);
-        });
-      });
-      
-      // Initialize with all initiatives shown
-      filterInitiatives('all');
-    });
-  </script>
 </head>
 
 <body class="bg-white text-black">
@@ -696,9 +524,9 @@
             <i class="fas fa-phone-alt mr-2"></i>
             <span>+91-9234241407</span>
           </a>
-          <a href="mailto:hrjafranchi@gmail.com" class="flex items-center">
+          <a href="mailto: jafpatna@gmail.com" class="flex items-center">
             <i class="fas fa-envelope mr-2"></i>
-            <span>hrjafranchi@gmail.com</span>
+            <span> jafpatna@gmail.com</span>
           </a>
         </div>
         <div class="flex items-center space-x-4">
@@ -708,17 +536,17 @@
              Donate-Now
             </button></a>
           </li>
-          <a href="https://www.facebook.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+          <a href="#" target="_blank" class="hover:text-[#e9a86b]">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://twitter.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+          <a href="#" target="_blank" class="hover:text-[#e9a86b]">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="https://www.linkedin.com/company/geetaambulance" target="_blank" class="hover:text-[#e9a86b]">
+          <a href="#" target="_blank" class="hover:text-[#e9a86b]">
             <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" target="_blank" class="hover:text-[#e9a86b]">
+            <i class="fab fa-youtube"></i>
           </a>
         </div>
       </div>
@@ -731,7 +559,7 @@
           <a href="./index.html" class="flex items-center">
             <img
               src="./image/logo/logo.png"
-              alt="JAN AKANKSHA FOUNDATION Logo"
+              alt="Jan Akanksha Foundation Logo"
               class="logo-img"
             />
           </a>
@@ -761,7 +589,7 @@
           <li><a href="./service.html" class="nav-link"><i class="fas fa-concierge-bell menu-icon"></i>Service</a></li>
           <li><a href="./our-product.html" class="nav-link"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
            <li><a href="./gallery.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Gallery</a></li>
-          <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+          <!-- <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li> -->
           <li><a href="./career.html" class="nav-link"><i class="fas fa-briefcase menu-icon"></i>Career</a></li>
           <li><a href="./contect.html" class="nav-link"><i class="fas fa-envelope menu-icon"></i>Contact Us</a></li>
         </ul>
@@ -786,392 +614,375 @@
           </li>
            <li><a href="./service.html" class="hover:underline block py-2"><i class="fas fa-concierge-bell mr-2"></i>Service</a></li>
           <li><a href="./gallery.html" class="hover:underline block py-2"><i class="fas fa-images mr-2"></i>Gallery</a></li>
-                      <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
-
-         <li><a href="./our-product.html" class="hover:underline block py-2"><i class="fas fa-project-diagram mr-2"></i>Project</a></li>
+          <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+          <li><a href="./our-product.html" class="hover:underline block py-2"><i class="fas fa-project-diagram mr-2"></i>Project</a></li>
           <li><a href="./career.html" class="hover:underline block py-2"><i class="fas fa-briefcase mr-2"></i>Career</a></li>
           <li><a href="./contect.html" class="hover:underline block py-2"><i class="fas fa-envelope mr-2"></i>Contact Us</a></li>
-          
         </ul>
       </div>
     </nav>
   </div>
   
-  <!-- Feedback Modal -->
-  <div id="feedbackModal" class="feedback-modal">
-    <div class="feedback-modal-content">
-      <div class="feedback-modal-header">
-        <i class="fas fa-comment-dots"></i>
-        <h2 class="text-xl font-bold">Send Feedback</h2>
-        <span class="feedback-close">&times;</span>
-      </div>
-      <div class="feedback-body">
-        <form id="feedbackForm">
-          <div class="form-group">
-            <label for="name">Name *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
-          <div class="form-group">
-            <label for="service">Service Type</label>
-            <select id="service" name="service">
-              <option value="">Select a service</option>
-              <option value="Education & Literacy">Education & Literacy</option>
-              <option value="Health & Family Welfare">Health & Family Welfare</option>
-              <option value="Agriculture & Animal Welfare">Agriculture & Animal Welfare</option>
-              <option value="Environment & Forests">Environment & Forests</option>
-              <option value="Rural Development">Rural Development</option>
-              <option value="Urban Development">Urban Development</option>
-              <option value="Akanksha Kendra">Akanksha Kendra</option>
-              <option value="Gramin-e-Vikas Pariyojana">Gramin-e-Vikas Pariyojana</option>
-              <option value="General Inquiry">General Inquiry</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Please share your feedback or inquiry..."></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send via WhatsApp</button>
-        </form>
+  <!-- banner-start -->
+  <section>
+    <div class="relative w-full h-48 sm:h-64 md:h-64 lg:h-80 xl:h-80">
+      <img src="./image/banner/project (1).jpeg" alt="Community Development Initiatives" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+        <div class="text-white text-center">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Our Projects</h1>
+          <p class="text-xl md:text-2xl">Jan Akanksha Foundation Initiatives</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+  <!-- banner-end -->
 
-<!-- banner-start -->
-<section>
-  <div class="relative w-full h-48 sm:h-64 md:h-64 lg:h-80 xl:h-80">
-    <img src="./image/banner/project (1).jpeg" alt="Community Development Initiatives" class="w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-    </div>
-  </div>
-</section>
-<!-- banner-end -->
+  <section class="py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Project Highlight Section -->
+      <div class="project-highlight mb-12">
+        <div class="highlight-content">
+          <h2 class="highlight-title">Gramin "E" Vikas Pariyojana</h2>
+          <p class="highlight-description">
+            Under the Gramin "E" Vikas Pariyojana (Rural E-Development Project), all services will be provided completely free of cost to the people sitting at the last level of society — those who are often unaware of or unable to access government and non-government welfare schemes.
+          </p>
+          
+          <div class="highlight-features">
+            <div class="highlight-feature">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h4 class="font-bold">Complete Information Access</h4>
+                <p>Every eligible individual gets complete information about available welfare programs.</p>
+              </div>
+            </div>
+            
+            <div class="highlight-feature">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h4 class="font-bold">Technical Assistance</h4>
+                <p>Beneficiaries receive technical assistance for documentation, online registration, and claim processing.</p>
+              </div>
+            </div>
+            
+            <div class="highlight-feature">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h4 class="font-bold">100% Free Services</h4>
+                <p>No charges are taken from anyone — not from individuals, government departments, or private organizations.</p>
+              </div>
+            </div>
+            
+            <div class="highlight-feature">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h4 class="font-bold">Transparency & People-Centered</h4>
+                <p>All services remain transparent, and people-centered, ensuring no discrimination or cost.</p>
+              </div>
+            </div>
+          </div>
+          
+          <p class="highlight-description mt-4">
+            The primary mission of this initiative is to make sure that no person in society remains deprived of development opportunities and that every welfare scheme — government or private — reaches its rightful beneficiary without discrimination or cost.
+          </p>
+        </div>
+      </div>
 
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="section-title">OUR INITIATIVES</h2>
+        <p class="section-subtitle">We provide comprehensive community development programs with our specialized initiatives across multiple sectors.</p>
+      </div>
 
-<section class="ambulance-section py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto">
-    <!-- Section Header -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-[#1b3860] mb-4">OUR INITIATIVES</h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto">We provide comprehensive community development programs with our specialized initiatives across multiple sectors.</p>
-    </div>
-
-    <!-- Category Navigation -->
-    <div class="mb-10">
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
-        <button class="category-btn active px-4 py-2 rounded-full bg-[#1b3860] text-white font-medium transition-all duration-300 hover:bg-[#e9a86b] shadow-md" data-category="all">
-          All Initiatives
+      <!-- Category Navigation -->
+      <div class="category-nav">
+        <button class="category-btn active" data-category="all">
+          All Projects
         </button>
-        <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium transition-all duration-300 hover:bg-[#1b3860] hover:text-white" data-category="education">
+        <button class="category-btn" data-category="education">
           Education
         </button>
-        <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium transition-all duration-300 hover:bg-[#1b3860] hover:text-white" data-category="health">
+        <button class="category-btn" data-category="health">
           Health
         </button>
-        <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium transition-all duration-300 hover:bg-[#1b3860] hover:text-white" data-category="agriculture">
+        <button class="category-btn" data-category="agriculture">
           Agriculture
         </button>
-        <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium transition-all duration-300 hover:bg-[#1b3860] hover:text-white" data-category="environment">
+        <button class="category-btn" data-category="environment">
           Environment
         </button>
-        <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium transition-all duration-300 hover:bg-[#1b3860] hover:text-white" data-category="rural">
+        <button class="category-btn" data-category="rural">
           Rural Dev.
         </button>
-        <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium transition-all duration-300 hover:bg-[#1b3860] hover:text-white" data-category="urban">
+        <button class="category-btn" data-category="urban">
           Urban Dev.
         </button>
       </div>
-    </div>
 
-    <!-- Initiative Grid -->
-    <div class="ambulance-grid">
-      <!-- Education Initiative -->
-      <div class="ambulance-card" data-category="education">
-        <div class="ambulance-image">
-          <img src="./image/banner/education (1).webp" alt="Education Programs" class="w-full h-full object-cover">
-        </div>
-        <div class="ambulance-info">
-          <h3 class="ambulance-name">Education & Literacy Program</h3>
-          <p class="ambulance-location">All Districts of Jharkhand</p>
-          <p class="ambulance-description">Promoting quality education and literacy programs for all age groups across Jharkhand.</p>
-          <div class="ambulance-details">
-            <span class="ambulance-detail"><i class="fas fa-book"></i> Education</span>
-            <span class="ambulance-detail"><i class="fas fa-school"></i> Learning Centers</span>
-          </div>
-          <div class="ambulance-action">
-            <button class="view-btn">View Details</button>
-          </div>
-        </div>
+      <!-- No Results Message -->
+      <div class="no-results" id="noResults">
+        <i class="fas fa-search fa-2x mb-4"></i>
+        <p>No projects found in this category. Please try another category.</p>
       </div>
 
-      <!-- Health Initiative -->
-      <div class="ambulance-card" data-category="health">
-        <div class="ambulance-image">
-          <img src="./image/banner/health (1).jpg" alt="Health Programs" class="w-full h-full object-cover">
-        </div>
-        <div class="ambulance-info">
-          <h3 class="ambulance-name">Health & Family Welfare</h3>
-          <p class="ambulance-location">Rural & Urban Areas</p>
-          <p class="ambulance-description">Improving healthcare access and promoting family welfare initiatives in communities.</p>
-          <div class="ambulance-details">
-            <span class="ambulance-detail"><i class="fas fa-heartbeat"></i> Health</span>
-            <span class="ambulance-detail"><i class="fas fa-user-md"></i> Medical Camps</span>
+      <!-- Project Grid -->
+      <div class="project-grid" id="projectGrid">
+        <!-- Service 7 - Akanksha Kendra -->
+        <div class="group bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full" data-category="rural">
+          <div class="relative flex-shrink-0 overflow-hidden">
+            <img src="./image/banner/enviroment.jpg" alt="Akanksha Kendra" class="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <div class="w-16 h-1 bg-white mx-auto mb-3"></div>
+                <h3 class="text-xl font-bold uppercase text-center">Akanksha Kendra</h3>
+              </div>
+            </div>
           </div>
-          <div class="ambulance-action">
-            <button class="view-btn">View Details</button>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="text-center mb-4">
+              <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <i class="fas fa-hands-helping text-3xl text-white"></i>
+              </div>
+              <h3 class="text-xl font-bold uppercase text-gray-800">Akanksha Kendra</h3>
+            </div>
+            <div class="text-gray-600 text-sm flex-grow">
+              <p class="mb-4">
+                Akanksha Kendras are community centers providing integrated development services at the grassroots level.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-indigo-500 mr-2 mt-0.5"></i>
+                  <span>Multi-service community hubs</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-indigo-500 mr-2 mt-0.5"></i>
+                  <span>Vocational training facilities</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-indigo-500 mr-2 mt-0.5"></i>
+                  <span>Health and education services</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-indigo-500 mr-2 mt-0.5"></i>
+                  <span>Women empowerment programs</span>
+                </li>
+              </ul>
+            </div>
+            <a href="./service.html" class="mt-6">
+              <button class="w-full bg-gradient-to-r from-indigo-500 to-indigo-600 text-white py-3 px-4 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                Learn More
+              </button>
+            </a>
           </div>
         </div>
-      </div>
 
-      <div class="ambulance-card" data-category="health">
-        <div class="ambulance-image">
-          <img src="./image/banner/health (1).jpg" alt="Maternal Health" class="w-full h-full object-cover">
-        </div>
-        <div class="ambulance-info">
-          <h3 class="ambulance-name">Maternal & Child Health</h3>
-          <p class="ambulance-location">Remote Villages</p>
-          <p class="ambulance-description">Specialized healthcare programs for mothers and children in underserved areas.</p>
-          <div class="ambulance-details">
-            <span class="ambulance-detail"><i class="fas fa-heartbeat"></i> Health</span>
-            <span class="ambulance-detail"><i class="fas fa-baby"></i> Child Care</span>
+        <!-- Service 8 - Gramin-e-Vikas Pariyojana -->
+        <div class="group bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full" data-category="rural">
+          <div class="relative flex-shrink-0 overflow-hidden">
+            <img src="./image/banner/gramin (1).jpg" alt="Gramin-e-Vikas" class="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <div class="w-16 h-1 bg-white mx-auto mb-3"></div>
+                <h3 class="text-xl font-bold uppercase text-center">Gramin-e-Vikas</h3>
+              </div>
+            </div>
           </div>
-          <div class="ambulance-action">
-            <button class="view-btn">View Details</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Agriculture Initiative -->
-      <div class="ambulance-card" data-category="agriculture">
-        <div class="ambulance-image">
-          <img src="./image/banner/agruc.jpg" alt="Agriculture Programs" class="w-full h-full object-cover">
-        </div>
-        <div class="ambulance-info">
-          <h3 class="ambulance-name">Sustainable Agriculture</h3>
-          <p class="ambulance-location">Rural Jharkhand</p>
-          <p class="ambulance-description">Supporting sustainable agriculture and animal welfare practices to enhance rural livelihoods.</p>
-          <div class="ambulance-details">
-            <span class="ambulance-detail"><i class="fas fa-seedling"></i> Agriculture</span>
-            <span class="ambulance-detail"><i class="fas fa-leaf"></i> Organic Farming</span>
-          </div>
-          <div class="ambulance-action">
-            <button class="view-btn">View Details</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="ambulance-card" data-category="agriculture">
-        <div class="ambulance-image">
-          <img src="./image/banner/agriculture.jpg" alt="Farmer Training" class="w-full h-full object-cover">
-        </div>
-        <div class="ambulance-info">
-          <h3 class="ambulance-name">Farmer Training & Support</h3>
-          <p class="ambulance-location">All Districts</p>
-          <p class="ambulance-description">Capacity building for farmers on modern techniques and market linkages.</p>
-          <div class="ambulance-details">
-            <span class="ambulance-detail"><i class="fas fa-seedling"></i> Agriculture</span>
-            <span class="ambulance-detail"><i class="fas fa-chalkboard-teacher"></i> Training</span>
-          </div>
-          <div class="ambulance-action">
-            <button class="view-btn">View Details</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Environment Initiative -->
-      <div class="ambulance-card" data-category="environment">
-        <div class="ambulance-image">
-          <img src="./image/banner/enviroment.jpg" alt="Environment Programs" class="w-full h-full object-cover">
-        </div>
-        <div class="ambulance-info">
-          <h3 class="ambulance-name">Environment Conservation</h3>
-          <p class="ambulance-location">Forest & Rural Areas</p>
-          <p class="ambulance-description">Conserving natural resources and promoting environmental awareness across Jharkhand.</p>
-          <div class="ambulance-details">
-            <span class="ambulance-detail"><i class="fas fa-tree"></i> Environment</span>
-            <span class="ambulance-detail"><i class="fas fa-recycle"></i> Conservation</span>
-          </div>
-          <div class="ambulance-action">
-            <button class="view-btn">View Details</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Rural Development Initiative -->
-      <div class="ambulance-card" data-category="rural">
-        <div class="ambulance-image">
-          <img src="./image/banner/ruler.jpg" alt="Rural Development" class="w-full h-full object-cover">
-        </div>
-        <div class="ambulance-info">
-          <h3 class="ambulance-name">Rural Infrastructure Development</h3>
-          <p class="ambulance-location">Villages Across Jharkhand</p>
-          <p class="ambulance-description">Enhancing infrastructure and livelihood opportunities in rural areas of Jharkhand.</p>
-          <div class="ambulance-details">
-            <span class="ambulance-detail"><i class="fas fa-home"></i> Rural</span>
-            <span class="ambulance-detail"><i class="fas fa-road"></i> Infrastructure</span>
-          </div>
-          <div class="ambulance-action">
-            <button class="view-btn">View Details</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Urban Development Initiative -->
-      <div class="ambulance-card" data-category="urban">
-        <div class="ambulance-image">
-          <img src="./image/banner/urban.jpg" alt="Urban Development" class="w-full h-full object-cover">
-        </div>
-        <div class="ambulance-info">
-          <h3 class="ambulance-name">Urban Community Development</h3>
-          <p class="ambulance-location">Cities & Towns</p>
-          <p class="ambulance-description">Creating sustainable and inclusive urban communities in Jharkhand's cities and towns.</p>
-          <div class="ambulance-details">
-            <span class="ambulance-detail"><i class="fas fa-city"></i> Urban</span>
-            <span class="ambulance-detail"><i class="fas fa-users"></i> Community</span>
-          </div>
-          <div class="ambulance-action">
-            <button class="view-btn">View Details</button>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="text-center mb-4">
+              <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <i class="fas fa-laptop text-3xl text-white"></i>
+              </div>
+              <h3 class="text-xl font-bold uppercase text-gray-800">Gramin-e-Vikas</h3>
+            </div>
+            <div class="text-gray-600 text-sm flex-grow">
+              <p class="mb-4">
+                Gramin-e-Vikas Pariyojana promotes digital literacy and e-governance for rural empowerment.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-cyan-500 mr-2 mt-0.5"></i>
+                  <span>Digital literacy training</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-cyan-500 mr-2 mt-0.5"></i>
+                  <span>Common service centers</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-cyan-500 mr-2 mt-0.5"></i>
+                  <span>E-governance awareness</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-cyan-500 mr-2 mt-0.5"></i>
+                  <span>Digital payment systems training</span>
+                </li>
+              </ul>
+            </div>
+            <a href="./service.html" class="mt-6">
+              <button class="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white py-3 px-4 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                Learn More
+              </button>
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- COUNTER-SECTION-START -->
-<section class="py-6">
-  <div class="max-w-9xl mx-auto px-4 bg-[#1b3860] text-white text-center py-8 rounded">
-    <div class="flex flex-wrap justify-center items-center gap-y-6">
-      <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-        <i class="fas fa-map-marker-alt text-xl md:text-2xl mb-1"></i>
-        <span class="counter text-[16px] md:text-[18px] font-bold" data-target="24">0</span>
-        <span class="text-xs md:text-sm font-bold uppercase mt-1">Districts</span>
-      </div>
-      <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-        <i class="fas fa-users text-xl md:text-2xl mb-1"></i>
-        <span class="counter text-[16px] md:text-[18px] font-bold" data-target="500000">0</span>
-        <span class="text-xs md:text-sm font-bold uppercase mt-1">Beneficiaries</span>
-      </div>
-      <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-        <i class="fas fa-project-diagram text-xl md:text-2xl mb-1"></i>
-        <span class="counter text-[16px] md:text-[18px] font-bold" data-target="100">0</span>
-        <span class="text-xs md:text-sm font-bold uppercase mt-1">Projects</span>
-      </div>
-      <div class="counter-item flex flex-col items-center w-1/2 sm:w-1/4 px-2">
-        <i class="fas fa-handshake text-xl md:text-2xl mb-1"></i>
-        <span class="counter text-[16px] md:text-[18px] font-bold" data-target="50">0</span>
-        <span class="text-xs md:text-sm font-bold uppercase mt-1">Partners</span>
-      </div>
-    </div>  
-  </div>
-</section>
-<!-- COUNTER-SECTION-END -->
-
-<!-- Footer Section -->
-<footer class="bg-gray-50 border-t border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="flex flex-col md:flex-row gap-8">
-      <!-- Column 1: Logo and Statement -->
-      <div class="md:w-1/4 flex flex-col items-start" style="margin-top: -30px;">
-        <a href="./index.html"><img
-          src="./image/logo/logo.png"
-          alt="JAN AKANKSHA FOUNDATION Logo"
-          class="w-24 h-auto mb-4"
-        /></a>
-        <div class="space-y-2">
-          <p class="text-gray-700 italic">"Saving Lives, Every Second Counts."</p>
-          <p class="text-gray-700 italic">"Your Emergency, Our Priority."</p>
-          <p class="text-gray-700 italic">"Critical Care on Wheels."</p>
+  <!-- Footer Section -->
+  <footer class="bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Column 1: Logo and Statement -->
+        <div class="md:w-1/4 flex flex-col items-start" style="margin-top: -30px;">
+          <a href="./index.html"><img
+            src="./image/logo/logo.png"
+            alt="Jan Akanksha Foundation Logo"
+            class="w-24 h-auto mb-4"
+          /></a>
+          <div class="space-y-2">
+            <p class="text-gray-700 italic">"Building an empowered, educated, and self-reliant society."</p>
+            <p class="text-gray-700 italic">"Working together for social development."</p>
+            <p class="text-gray-700 italic">"Creating opportunities for everyone, everywhere."</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Column 2: Quick Links -->
-      <div class="md:w-1/4">
-        <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
-        <ul class="space-y-3">
-          <li><a href="./index.html" class="footer-link text-gray-600 hover:text-blue-700 block">Home</a></li>
-          <li><a href="./about.html" class="footer-link text-gray-600 hover:text-blue-700 block">About</a></li>
-          <li><a href="./gallery.html" class="footer-link text-gray-600 hover:text-blue-700 block">Gallery</a></li>
-          <li><a href="./service.html" class="footer-link text-gray-600 hover:text-blue-700 block">Services</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: More Quick Links -->
-      <div class="md:w-1/4">
-        <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
-        <ul class="space-y-3">
-          <li><a href="./our-product.html" class="footer-link text-gray-600 hover:text-blue-700 block">Project</a></li>
-          <li><a href="./career.html" class="footer-link text-gray-600 hover:text-blue-700 block">Careers</a></li>
-          <li><a href="./contect.html" class="footer-link text-gray-600 hover:text-blue-700 block">Contact</a></li>
-          <li><a href="./mission-vision.html" class="footer-link text-gray-600 hover:text-blue-700 block">Mission</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4: Contact and Social -->
-      <div class="md:w-1/4">
-        <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Contact Us</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start">
-            <i class="fas fa-map-marker-alt text-[#1b3860] mt-1 mr-3"></i>
-            <span class="text-gray-600">Jharkhand, India </span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-phone text-[#1b3860] mr-3"></i>
-            <span class="text-gray-600">9234241407</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
-            <span class="text-gray-600">info@domain.name</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Copyright Section -->
-  <div class="bg-gray-100 border-t border-gray-300 py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="text-gray-600 text-sm mb-2 md:mb-0">
-          Copyright © 2025 Ambulance service. All Rights Reserved
+        <!-- Column 2: Quick Links -->
+        <div class="md:w-1/4">
+          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="./index.html" class="footer-link text-gray-600 hover:text-blue-700 block">Home</a></li>
+            <li><a href="./about.html" class="footer-link text-gray-600 hover:text-blue-700 block">About</a></li>
+            <li><a href="./gallery.html" class="footer-link text-gray-600 hover:text-blue-700 block">Gallery</a></li>
+            <li><a href="./service.html" class="footer-link text-gray-600 hover:text-blue-700 block">Services</a></li>
+          </ul>
         </div>
-        <div class="text-gray-600 text-sm">
-          Design &amp; developed by 
-          <a class="text-blue-600 hover:underline font-medium" href="https://globias.com">globias</a>
+
+        <!-- Column 3: More Quick Links -->
+        <div class="md:w-1/4">
+          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="./our-product.html" class="footer-link text-gray-600 hover:text-blue-700 block">Project</a></li>
+            <li><a href="./career.html" class="footer-link text-gray-600 hover:text-blue-700 block">Careers</a></li>
+            <li><a href="./contect.html" class="footer-link text-gray-600 hover:text-blue-700 block">Contact</a></li>
+            <li><a href="./mission-vision.html" class="footer-link text-gray-600 hover:text-blue-700 block">Mission</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact and Social -->
+        <div class="md:w-1/4">
+          <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-300">Contact Us</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-[#1b3860] mt-1 mr-3"></i>
+              <span class="text-gray-600">Jan Akanksha Foundation,  LIC More, B. Deoghar, Jharkhand, PIN: 834001</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-[#1b3860] mr-3"></i>
+              <span class="text-gray-600">+91 9234241407</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
+              <span class="text-gray-600"> jafpatna@gmail.com</span>
+            </li>
+          </ul>
+          <div class="flex space-x-3 mt-4">
+            <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank" class="text-pink-600 hover:text-pink-800 text-lg"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" class="text-blue-700 hover:text-blue-900 text-lg"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" class="text-red-600 hover:text-red-800 text-lg"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+    
+    <!-- Copyright Section -->
+    <div class="bg-gray-100 border-t border-gray-300 py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-gray-600 text-sm mb-2 md:mb-0">
+            Copyright © 2025 Jan Akanksha Foundation. All Rights Reserved
+          </div>
+          <div class="text-gray-600 text-sm">
+            Design &amp; developed by 
+            <a class="text-blue-600 hover:underline font-medium" href="https://globias.com/">globias</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-<script>
-  // Counter animation
-  const counters = document.querySelectorAll('.counter');
-  counters.forEach(counter => {
-    const updateCounter = () => {
-      const target = +counter.getAttribute('data-target');
-      const current = +counter.innerText.replace(/,/g, '');
-      const increment = target / 200;
+  <script>
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText.replace(/,/g, '');
+        const increment = target / 200;
 
-      if (current < target) {
-        counter.innerText = Math.ceil(current + increment).toLocaleString();
-        requestAnimationFrame(updateCounter);
-      } else {
-        counter.innerText = target.toLocaleString();
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment).toLocaleString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+      updateCounter();
+    });
+
+    // Enhanced filter functionality for projects
+    document.addEventListener('DOMContentLoaded', function() {
+      const categoryButtons = document.querySelectorAll('.category-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      const projectGrid = document.getElementById('projectGrid');
+      const noResults = document.getElementById('noResults');
+      
+      // Filter projects by category
+      function filterProjects(category) {
+        let visibleCount = 0;
+        
+        projectCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+            visibleCount++;
+            // Add animation
+            card.style.animation = 'fadeIn 0.5s ease forwards';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          noResults.style.display = 'block';
+          projectGrid.style.display = 'none';
+        } else {
+          noResults.style.display = 'none';
+          projectGrid.style.display = 'grid';
+        }
+        
+        // Update active button
+        categoryButtons.forEach(button => {
+          if (button.dataset.category === category) {
+            button.classList.add('active');
+          } else {
+            button.classList.remove('active');
+          }
+        });
       }
-    };
-    updateCounter();
-  });
-</script>
-
+      
+      // Add event listeners to category buttons
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const category = this.dataset.category;
+          filterProjects(category);
+        });
+      });
+      
+      // Initialize with all projects shown
+      filterProjects('all');
+    });
+  </script>
 </body>
 </html>

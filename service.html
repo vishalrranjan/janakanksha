@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Initiatives | JAN AKANKSHA FOUNDATION</title>
+  <title>Services | JAN AKANSHA KENDRA</title>
   
   <!-- Meta Tags for SEO -->
-  <meta name="description" content="JAN AKANKSHA FOUNDATION offers comprehensive community development initiatives in education, health, agriculture, environment, and rural-urban development across Jharkhand. Learn about our flagship programs and projects.">
-  <meta name="keywords" content="JAN AKANKSHA FOUNDATION, non-profit organization, education, health, agriculture, environment, rural development, Jharkhand, NGO, charity, social work, Akanksha Kendra, Gramin-e-Vikas Pariyojana">
-  <meta name="author" content="JAN AKANKSHA FOUNDATION">
+  <meta name="description" content="JAN AKANSHA KENDRA offers comprehensive services including E-District Services, Aadhar Card Correction, Banking CSP, Ayushman Bharat Card, and many more.">
+  <meta name="keywords" content="JAN AKANSHA KENDRA, E-District Services, Aadhar Card Correction, Banking CSP, Ayushman Bharat Card, AEPS, BBPS, Money Transfer, Bank Account Opening, Mobile Recharge, Bus Booking, Flight Booking, IRCTC, Pan Card, Voter Card, Driving License, Kisan Mandhan Yojna, GST Registration, Income Tax Return, Fasal Bima Yojna, Insurance, Loan, ATM Services, Hotel Booking, DTH Recharge, Kiosk Banking, Insurance Premium, FSSAI Registration, Business Loan, Credit Card Bill Payment, Passport, Online Shopping, MPOS Machine, Residential Certificate, Metro Card Recharge, Wallet Transfer, NSDL Payments Bank">
+  <meta name="author" content="JAN AKANSHA KENDRA">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -345,73 +345,47 @@
       font-family: 'Inter', sans-serif;
     }
     
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
+    /* Service Card Styles */
+    .service-card {
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      animation: fadeIn 0.3s;
-    }
-    
-    .modal-content {
-      background-color: #fff;
-      margin: 5% auto;
-      padding: 0;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 800px;
-      max-height: 85vh;
-      overflow-y: auto;
-      animation: slideIn 0.4s;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    .modal-header {
-      background-color: #e74c3c;
-      color: white;
-      padding: 20px;
-      border-radius: 12px 12px 0 0;
-      position: relative;
-    }
-    
-    .close {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      color: white;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    
-    .close:hover {
-      opacity: 0.7;
-    }
-    
-    .modal-body {
-      padding: 25px;
-    }
-    
-    .feature-list {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    
-    .feature-list li {
-      margin-bottom: 12px;
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
     
-    .feature-list li i {
-      color: #e74c3c;
-      margin-right: 10px;
-      margin-top: 3px;
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+      color: #1b3860;
+      margin-bottom: 1rem;
+    }
+    
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1b3860;
+    }
+    
+    .service-description {
+      color: #4b5563;
+      font-size: 0.875rem;
+    }
+    
+    /* Service Grid */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
   </style>
 </head>
@@ -428,9 +402,9 @@
             <i class="fas fa-phone-alt mr-2"></i>
             <span>+91-9234241407</span>
           </a>
-          <a href="mailto:hrjafranchi@gmail.com" class="flex items-center">
+          <a href="mailto: jafpatna@gmail.com" class="flex items-center">
             <i class="fas fa-envelope mr-2"></i>
-            <span>hrjafranchi@gmail.com</span>
+            <span> jafpatna@gmail.com</span>
           </a>
         </div>
         <div class="flex items-center space-x-4">
@@ -463,7 +437,7 @@
           <a href="./index.html" class="flex items-center">
             <img
               src="./image/logo/logo.png"
-              alt="Geeta Ambulance Logo"
+              alt="JAN AKANSHA KENDRA Logo"
               class="logo-img"
             />
           </a>
@@ -493,7 +467,7 @@
           <li><a href="./service.html" class="nav-link"><i class="fas fa-concierge-bell menu-icon"></i>Service</a></li>
           <li><a href="./our-product.html" class="nav-link"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
            <li><a href="./gallery.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Gallery</a></li>
-          <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li>
+          <!-- <li><a href="./blog.html" class="nav-link"><i class="fas fa-images menu-icon"></i>Blog</a></li> -->
           <li><a href="./career.html" class="nav-link"><i class="fas fa-briefcase menu-icon"></i>Career</a></li>
           <li><a href="./contect.html" class="nav-link"><i class="fas fa-envelope menu-icon"></i>Contact Us</a></li>
         </ul>
@@ -532,111 +506,602 @@
     <div class="relative w-full h-[200px] sm:h-72 md:h-80 lg:h-96 xl:h-[400px] overflow-hidden">
       <img
         src="./image/banner/service.jpg"
-        alt="Community development initiatives by JAN AKANKSHA FOUNDATION"
+        alt="Services provided by JAN AKANSHA KENDRA"
         class="w-full h-full object-contain sm:object-cover"
       />
     </div>
   </section>
   <!-- Banner End -->
 
-  <!-- Initiatives Section -->
-  <div class="max-w-7xl mx-auto px-4 py-12" style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
-    <div class="text-center mb-12">
-      <h2 class="font-extrabold text-3xl uppercase mb-4">
-        <span class="text-[#e74c3c]">OUR</span> INITIATIVES
+ <!-- Services Section -->
+<div class="relative py-16" style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Services Background" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#1b3860]/90 to-[#1b3860]/70"></div>
+  </div>
+
+  <!-- Animated Background Elements -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-teal-400 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="font-extrabold text-4xl md:text-5xl uppercase mb-4 text-white relative inline-block">
+        <span class="text-white">OUR</span> SERVICES
+        <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-teal-400 transform scale-x-75"></span>
       </h2>
-      <p class="text-gray-600 max-w-3xl mx-auto text-base">
-        JAN AKANKSHA FOUNDATION implements diverse programs across education, health, agriculture, environment, and rural development sectors to create sustainable change in Jharkhand.
+      <p class="text-blue-100 max-w-3xl mx-auto text-lg md:text-xl">
+        JAN AKANSHA KENDRA provides a wide range of services to meet your needs. From government documentation to financial services, we offer convenient solutions all under one roof.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Initiative 1 -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="p-6 flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-book text-3xl text-[#e74c3c]"></i>
+    <div class="service-grid">
+      <!-- Service 1: E-District Services -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300">
+            <i class="fas fa-file-alt text-2xl text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-3">Education & Literacy</h3>
-          <p class="text-gray-600 mb-4">Promoting quality education and literacy programs for all age groups across Jharkhand.</p>
-          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="education">
-            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-          </a>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors duration-300">E-District Services</h3>
+          <p class="text-blue-100 text-sm flex-grow">Birth Certificate, Death Certificate, Domicile Certificate, Income Certificate, Caste Certificate & Ration Card Apply</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-blue-500/30 to-blue-600/30 hover:from-blue-500/50 hover:to-blue-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
         </div>
       </div>
 
-      <!-- Initiative 2 -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="p-6 flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-heartbeat text-3xl text-[#e74c3c]"></i>
+      <!-- Service 2: Aadhar Card Correction -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-purple-500/30 transition-all duration-300">
+            <i class="fas fa-id-card text-2xl text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-3">Health & Welfare</h3>
-          <p class="text-gray-600 mb-4">Improving healthcare access and promoting family welfare initiatives in rural and urban areas.</p>
-          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="health">
-            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-          </a>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-200 transition-colors duration-300">Aadhar Card Correction</h3>
+          <p class="text-blue-100 text-sm flex-grow">Name Change + Date Of Birth Change + Address Change + Father's name Change + Husbands Name Change + Mobile Number Link</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-purple-500/30 to-purple-600/30 hover:from-purple-500/50 hover:to-purple-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
         </div>
       </div>
 
-      <!-- Initiative 3 -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="p-6 flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-seedling text-3xl text-[#e74c3c]"></i>
+      <!-- Service 3: Banking CSP -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-green-500/30 transition-all duration-300">
+            <i class="fas fa-university text-2xl text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-3">Agriculture</h3>
-          <p class="text-gray-600 mb-4">Supporting sustainable agriculture and animal welfare practices to enhance rural livelihoods.</p>
-          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="agriculture">
-            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-          </a>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-200 transition-colors duration-300">Banking CSP</h3>
+          <p class="text-blue-100 text-sm flex-grow">ICICI, YES Bank, Punjab National Bank, Union Bank, SBI Bank, Axis Bank, Kotak Mahindra Bank, HDFC, Bank of Baroda & Etc.</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-green-500/30 to-green-600/30 hover:from-green-500/50 hover:to-green-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
         </div>
       </div>
 
-      <!-- Initiative 4 -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="p-6 flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-tree text-3xl text-[#e74c3c]"></i>
+      <!-- Service 4: Ayushman Bharat Card ID -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-red-500/30 transition-all duration-300">
+            <i class="fas fa-hospital text-2xl text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-3">Environment</h3>
-          <p class="text-gray-600 mb-4">Conserving natural resources and promoting environmental awareness across Jharkhand.</p>
-          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="environment">
-            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-          </a>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-200 transition-colors duration-300">Ayushman Bharat Card ID</h3>
+          <p class="text-blue-100 text-sm flex-grow">Health insurance coverage for poor and vulnerable families</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-red-500/30 to-red-600/30 hover:from-red-500/50 hover:to-red-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
         </div>
       </div>
 
-      <!-- Initiative 5 -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="p-6 flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-home text-3xl text-[#e74c3c]"></i>
+      <!-- Service 5: E-sharm & LABOUR Card Services -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-amber-500/30 transition-all duration-300">
+            <i class="fas fa-hard-hat text-2xl text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-3">Rural Development</h3>
-          <p class="text-gray-600 mb-4">Enhancing infrastructure and livelihood opportunities in rural areas of Jharkhand.</p>
-          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="rural">
-            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-          </a>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-200 transition-colors duration-300">E-sharm & LABOUR Card</h3>
+          <p class="text-blue-100 text-sm flex-grow">Registration and services for unorganized workers</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-amber-500/30 to-amber-600/30 hover:from-amber-500/50 hover:to-amber-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
         </div>
       </div>
 
-      <!-- Initiative 6 -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="p-6 flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-[#e74c3c] bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-city text-3xl text-[#e74c3c]"></i>
+      <!-- Service 6: PM Kisan Yojna -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-teal-500/30 transition-all duration-300">
+            <i class="fas fa-seedling text-2xl text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-3">Urban Development</h3>
-          <p class="text-gray-600 mb-4">Creating sustainable and inclusive urban communities in Jharkhand's cities and towns.</p>
-          <a href="#" class="service-link text-[#e74c3c] font-medium inline-flex items-center mt-auto" data-service="urban">
-            Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-          </a>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-teal-200 transition-colors duration-300">PM Kisan Yojna</h3>
+          <p class="text-blue-100 text-sm flex-grow">Income support scheme for farmers</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-teal-500/30 to-teal-600/30 hover:from-teal-500/50 hover:to-teal-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 7: AEPS -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-indigo-500/30 transition-all duration-300">
+            <i class="fas fa-mobile-alt text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-200 transition-colors duration-300">AEPS</h3>
+          <p class="text-blue-100 text-sm flex-grow">Powered by YES Bank, ICIC Bank</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-indigo-500/30 to-indigo-600/30 hover:from-indigo-500/50 hover:to-indigo-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 8: BBPS -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-yellow-500/30 transition-all duration-300">
+            <i class="fas fa-lightbulb text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-200 transition-colors duration-300">BBPS</h3>
+          <p class="text-blue-100 text-sm flex-grow">Electricity Bill Payment</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-yellow-500/30 to-yellow-600/30 hover:from-yellow-500/50 hover:to-yellow-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 9: Money Transfer -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-cyan-500/30 transition-all duration-300">
+            <i class="fas fa-money-bill-wave text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-200 transition-colors duration-300">Money Transfer</h3>
+          <p class="text-blue-100 text-sm flex-grow">Limit Rs 2,00000/-</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-cyan-500/30 to-cyan-600/30 hover:from-cyan-500/50 hover:to-cyan-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 10: Bank Account Opening -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-pink-500/30 transition-all duration-300">
+            <i class="fas fa-piggy-bank text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-200 transition-colors duration-300">Bank Account Opening</h3>
+          <p class="text-blue-100 text-sm flex-grow">Punjab National Bank / Bank Of India / Bank Of Baroda / ICICI Bank / YES Bank / Andhra Bank / IndusInd Bank/ SBI BANK/ CENTRAL BANK/ EQAUTAS BANK/ KOTAK MAHINDRA BANK/ HDFC BANK & Etc.</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-pink-500/30 to-pink-600/30 hover:from-pink-500/50 hover:to-pink-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 11: Mobile Recharge -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-orange-500/30 transition-all duration-300">
+            <i class="fas fa-mobile text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-orange-200 transition-colors duration-300">Mobile Recharge</h3>
+          <p class="text-blue-100 text-sm flex-grow">Prepaid and postpaid mobile recharge for all operators</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-orange-500/30 to-orange-600/30 hover:from-orange-500/50 hover:to-orange-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 12: Bus Booking -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-lime-500 to-lime-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-lime-500/30 transition-all duration-300">
+            <i class="fas fa-bus text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-lime-200 transition-colors duration-300">Bus Booking</h3>
+          <p class="text-blue-100 text-sm flex-grow">Book bus tickets for various routes</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-lime-500/30 to-lime-600/30 hover:from-lime-500/50 hover:to-lime-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 13: Flight Booking -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-sky-500/30 transition-all duration-300">
+            <i class="fas fa-plane text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-200 transition-colors duration-300">Flight Booking</h3>
+          <p class="text-blue-100 text-sm flex-grow">Domestic and international flight bookings</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-sky-500/30 to-sky-600/30 hover:from-sky-500/50 hover:to-sky-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 14: IRCTC -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-violet-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-violet-500/30 transition-all duration-300">
+            <i class="fas fa-train text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-200 transition-colors duration-300">IRCTC</h3>
+          <p class="text-blue-100 text-sm flex-grow">Railway ticket booking services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-violet-500/30 to-violet-600/30 hover:from-violet-500/50 hover:to-violet-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 15: Pan Card UTI/NSDL -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-fuchsia-500/30 transition-all duration-300">
+            <i class="fas fa-id-card text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-fuchsia-200 transition-colors duration-300">Pan Card UTI/NSDL</h3>
+          <p class="text-blue-100 text-sm flex-grow">New PAN card application and corrections</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-fuchsia-500/30 to-fuchsia-600/30 hover:from-fuchsia-500/50 hover:to-fuchsia-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 16: Voter Card -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-rose-500 to-rose-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-rose-500/30 transition-all duration-300">
+            <i class="fas fa-vote-yea text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-rose-200 transition-colors duration-300">Voter Card</h3>
+          <p class="text-blue-100 text-sm flex-grow">Voter ID registration and corrections</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-rose-500/30 to-rose-600/30 hover:from-rose-500/50 hover:to-rose-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 17: Driving License -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-emerald-500/30 transition-all duration-300">
+            <i class="fas fa-id-card text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-200 transition-colors duration-300">Driving License</h3>
+          <p class="text-blue-100 text-sm flex-grow">New license application and renewal services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-emerald-500/30 to-emerald-600/30 hover:from-emerald-500/50 hover:to-emerald-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 18: Kisan Mandhan Yojna -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-jade-500 to-jade-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-jade-500/30 transition-all duration-300">
+            <i class="fas fa-leaf text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-jade-200 transition-colors duration-300">Kisan Mandhan Yojna</h3>
+          <p class="text-blue-100 text-sm flex-grow">Pension scheme for small and marginal farmers</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-jade-500/30 to-jade-600/30 hover:from-jade-500/50 hover:to-jade-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 19: GST Registration -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-turquoise-500 to-turquoise-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-turquoise-500/30 transition-all duration-300">
+            <i class="fas fa-file-invoice-dollar text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-turquoise-200 transition-colors duration-300">GST Registration</h3>
+          <p class="text-blue-100 text-sm flex-grow">Goods and Services Tax registration services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-turquoise-500/30 to-turquoise-600/30 hover:from-turquoise-500/50 hover:to-turquoise-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 20: Income Tax Return Filling -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-slate-500/30 transition-all duration-300">
+            <i class="fas fa-file-invoice text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-slate-200 transition-colors duration-300">Income Tax Return Filling</h3>
+          <p class="text-blue-100 text-sm flex-grow">Professional tax filing services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-slate-500/30 to-slate-600/30 hover:from-slate-500/50 hover:to-slate-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 21: Fasal Bima Yojna -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-olive-500 to-olive-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-olive-500/30 transition-all duration-300">
+            <i class="fas fa-shield-alt text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-olive-200 transition-colors duration-300">Fasal Bima Yojna</h3>
+          <p class="text-blue-100 text-sm flex-grow">Crop insurance scheme for farmers</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-olive-500/30 to-olive-600/30 hover:from-olive-500/50 hover:to-olive-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 22: Insurance -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-azure-500 to-azure-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-azure-500/30 transition-all duration-300">
+            <i class="fas fa-umbrella text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-azure-200 transition-colors duration-300">Insurance</h3>
+          <p class="text-blue-100 text-sm flex-grow">Various insurance services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-azure-500/30 to-azure-600/30 hover:from-azure-500/50 hover:to-azure-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 23: Loan -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-crimson-500 to-crimson-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-crimson-500/30 transition-all duration-300">
+            <i class="fas fa-hand-holding-usd text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-crimson-200 transition-colors duration-300">Loan</h3>
+          <p class="text-blue-100 text-sm flex-grow">Provider direct Bank</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-crimson-500/30 to-crimson-600/30 hover:from-crimson-500/50 hover:to-crimson-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 24: ATM Services -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-gold-500 to-gold-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-gold-500/30 transition-all duration-300">
+            <i class="fas fa-credit-card text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-gold-200 transition-colors duration-300">ATM Services</h3>
+          <p class="text-blue-100 text-sm flex-grow">As Per Debit Card Limit</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-gold-500/30 to-gold-600/30 hover:from-gold-500/50 hover:to-gold-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 25: Hotel Booking -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-bronze-500 to-bronze-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-bronze-500/30 transition-all duration-300">
+            <i class="fas fa-hotel text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-bronze-200 transition-colors duration-300">Hotel Booking</h3>
+          <p class="text-blue-100 text-sm flex-grow">Book hotels at affordable prices</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-bronze-500/30 to-bronze-600/30 hover:from-bronze-500/50 hover:to-bronze-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 26: DTH Recharge -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-copper-500 to-copper-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-copper-500/30 transition-all duration-300">
+            <i class="fas fa-satellite-dish text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-copper-200 transition-colors duration-300">DTH Recharge</h3>
+          <p class="text-blue-100 text-sm flex-grow">DTH recharge for all operators</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-copper-500/30 to-copper-600/30 hover:from-copper-500/50 hover:to-copper-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 27: Kisok banking CSP point -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-silver-500 to-silver-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-silver-500/30 transition-all duration-300">
+            <i class="fas fa-store text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-silver-200 transition-colors duration-300">Kisok Banking CSP Point</h3>
+          <p class="text-blue-100 text-sm flex-grow">Banking services at your neighborhood</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-silver-500/30 to-silver-600/30 hover:from-silver-500/50 hover:to-silver-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 28: New insurance Car, Bike, Health -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-platinum-500 to-platinum-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-platinum-500/30 transition-all duration-300">
+            <i class="fas fa-shield-alt text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-platinum-200 transition-colors duration-300">New Insurance</h3>
+          <p class="text-blue-100 text-sm flex-grow">Car, Bike, Health insurance services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-platinum-500/30 to-platinum-600/30 hover:from-platinum-500/50 hover:to-platinum-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 29: Insurance Premium (L.I.C.) -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-pearl-500 to-pearl-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-pearl-500/30 transition-all duration-300">
+            <i class="fas fa-file-invoice-dollar text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-pearl-200 transition-colors duration-300">Insurance Premium</h3>
+          <p class="text-blue-100 text-sm flex-grow">L.I.C. premium payment services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-pearl-500/30 to-pearl-600/30 hover:from-pearl-500/50 hover:to-pearl-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 30: FSSAI Registration -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-ruby-500 to-ruby-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-ruby-500/30 transition-all duration-300">
+            <i class="fas fa-certificate text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-ruby-200 transition-colors duration-300">FSSAI Registration</h3>
+          <p class="text-blue-100 text-sm flex-grow">Food safety registration services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-ruby-500/30 to-ruby-600/30 hover:from-ruby-500/50 hover:to-ruby-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 31: Business Loan For Retailer -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-emerald-500/30 transition-all duration-300">
+            <i class="fas fa-store text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-200 transition-colors duration-300">Business Loan For Retailer</h3>
+          <p class="text-blue-100 text-sm flex-grow">Special loans for retail businesses</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-emerald-500/30 to-emerald-600/30 hover:from-emerald-500/50 hover:to-emerald-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 32: Credit Card Bill Payment -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-indigo-500/30 transition-all duration-300">
+            <i class="fas fa-credit-card text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-200 transition-colors duration-300">Credit Card Bill Payment</h3>
+          <p class="text-blue-100 text-sm flex-grow">Pay your credit card bills easily</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-indigo-500/30 to-indigo-600/30 hover:from-indigo-500/50 hover:to-indigo-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 33: Passport -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-navy-500 to-navy-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-navy-500/30 transition-all duration-300">
+            <i class="fas fa-passport text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-navy-200 transition-colors duration-300">Passport</h3>
+          <p class="text-blue-100 text-sm flex-grow">Passport application and renewal services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-navy-500/30 to-navy-600/30 hover:from-navy-500/50 hover:to-navy-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 34: Online Shopping -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-maroon-500 to-maroon-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-maroon-500/30 transition-all duration-300">
+            <i class="fas fa-shopping-cart text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-maroon-200 transition-colors duration-300">Online Shopping</h3>
+          <p class="text-blue-100 text-sm flex-grow">Shop for various products online</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-maroon-500/30 to-maroon-600/30 hover:from-maroon-500/50 hover:to-maroon-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 35: Mpos mini ATM machine -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-teal-500/30 transition-all duration-300">
+            <i class="fas fa-credit-card text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-teal-200 transition-colors duration-300">MPOS Mini ATM Machine</h3>
+          <p class="text-blue-100 text-sm flex-grow">Mobile point of sale services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-teal-500/30 to-teal-600/30 hover:from-teal-500/50 hover:to-teal-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 36: Residential Certificate -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-cyan-500/30 transition-all duration-300">
+            <i class="fas fa-home text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-200 transition-colors duration-300">Residential Certificate</h3>
+          <p class="text-blue-100 text-sm flex-grow">Proof of residence certificates</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-cyan-500/30 to-cyan-600/30 hover:from-cyan-500/50 hover:to-cyan-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 37: Metro Card Recharge -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-purple-500/30 transition-all duration-300">
+            <i class="fas fa-subway text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-200 transition-colors duration-300">Metro Card Recharge</h3>
+          <p class="text-blue-100 text-sm flex-grow">Recharge your metro cards</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-purple-500/30 to-purple-600/30 hover:from-purple-500/50 hover:to-purple-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 38: Wallet to wallet fund transfer -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300">
+            <i class="fas fa-exchange-alt text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors duration-300">Wallet To Wallet Fund Transfer</h3>
+          <p class="text-blue-100 text-sm flex-grow">Transfer funds between digital wallets</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-blue-500/30 to-blue-600/30 hover:from-blue-500/50 hover:to-blue-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 39: NSDL Payments Bank (NEW) -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-green-500/30 transition-all duration-300">
+            <i class="fas fa-university text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-200 transition-colors duration-300">NSDL Payments Bank</h3>
+          <p class="text-blue-100 text-sm flex-grow">NEW banking services</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-green-500/30 to-green-600/30 hover:from-green-500/50 hover:to-green-600/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 40: And 300+ Others Services -->
+      <div class="group backdrop-blur-lg bg-white/10 rounded-2xl p-1 border border-white/20 shadow-xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:bg-white/20">
+        <div class="bg-gradient-to-br from-white/10 to-transparent rounded-2xl p-6 h-full flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300">
+            <i class="fas fa-ellipsis-h text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors duration-300">300+ Others Services</h3>
+          <p class="text-blue-100 text-sm flex-grow">Many more services available</p>
+          <button class="mt-4 text-white text-sm font-medium bg-gradient-to-r from-blue-500/30 to-purple-500/30 hover:from-blue-500/50 hover:to-purple-500/50 py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">
+            Learn More
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <!-- Initiatives Section End -->
+</div>
+<!-- Services Section End -->
 
   <!-- COUNTER-SECTION-START -->
   <section class="py-6">
@@ -667,181 +1132,6 @@
   </section>
   <!-- COUNTER-SECTION-END -->
 
-  <!-- Initiative Modals -->
-  <!-- Education & Literacy Modal -->
-  <div id="educationModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">Education & Literacy Programs</h2>
-        <span class="close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="mb-4">JAN AKANKSHA FOUNDATION is committed to promoting education and literacy across all age groups in Jharkhand. Our education initiatives focus on improving access to quality education, enhancing learning outcomes, and promoting lifelong learning opportunities for community members.</p>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
-        <ul class="feature-list mb-6">
-          <li><i class="fas fa-check-circle"></i> <strong>Non-formal Education Centers:</strong> For out-of-school children and youth</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Remedial Coaching:</strong> Academic support programs for improved learning outcomes</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Adult Literacy Classes:</strong> Empowering adults through basic education</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Educational Infrastructure:</strong> Development of school facilities</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Teacher Training:</strong> Capacity building for educators</li>
-        </ul>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
-        <ul class="feature-list">
-          <li><i class="fas fa-arrow-right"></i> Increased enrollment rates by 35% in intervention areas</li>
-          <li><i class="fas fa-arrow-right"></i> 70% of students showing grade-appropriate competency levels</li>
-          <li><i class="fas fa-arrow-right"></i> Established 200 learning centers across all districts</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Health & Welfare Modal -->
-  <div id="healthModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">Health & Family Welfare Programs</h2>
-        <span class="close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="mb-4">JAN AKANKSHA FOUNDATION works to improve healthcare access and promote family welfare initiatives across Jharkhand. Our health programs focus on preventive healthcare, maternal and child health, nutrition, and awareness about government health schemes.</p>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
-        <ul class="feature-list mb-6">
-          <li><i class="fas fa-check-circle"></i> <strong>Health Camps:</strong> Medical check-ups in remote areas</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Maternal & Child Health:</strong> Specialized interventions for mothers and children</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Nutrition Programs:</strong> For women and children</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Health Awareness:</strong> Campaigns on preventive healthcare</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Health Worker Training:</strong> Building community health capacity</li>
-        </ul>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
-        <ul class="feature-list">
-          <li><i class="fas fa-arrow-right"></i> Provided healthcare services to over 50,000 beneficiaries</li>
-          <li><i class="fas fa-arrow-right"></i> Reduced maternal mortality ratio by 25% in intervention districts</li>
-          <li><i class="fas fa-arrow-right"></i> Trained 500 community health workers</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Agriculture Modal -->
-  <div id="agricultureModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">Agriculture & Animal Welfare Programs</h2>
-        <span class="close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="mb-4">JAN AKANKSHA FOUNDATION supports sustainable agriculture and animal welfare practices to enhance rural livelihoods. Our agriculture programs focus on improving agricultural productivity, promoting sustainable farming practices, and enhancing animal health and welfare.</p>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
-        <ul class="feature-list mb-6">
-          <li><i class="fas fa-check-circle"></i> <strong>Sustainable Farming Training:</strong> Modern agricultural techniques</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Organic Farming:</strong> Natural farming methods promotion</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Animal Health Camps:</strong> Veterinary services and care</li>
-          <li><i class="fas fa-check-circle"></i> <strong>High-Value Crops:</strong> Diversification and improved practices</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Water Conservation:</strong> Irrigation and watershed management</li>
-        </ul>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
-        <ul class="feature-list">
-          <li><i class="fas fa-arrow-right"></i> Increased agricultural productivity by 40%</li>
-          <li><i class="fas fa-arrow-right"></i> Enhanced farmer incomes by 35%</li>
-          <li><i class="fas fa-arrow-right"></i> Promoted organic farming in 100 villages</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Environment Modal -->
-  <div id="environmentModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">Environment & Forest Conservation Programs</h2>
-        <span class="close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="mb-4">JAN AKANKSHA FOUNDATION is dedicated to conserving natural resources and promoting environmental awareness in Jharkhand. Our environment programs focus on afforestation, water conservation, waste management, and promoting sustainable practices among communities.</p>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
-        <ul class="feature-list mb-6">
-          <li><i class="fas fa-check-circle"></i> <strong>Afforestation Drives:</strong> Large-scale plantation initiatives</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Water Conservation:</strong> Harvesting structures and watershed management</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Waste Management:</strong> Recycling and proper disposal systems</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Environmental Awareness:</strong> Campaigns and education</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Biodiversity Conservation:</strong> Protection of local flora and fauna</li>
-        </ul>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
-        <ul class="feature-list">
-          <li><i class="fas fa-arrow-right"></i> Planted over 100,000 trees with 85% survival rate</li>
-          <li><i class="fas fa-arrow-right"></i> Constructed 250 water harvesting structures</li>
-          <li><i class="fas fa-arrow-right"></i> Benefited 15,000 households with improved water access</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Rural Development Modal -->
-  <div id="ruralModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">Rural Development Programs</h2>
-        <span class="close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="mb-4">JAN AKANKSHA FOUNDATION works towards enhancing infrastructure and livelihood opportunities in rural areas of Jharkhand. Our rural development programs focus on improving basic infrastructure, creating sustainable livelihood opportunities, and strengthening local governance.</p>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
-        <ul class="feature-list mb-6">
-          <li><i class="fas fa-check-circle"></i> <strong>Infrastructure Development:</strong> Roads, drainage, and sanitation</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Livelihood Training:</strong> Skill development and enterprise creation</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Self-Help Groups:</strong> Formation and capacity building</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Water & Sanitation:</strong> Facilities in rural areas</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Panchayat Strengthening:</strong> Local governance support</li>
-        </ul>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
-        <ul class="feature-list">
-          <li><i class="fas fa-arrow-right"></i> Improved infrastructure in 200 villages</li>
-          <li><i class="fas fa-arrow-right"></i> Created livelihoods for 15,000 families</li>
-          <li><i class="fas fa-arrow-right"></i> Formed 500 self-help groups across the state</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Urban Development Modal -->
-  <div id="urbanModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">Urban Development Programs</h2>
-        <span class="close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="mb-4">JAN AKANKSHA FOUNDATION works towards creating sustainable and inclusive urban communities in Jharkhand. Our urban development programs focus on improving urban infrastructure, promoting sustainable urban planning, and enhancing the quality of life for urban residents, especially in slum areas.</p>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Key Programs:</h3>
-        <ul class="feature-list mb-6">
-          <li><i class="fas fa-check-circle"></i> <strong>Slum Improvement:</strong> Rehabilitation and infrastructure development</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Urban Services:</strong> Water supply and sanitation initiatives</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Skill Development:</strong> Training for urban youth and women</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Waste Management:</strong> Cleanliness and environmental programs</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Community Mobilization:</strong> Participation in urban planning</li>
-        </ul>
-        
-        <h3 class="text-xl font-bold text-[#e74c3c] mb-3">Impact:</h3>
-        <ul class="feature-list">
-          <li><i class="fas fa-arrow-right"></i> Improved conditions in 50 slum clusters</li>
-          <li><i class="fas fa-arrow-right"></i> Provided skill training to 10,000 urban youth</li>
-          <li><i class="fas fa-arrow-right"></i> 70% of trained youth secured employment or started businesses</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
   <!-- Footer Section -->
   <footer class="bg-gray-50 border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -850,13 +1140,13 @@
         <div class="md:w-1/4 flex flex-col items-start" style="margin-top: -30px;">
           <a href="./index.html"><img
             src="./image/logo/logo.png"
-            alt="One Square Lifesciences Logo"
+            alt="JAN AKANSHA KENDRA Logo"
             class="w-24 h-auto mb-4"
           /></a>
           <div class="space-y-2">
-            <p class="text-gray-700 italic">"Saving Lives, Every Second Counts."</p>
-            <p class="text-gray-700 italic">"Your Emergency, Our Priority."</p>
-            <p class="text-gray-700 italic">"Critical Care on Wheels."</p>
+            <p class="text-gray-700 italic">"Your One-Stop Service Center"</p>
+            <p class="text-gray-700 italic">"Simplifying Government Services"</p>
+            <p class="text-gray-700 italic">"Empowering Communities"</p>
           </div>
         </div>
 
@@ -888,7 +1178,7 @@
           <ul class="space-y-3">
             <li class="flex items-start">
               <i class="fas fa-map-marker-alt text-[#1b3860] mt-1 mr-3"></i>
-              <span class="text-gray-600">Jharkhand, India </span>
+              <span class="text-gray-600">LIC More, B. Deoghar, Jharkhand </span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-phone text-[#1b3860] mr-3"></i>
@@ -896,7 +1186,7 @@
             </li>
             <li class="flex items-center">
               <i class="fas fa-envelope text-[#1b3860] mr-3"></i>
-              <span class="text-gray-600">info@domain.name</span>
+              <span class="text-gray-600"> www.janakanksha.net</span>
             </li>
           </ul>
         </div>
@@ -908,7 +1198,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="text-gray-600 text-sm mb-2 md:mb-0">
-            Copyright © 2025 Ambulance service. All Rights Reserved
+            Copyright © 2025 JAN AKANSHA KENDRA. All Rights Reserved
           </div>
           <div class="text-gray-600 text-sm">
             Design &amp; developed by 
@@ -1032,7 +1322,7 @@
         const message = document.getElementById('message').value;
         
         // Create WhatsApp message
-        const whatsappMessage = `Hello SHARGAM ELEVATOR, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+        const whatsappMessage = `Hello JAN AKANSHA KENDRA, I would like to provide feedback:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
         
         // Open WhatsApp with pre-filled message
         const whatsappURL = `https://wa.me/919234241407?text=${whatsappMessage}`;
@@ -1084,44 +1374,6 @@
         }
       };
       updateCounter();
-    });
-
-    // Modal Script
-    // Get all service links
-    const serviceLinks = document.querySelectorAll('.service-link');
-    
-    // Get all modals
-    const modals = document.querySelectorAll('.modal');
-    
-    // Get all close buttons
-    const closeButtons = document.querySelectorAll('.close');
-    
-    // Add click event to each service link
-    serviceLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const serviceType = this.getAttribute('data-service');
-        const modal = document.getElementById(serviceType + 'Modal');
-        if (modal) {
-          modal.style.display = 'block';
-        }
-      });
-    });
-    
-    // Add click event to each close button
-    closeButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        this.closest('.modal').style.display = 'none';
-      });
-    });
-    
-    // Close modal when clicking outside of it
-    window.addEventListener('click', function(event) {
-      modals.forEach(modal => {
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
     });
   </script>
 </body>
